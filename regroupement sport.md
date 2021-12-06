@@ -17,4 +17,4 @@
 - surf
 
 2 communauté = commité olympique
-2 Chance =  
+2 Chance = Corruption
