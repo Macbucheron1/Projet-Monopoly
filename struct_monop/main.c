@@ -2,7 +2,7 @@
 
 int main()
 {
-    /*
+    /* pour tester que tout marche bien
     t_joueur joueur1;
     joueur1=creation_joueur();
 
@@ -12,7 +12,7 @@ int main()
     t_banque banque;
     banque=creation_banque();
 
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
     afficher_banque(banque);
     afficher_case(case1);
     afficher_joueur(joueur1);*/
