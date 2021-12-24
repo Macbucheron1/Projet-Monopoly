@@ -16,22 +16,22 @@ typedef struct //case(ou cartes) du plateau
 {
     int position; //position de la case sur le plateau
     int valeur; //prix d'achat
-    char nom_joueur[TAILLE_NOM]; //nom du propriÈtaire(NONE si ya pas)
+    char nom_joueur[TAILLE_NOM]; //nom du propri√©taire(NONE si ya pas)
     int nb_maison; //entre 0 et 3
     int nb_hotel; //si ya un hotel ou pas
     int val_maison; //prix d'une maison sur la case
     int val_hotel; //prix de l'hotel
-    int groupe_cartes; //groupe ‡ laquelle appartient la case
+    int groupe_cartes; //groupe √† laquelle appartient la case
 }t_case;
 
 typedef struct //joueur du plateau (max 4)
 {
     char nom[TAILLE_NOM];
-    int position; //initialisÈ ‡ 0, la case dÈpart (modulo 32)
-    int argent; //‡ initialiser avec le montant de base (argent sur le compte, c'est ‡ dire argent utilisable)
+    int position; //initialis√© √† 0, la case d√©part (modulo 32)
+    int argent; //√† initialiser avec le montant de base (argent sur le compte, c'est √† dire argent utilisable)
     int capital; //c'est l'argent que le joueur a sur son compte plus la valeur des propriete, des maisons,etc (sert dns les parties rapides)
-    int proprietes[TAILLE_PLATEAU]; //propriÈtÈs dÈtenue par le joueur --> position de la case (tableau de case)
-    bool en_prison; //boolÈen vÈrifiant si le joueur est en prison ou non (0 pas en prison, totu autre chiffre = en prison)
+    t_case proprietes[TAILLE_PLATEAU]; //propri√©t√©s d√©tenue par le joueur --> position de la case (tableau de case)
+    bool en_prison; //bool√©en v√©rifiant si le joueur est en prison ou non (0 pas en prison, totu autre chiffre = en prison)
     int tour_prison; //nombre de tour en prison(max: 3)
     int carte_sortie_prison; //nombre de carte permettant au joueur de sortir de prison
 }t_joueur;
