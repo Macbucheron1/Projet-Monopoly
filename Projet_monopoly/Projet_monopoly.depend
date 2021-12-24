@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1640281411 source:c:\users\maxime\desktop\projet_monopoly\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	"sous_prog.h"
+
+1640296092 source:c:\users\maxime\desktop\projet_monopoly\sous_prog.c
+	"sous_prog.h"
+
+1640281163 c:\users\maxime\desktop\projet_monopoly\sous_prog.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
