@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1640281411 source:c:\users\maxime\desktop\projet_monopoly\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	"sous_prog.h"
+
+1640525444 source:c:\users\maxime\desktop\projet_monopoly\sous_prog.c
+	"sous_prog.h"
+
+1640525483 c:\users\maxime\desktop\projet_monopoly\sous_prog.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1640525945 source:c:\users\maxime\desktop\maxime_26_12_creation_des_cases\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	"sous_prog.h"
+
+1640525483 c:\users\maxime\desktop\maxime_26_12_creation_des_cases\sous_prog.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1640525939 source:c:\users\maxime\desktop\maxime_26_12_creation_des_cases\sous_prog.c
+	"sous_prog.h"
+
