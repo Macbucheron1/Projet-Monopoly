@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1640296382 source:c:\users\natha\desktop\monopoly\main.c
+	"NATHAN_H.h"
+	<time.h>
+
+1640295303 c:\users\natha\desktop\monopoly\nathan_h.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1640368024 source:c:\users\natha\desktop\nathan_24.12\main.c
+	"Header.h"
+
+1640360792 c:\users\natha\desktop\nathan_24.12\monopoly_header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+
+1640360396 source:c:\users\natha\desktop\nathan_24.12\fonction_monopoly.c
+	"Monopoly_header.h"
+
+1640368006 source:c:\users\natha\desktop\nathan_24.12\fonctions.c
+	"Header.h"
+
+1640368258 c:\users\natha\desktop\nathan_24.12\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+
+1640534737 source:c:\users\natha\desktop\version1.0\main.c
+	"Header.h"
+
+1640536389 c:\users\natha\desktop\version1.0\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640536389 source:c:\users\natha\desktop\version1.0\fonctions.c
+	"Header.h"
+
+1640707157 source:c:\users\natha\desktop\version1.2\fonctions.c
+	"Header.h"
+
+1640706794 c:\users\natha\desktop\version1.2\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640705014 source:c:\users\natha\desktop\version1.2\main.c
+	"Header.h"
+
+1640722067 source:c:\users\natha\desktop\plateau pointeur\fonctions.c
+	"Header.h"
+
+1640722079 c:\users\natha\desktop\plateau pointeur\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640721994 source:c:\users\natha\desktop\plateau pointeur\main.c
+	"Header.h"
+
