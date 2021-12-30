@@ -122,6 +122,7 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
     c.nb_hotel = 0;
     c.couleur_fond = couleur_fond;
     c.couleur_texte = couleur_texte;
+    c.hypoteque = false;
 
     return c;
 }
@@ -743,7 +744,7 @@ void afficher_plateau(t_case plateau[], t_joueur tab_joueur[])
             }
             printf("\n\n\n\n\n\n|");
         }
-        else if(i ==15)
+        else if(i ==17)
         {
             printf("\n\n\n\n\n\n|");
         }

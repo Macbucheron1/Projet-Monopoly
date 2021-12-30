@@ -25,6 +25,7 @@ typedef struct //case(ou cartes) du plateau
     int groupe_cartes; //groupe à laquelle appartient la case
     int couleur_fond; // Couleur de fond de la case
     int couleur_texte; // Couleur de texte de la case
+    bool hypoteque;
 }t_case;
 
 typedef struct //joueur du plateau (max 4)

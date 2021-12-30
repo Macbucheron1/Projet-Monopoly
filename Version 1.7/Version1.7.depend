@@ -97,7 +97,7 @@
 1640820064 source:c:\users\natha\desktop\version 1.7\main.c
 	"Header.h"
 
-1640858196 c:\users\natha\desktop\version 1.7\header.h
+1640885328 c:\users\natha\desktop\version 1.7\header.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -105,6 +105,6 @@
 	<string.h>
 	<windows.h>
 
-1640861118 source:c:\users\natha\desktop\version 1.7\fonctions.c
+1640869620 source:c:\users\natha\desktop\version 1.7\fonctions.c
 	"Header.h"
 
