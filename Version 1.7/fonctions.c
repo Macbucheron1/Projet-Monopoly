@@ -103,12 +103,8 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i)
 }
 
 // fonction creation d'instance
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte)
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom)
 {
-    /* Fonction qui créée une case
-       Prend en paramètre toutes ses caractéristique
-       Renvoie la case
-    */
     t_case c;
     fflush(stdin);
     strcpy(c.nom, nom);
@@ -120,10 +116,6 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
     c.groupe_cartes=groupe_cartes;
     c.nb_maison = 0;
     c.nb_hotel = 0;
-    c.couleur_fond = couleur_fond;
-    c.couleur_texte = couleur_texte;
-    c.hypoteque = false;
-
     return c;
 }
 
@@ -131,7 +123,7 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
 t_joueur creation_joueur(int numero)
 {
     /* Permet la creation d'un joueur
-       Prend en paramètre le numéro du joueur
+       Ne prend pas de paramètre
        Renvoie une instance de la classe joueur au debut de partie
     */
     t_joueur j;
@@ -175,158 +167,155 @@ void creation_plateau(t_case* plateau)
        Ne renvoie rien
     */
 
-    // Groupe 1 = Propriétés , 2 cases , vert caca d'oie , blanc
-    // Groupe 2 = Propriétés , 3 cases , turquoise , blanc
-    // Groupe 3 = Propriétés , 3 cases , violet , blanc
-    // Groupe 4 = Propriétés , 2 cases , gris foncé , blanc
-    // Groupe 5 = Propriétés , 2 cases , rouge , blanc
-    // Groupe 6 = Propriétés , 2 cases , jaune , noir
-    // Groupe 7 = Propriétés , 3 cases , vert , blanc
-    // Groupe 8 = Propriétés , 2 cases , bleu , blanc
-    // Groupe 9 = Gares, 4 cases , blanc , noir
+    // Groupe 1 = Propriétés , 2 cases
+    // Groupe 2 = Propriétés , 3 cases
+    // Groupe 3 = Propriétés , 3 cases
+    // Groupe 4 = Propriétés , 2 cases
+    // Groupe 5 = Propriétés , 2 cases
+    // Groupe 6 = Propriétés , 2 cases
+    // Groupe 7 = Propriétés , 3 cases
+    // Groupe 8 = Propriétés , 2 cases
+    // Groupe 9 = Gares, 4 cases
     // Groupe 10 = carte communauté,
     // Groupe 11 = carte chance
     // Groupe 12 = prison
     // Groupe 13 = parc gratuit
     // Groupe 14 = Impot
     // Groupe 15 = Aller en prison
+    // Groupe 16 = Depart
 
     t_case depart;
-    depart=creation_case(0,0,0,0,16,"depart",7,0);
-    plateau[0]= depart;
+    depart = creation_case(0, 0, 0, 0, 16, "Depart");
+    plateau[0] = depart;
 
     t_case sport_equestre;
-    sport_equestre=creation_case(1, 60, 50, 60,1, "Sport Equestre", 6 , 15);
+    sport_equestre=creation_case(1, 60, 50, 60,1, "Sport Equestre");
     plateau[1] = sport_equestre;
 
     t_case waterpolo;
-    waterpolo=creation_case(2, 60, 50, 60,1, "Waterpolo", 6, 15);
+    waterpolo=creation_case(2, 60, 50, 60,1, "Waterpolo");
     plateau[2] = waterpolo;
 
     t_case breaking;
-    breaking=creation_case(3, 200, 0, 0,9, "Breaking",15, 0);
+    breaking=creation_case(3, 200, 0, 0,9, "Breaking");
     plateau[3] = breaking;
 
     t_case aviron;
-    aviron=creation_case(4, 60, 50, 60,2, "Aviron",3, 15);
+    aviron=creation_case(4, 60, 50, 60,2, "Aviron");
     plateau[4] = aviron;
 
     t_case corruption1;
-    corruption1 = creation_case(5, 0, 0, 0, 11, "Corruption",13 , 15);
+    corruption1 = creation_case(5, 0, 0, 0, 11, "Corruption");
     plateau[5] = corruption1;
 
     t_case canoe;
-    canoe=creation_case(6, 60, 50, 60, 2, "Canoe",3, 15);
+    canoe=creation_case(6, 60, 50, 60, 2, "Canoe");
     plateau[6] = canoe;
 
     t_case voile;
-    voile=creation_case(7, 60, 50, 60, 2, "Voile",3 , 15);
+    voile=creation_case(7, 60, 50, 60, 2, "Voile");
     plateau[7] = voile;
 
     t_case suspension;
-    suspension = creation_case(8, 0, 0, 0, 12, "Suspension", 7 , 0);
+    suspension = creation_case(8, 0, 0, 0, 12, "Suspension");
     plateau[8] = suspension;
 
     t_case tennis;
-    tennis=creation_case(9, 140, 100, 110,3, "Tennis",5 , 15);
+    tennis=creation_case(9, 140, 100, 110,3, "Tennis");
     plateau[9] = tennis;
 
     t_case golf;
-    golf=creation_case(10, 140, 100, 110,3, "Golf", 5 , 15);
+    golf=creation_case(10, 140, 100, 110,3, "Golf");
     plateau[10] = golf;
 
     t_case skate;
-    skate=creation_case(11, 200, 0, 0,9, "Skate", 15 , 0);
+    skate=creation_case(11, 200, 0, 0,9, "Skate");
     plateau[11] = skate;
 
     t_case tir_a_l_arc;
-    tir_a_l_arc=creation_case(12, 160, 100, 110,3, "Tir a l'arc",5 , 15);
+    tir_a_l_arc=creation_case(12, 160, 100, 110,3, "Tir a l'arc");
     plateau[12] = tir_a_l_arc;
 
     t_case lutte;
-    lutte=creation_case(13, 180, 100, 110, 4, "Lutte",8 , 15);
+    lutte=creation_case(13, 180, 100, 110, 4, "Lutte");
     plateau[13] = lutte;
 
     t_case comite_olympique1;
-    comite_olympique1 = creation_case(14, 0, 0, 0, 10, "Comite olympique",9 , 15);
+    comite_olympique1 = creation_case(14, 0, 0, 0, 10, "Comite olympique");
     plateau[14] = comite_olympique1;
 
     t_case halterophilie;
-    halterophilie=creation_case(15, 200, 100, 110, 4, "Halterophilie", 8, 15);
+    halterophilie=creation_case(15, 200, 100, 110, 4, "Halterophilie");
     plateau[15] = halterophilie;
 
     t_case village_olympique;
-    village_olympique = creation_case(16, 0, 0, 0, 13, "Village olympique",7, 0);
+    village_olympique = creation_case(16, 0, 0, 0, 13, "Village olympique");
     plateau[16] = village_olympique;
 
     t_case Volley;
-    Volley=creation_case(17, 220, 150, 165, 5, "Volley",4 , 15);
+    Volley=creation_case(17, 220, 150, 165, 5, "Volley");
     plateau[17] = Volley;
 
     t_case handball;
-    handball=creation_case(18, 220, 150, 165, 5, "Handball",4, 15);
+    handball=creation_case(18, 220, 150, 165, 5, "Handball");
     plateau[18] = handball;
 
     t_case escalade;
-    escalade=creation_case(19, 200, 0, 0,9, "Escalade", 15, 0);
+    escalade=creation_case(19, 200, 0, 0,9, "Escalade");
     plateau[19] = escalade;
 
     t_case amende;
-    amende = creation_case(20, 0, 0, 0, 14, "Amende", 12, 15);
+    amende = creation_case(20, 0, 0, 0, 14, "Amende");
     plateau[20] = amende;
 
     t_case corruption2;
-    corruption2 = creation_case(5, 0, 0, 0, 11, "Corruption",13, 15);
+    corruption2 = creation_case(5, 0, 0, 0, 11, "Corruption");
     plateau[21] = corruption2;
 
     t_case judo;
-    judo=creation_case(22, 260, 150, 165,6, "Judo", 14, 0);
+    judo=creation_case(22, 260, 150, 165,6, "Judo");
     plateau[22] = judo;
 
     t_case boxe;
-    boxe=creation_case(23, 280, 150, 165,6, "Boxe", 14, 0);
+    boxe=creation_case(23, 280, 150, 165,6, "Boxe");
     plateau[23] = boxe;
 
     t_case controle_dopage;
-    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle anti dopage",7,0);
+    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle anti dopage");
     plateau[24] = controle_dopage;
 
     t_case basket;
-    basket=creation_case(25, 300, 200, 220, 7, "Basket" ,2, 15);
-    plateau[25] = basket;
+    basket=creation_case(25, 300, 200, 220, 7, "Basket");
+    plateau[25] = sport_equestre;
 
     t_case foot;
-    foot=creation_case(26, 300, 200, 220, 7, "Foot", 2, 15);
+    foot=creation_case(26, 300, 200, 220, 7, "Foot");
     plateau[26] = foot;
 
     t_case surf;
-    surf=creation_case(27, 200, 0, 0,9, "Surf",15, 0);
+    surf=creation_case(27, 200, 0, 0,9, "Surf");
     plateau[27] = surf;
 
     t_case rugby;
-    rugby=creation_case(28, 320, 200, 220, 7, "Rugby", 2, 15);
+    rugby=creation_case(28, 320, 200, 220, 7, "Rugby");
     plateau[28] = rugby;
 
     t_case athletisme;
-    athletisme=creation_case(29, 350, 200, 220, 8, "Athletisme",1,15);
+    athletisme=creation_case(29, 350, 200, 220, 8, "Athletisme");
     plateau[29] = athletisme;
 
     t_case comite_olympique2;
-    comite_olympique2 = creation_case(5, 0, 0, 0, 10, "Comite olympique",9,15);
+    comite_olympique2 = creation_case(5, 0, 0, 0, 10, "Comite olympique");
     plateau[30] = comite_olympique2;
 
     t_case natation;
-    natation=creation_case(31, 400, 200, 220, 8, "Natation",1,15);
+    natation=creation_case(31, 400, 200, 220, 8, "Natation");
     plateau[31] = natation;
 }
 
 // fonction creation tableau joueur
 void creation_tab_joueur(t_joueur tab_joueur[])
 {
-    /* Créée le tableau de joueurs, permet de choisir le nombre de joueur
-       Prend en paramètre la tableau des joueurs
-       Ne renvoie rien
-    */
     char choix[10];
     do
     {
@@ -499,32 +488,22 @@ void en_faillite(t_joueur tab_joueur[], int i) // En cours par LUC
 // fonction pour loyer
 void loyer(t_joueur tab_joueur[], int i, t_case cases) // En cours par Nathan
 {
-    /* Permet de faire payer un joueur si il est sur la case d'un autre joueur
-       Prend en paramèètre le tableau de joueur, l'indice du joueur qui joue et la case sur laquelle il est
-    */
     if ((cases.num_joueur != tab_joueur[i].numero) && (cases.num_joueur != 0) && (cases.groupe_cartes <= 9))
     {
         // le joueur doit payer
         printf("Paye\n");
-        return true;
     }
     else
     {
         printf("Vous n'etes pas sur la case de quelqu'un d'autre, vous ne payez pas\n");
-        return false;
     }
 }
 
-// Fonction de tour
 void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cours par Nathan
 {
-    /* Procédure qui fait un tour à tout les joueurs
-       Prend en paramèètre le tableau des joueurs, le plateau et la banque
-       Ne renvoie rien
-    */
     for (int i = 0; i < 4; i++)
     {
-        // En faillite
+        en_faillite(tab_joueur, i);
         if (tab_joueur[i].en_faillite)
         {
             // Le joueur ne joue pas
@@ -538,13 +517,12 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cou
             printf("Vous avez fait %d et %d\n", de[0], de[1]);
             if (sortie_prison(de, tab_joueur, i)) // Le joueur sors de prison donc ne joue pas plus pendant ce tour
             {
-                afficher_plateau(plateau, tab_joueur);
+
             }
             else // Le joueur n'est pas en prison                       // continue ici
             {
                 // Le joueur joue une fois
                 deplacement(de, tab_joueur, i);
-                afficher_plateau(plateau, tab_joueur);
                 printf("Vous etes a la case %s\n", plateau[tab_joueur[i].position].nom);
                 loyer(tab_joueur, i, plateau[tab_joueur[i].position]);
                 // acheter_propriete(p_joueur, plateau[p_joueur->position]);
@@ -581,7 +559,6 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cou
     }
 }
 
-// fonction pour les tours
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque) // faire le blindage
 {
 //La fonction permet au joueur d’acheter une maison ou un hôtel (elle lui demande)
@@ -691,66 +668,35 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
     }
 }
 
-// Fonction d'affichage
-void Color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
+void achat(t_joueur tab_joueur[],t_case plateau[])
 {
-    HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
-}
-
-// Fonction d'affichage
-void afficher_plateau(t_case plateau[], t_joueur tab_joueur[])
-{
-//la fonction permet d'afficher le plateau
-//prend en parametre le plateau
-//ne renvoie rien
-    printf("|");
-    for(int i=0;i<32 ; i++)
-    {
-        Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
-        printf("%s", plateau[i].nom);//affiche le nom de chaque case
-        for(int j = strlen(plateau[i].nom); j<strlen(plateau[24].nom)-2; j++)//permet de faire que chaque case ai la meme longueur
-        {
-            printf(" ");
-        }
-        Color(15,0);//re-met en noir et blanc
-        printf("|");
-        if(i == 8)//permet de faire les saut de ligne(pareil pour les 2 suivant)
-        {
-            for (int l = 0; l<4; l++)
-            {
-                printf("|");
-                for(int k=0;k<9 ; k++)
-                {
-                    Color(plateau[k].couleur_texte,plateau[k].couleur_fond);
-                    //printf("joueur = %d et k = %d", tab_joueur[m].position, k);
-                    if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))
-                    {
-                        printf("%s", tab_joueur[l].nom);
-                        for(int j = strlen(tab_joueur[l].nom); j<strlen(plateau[24].nom)-2; j++)//permet de faire que chaque case ai la meme longueur
-                        {
-                            printf(" ");
-                        }
-                   }
-                    else
-                    {
-                        printf("                  ");
-                    }
-
-
-                    Color(15,0);//re-met en noir et blanc
-                    printf("|");
-                }
-            }
-            printf("\n\n\n\n\n\n|");
-        }
-        else if(i ==17)
-        {
-            printf("\n\n\n\n\n\n|");
-        }
-        else if(i == 23)
-        {
-            printf("\n\n\n\n\n\n|");
-        }
-    }
+    if(t_case plateau[].groupe_cartes >= 9)
+   {
+       if(t_case plateau[].num_joueur==0)
+      {
+            if(tab_joueur[i].argent < plateau[tab_joueur[i].position].val_hotel)
+          {
+            printf("Fonds insuffisants !");
+            return false;
+          }
+            else if(tab_joueur[i].argent >= plateau[tab_joueur[i].position].valeur)
+          {
+            tab_joueur[i].argent-=plateau[tab_joueur[i].position].valeur;
+            tab_joueur[i].capital+=plateau[tab_joueur[i].position].valeur;
+            tab_joueur[i].capital-=plateau[tab_joueur[i].position].valeur;
+            plateau[tab_joueur[i].position].num_joueur=i;
+            return true;
+          }
+      }
+        else if(t_case plateau[].num_joueur!=0)
+      {
+        printf("Vous ne pouvez pas acheter cette case !");
+        return false;
+      }
+   }
+     else if(t_case plateau[].num_joueur!=0)
+   {
+     printf("Vous ne pouvez pas acheter cette case !");
+     return false;
+   }
 }

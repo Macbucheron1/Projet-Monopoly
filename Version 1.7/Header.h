@@ -1,13 +1,12 @@
 #ifndef NATHAN_H_H_INCLUDED
 #define NATHAN_H_H_INCLUDED
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
 #include <string.h>
-#include<windows.h>
+
 
 #define TAILLE_NOM 50
 #define TAILLE_PLATEAU 32
@@ -23,9 +22,6 @@ typedef struct //case(ou cartes) du plateau
     int val_maison; //prix d'une maison sur la case
     int val_hotel; //prix de l'hotel
     int groupe_cartes; //groupe à laquelle appartient la case
-    int couleur_fond; // Couleur de fond de la case
-    int couleur_texte; // Couleur de texte de la case
-    bool hypoteque;
 }t_case;
 
 typedef struct //joueur du plateau (max 4)
@@ -62,7 +58,7 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i); // Permet de fa
 
 //instanciation
 t_joueur creation_joueur(int numero); // permet de créer une instance de structure joueur
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte);  //permet de créer une instance de strucutre de case
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom); //permet de créer une instance de strucutre de case
 t_banque creation_banque(void); // Permet de créer une instance de banque
 void creation_plateau(t_case* plateau); // Permet de créer le plateau
 void creation_tab_joueur(t_joueur tab_joueur[]); // Permet de créer le tableau des joueurs
@@ -79,8 +75,5 @@ void en_faillite(t_joueur tab_joueur[], int i); // Met le joueur en faillite si 
 void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque); // Fais faire un tour à un joueur
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque); // Achat de maison et d'hotel
 void loyer(t_joueur tab_joueur[], int i, t_case cases); // Permet de faire payer le loyer
-
-// Fonction d'affichage
-void afficher_plateau(t_case plateau[], t_joueur tab_joueur[]); //affiche le plateau
 
 #endif // NATHAN_H_H_INCLUDED

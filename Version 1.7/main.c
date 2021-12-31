@@ -9,6 +9,6 @@ int main()
     t_banque* p_banque = &banque;
     t_case plateau[TAILLE_PLATEAU];
     creation_plateau(plateau);
-    tab_joueur[0].argent = 0;
+    tab_joueur[0].argent = 0
     tour(tab_joueur, plateau, p_banque);
 }
