@@ -122,3 +122,17 @@
 1640861916 source:c:\users\maxime\desktop\version 1.7\main.c
 	"Header.h"
 
+1640861916 source:c:\users\maxime\desktop\maxime_31_12_affichage_plateau\main.c
+	"Header.h"
+
+1640963745 c:\users\maxime\desktop\maxime_31_12_affichage_plateau\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1640963917 source:c:\users\maxime\desktop\maxime_31_12_affichage_plateau\fonctions.c
+	"Header.h"
+

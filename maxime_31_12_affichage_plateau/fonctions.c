@@ -287,7 +287,7 @@ void creation_plateau(t_case* plateau)
     plateau[23] = boxe;
 
     t_case controle_dopage;
-    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle anti dopa",7,0);
+    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle dopage",7,0);
     plateau[24] = controle_dopage;
 
     t_case basket;
@@ -698,53 +698,14 @@ void Color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de coul
 }
 
 //fonction d'affichage
-void creation_sous_case(t_case plateau[], t_joueur tab_joueur[], int k_petit, int k_grand)
-{
-    for (int l = 0; l<4; l++)
-    {
-        if(k_grand==9)
-        {
-            printf("|");
-        }
-        else
-        {
-            printf("\n|");
-        }
-        for(int k=k_petit;k<k_grand ; k++)
-        {
-            Color(plateau[k].couleur_texte,plateau[k].couleur_fond);
-            //printf("joueur = %d et k = %d", tab_joueur[m].position, k);
-            if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))
-            {
-                printf("%s", tab_joueur[l].nom);
-                for(int j = strlen(tab_joueur[l].nom); j<strlen(plateau[24].nom)-2; j++)//permet de faire que chaque case ai la meme longueur
-                {
-                    printf(" ");
-                }
-           }
-            else
-                if(k == 24)
-                {
-                    printf("                    ");
-                }
-                else
-                {
-                    printf("                  ");
-                }
-
-
-            Color(15,0);//re-met en noir et blanc
-            printf("|");
-        }
-    }
-    printf("\n|");
-}
-
 void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i)
+//permet d'afficher la premiere ligne du plateau
+//prends en parametre le plateau, le tableau des joueur et l'indice i
+//ne renvoie rien
 {
     Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
     printf("%s", plateau[i].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[i].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+    for(int j = strlen(plateau[i].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
     {
         printf(" ");
     }
@@ -752,16 +713,16 @@ void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i)
     printf("|");
     if(i == 8)
     {
-        for (int l = 0; l<4; l++)
+        for (int l = 0; l<4; l++)//affiche les 4 ligne sous le nom de la case
         {
             printf("|");
-            for(int k = 0;k<9;k++)
+            for(int k = 0;k<9;k++)//permet de parcourir l'indice des cases pour pouvoir recuperer les couleur attribue a chaque case
             {
                 Color(plateau[k].couleur_texte,plateau[k].couleur_fond);
-                if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))
+                if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite
                 {
                     printf("%s", tab_joueur[l].nom);
-                    for(int j = strlen(tab_joueur[l].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+                    for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
                     {
                         printf(" ");
                     }
@@ -776,6 +737,7 @@ void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i)
                 printf("|");
             }
         }
+        //permet d'afficher la 5e ligne sous les cases
         printf("|");
         for(int k =0;k<9;k++)
         {
@@ -787,54 +749,43 @@ void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i)
     }
 }
 
-void gotoligcol( int lig, int col )
-{
-
-    // ressources
-
-    COORD mycoord;
-
-    mycoord.X = col;
-
-    mycoord.Y = lig;
-
-    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
-
-}
 
 
 
 void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i)
+//permet d'afficher les 2 colonnes sur les cote du plateau
+//prends en parametre le plateau, le tableau des joueur et l'indice i
+//ne renvoie rien
 {
     Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);//permet de prendre les couleur attribue a chaque case
     printf("%s", plateau[40-i].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[40-i].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+    for(int j = strlen(plateau[40-i].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
     {
         printf(" ");
     }
     Color(15,0);//re-met en noir et blanc
     printf("|");
-    for(int z = 0; z<=131;z++)
+    for(int z = 0; z<=131;z++)//permet de faire l'espace entre les 2 colonnes
         {
             printf(" ");
         }
     printf("|");
     Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
     printf("%s", plateau[i].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[i].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+    for(int j = strlen(plateau[i].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
     {
         printf(" ");
     }
     Color(15,0);//re-met en noir et blanc
     printf("|");
-    for (int l = 0; l<5; l++)
+    for (int l = 0; l<4; l++)//permet de faire les 4 lignes sous le nom des cases
     {
         printf("|");
-        Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);
-        if ((tab_joueur[l].position == 40-i) && (tab_joueur[l].en_faillite == false))
+        Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);//permet de prendre  les couleur attribue a chaque case
+        if ((tab_joueur[l].position == 40-i) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite
         {
             printf("%s", tab_joueur[l].nom);
-            for(int j = strlen(tab_joueur[l].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+            for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
             {
                 printf(" ");
             }
@@ -845,16 +796,16 @@ void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i)
         }
         Color(15,0);//re-met en noir et blanc
         printf("|");
-        for(int z = 0; z<=131;z++)
+        for(int z = 0; z<=131;z++)//permet de faire l'espace entre les 2 colonnes
         {
             printf(" ");
         }
         printf("|");
-        Color(plateau[i].couleur_texte,plateau[i].couleur_fond);
-        if ((tab_joueur[l].position == i) && (tab_joueur[l].en_faillite == false))
+        Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
+        if ((tab_joueur[l].position == i) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite
         {
             printf("%s", tab_joueur[l].nom);
-            for(int j = strlen(tab_joueur[l].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+            for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
             {
                 printf(" ");
             }
@@ -866,36 +817,54 @@ void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i)
         Color(15,0);//re-met en noir et blanc
         printf("|");
     }
+    //permet de creer la 5e ligne sous les cases
+    printf("|");
+    Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);
+    printf("                  ");
+    Color(15,0);//re-met en noir et blanc
+    printf("|");
+    for(int z = 0; z<=131;z++)
+    {
+        printf(" ");
+    }
+    printf("|");
+    Color(plateau[i].couleur_texte,plateau[i].couleur_fond);
+    printf("                  ");
+    Color(15,0);//re-met en noir et blanc
+    printf("|");
 }
 
 
 void creation_sous_case3(t_case plateau[], t_joueur tab_joueur[], int i)
+//permet d'afficher la derniere ligne du plateau
+//prends en parametre le plateau, le tableau des joueur et l'indice i
+//ne renvoie rien
 {
-    i = i-16;
-    if(i == 0)
+    i = i-16;//pour mettre i =0 puis i=1 etc jusqu'a i=8
+    if(i == 0)//permet d'afficher la premiere barre de la ligne
     {
         printf("|");
     }
     Color(plateau[24-(i*1)].couleur_texte,plateau[24-(i*1)].couleur_fond);//permet de prendre les couleur attribue a chaque case
     printf("%s", plateau[24-(i*1)].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[24-(i*1)].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+    for(int j = strlen(plateau[24-(i*1)].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
     {
         printf(" ");
     }
     Color(15,0);//re-met en noir et blanc
     printf("|");
-    if(i == 8)
+    if(i == 8)//quand on arrive a la derniere case de la ligne
     {
-        for (int l = 0; l<5; l++)
+        for (int l = 0; l<5; l++)//permet d'afficher les 4 ligne sous le nom de la case
         {
             printf("|");
             for(int k = 16;k<25;k++)
             {
-                Color(plateau[40-k].couleur_texte,plateau[40-k].couleur_fond);;
-                if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))
+                Color(plateau[40-k].couleur_texte,plateau[40-k].couleur_fond);//permet de prendre la couleur de la case
+                if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite ou pas
                 {
                     printf("%s", tab_joueur[l].nom);
-                    for(int j = strlen(tab_joueur[l].nom); j<strlen(plateau[24].nom); j++)//permet de faire que chaque case ai la meme longueur
+                    for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
                     {
                         printf(" ");
                     }
@@ -917,47 +886,21 @@ void creation_sous_case3(t_case plateau[], t_joueur tab_joueur[], int i)
 void afficher_plateau(t_case plateau[], t_joueur tab_joueur[])
 {
 //la fonction permet d'afficher le plateau
-//prend en parametre le plateau
+//prend en parametre le plateau et le tableau des joueurs
 //ne renvoie rien
-    printf("|");
+    printf("|");//fait la premiere barre(en haut a gauche)
     for(int i=0;i<32 ; i++)
     {
-        /*
-        Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
-        printf("%s", plateau[i].nom);//affiche le nom de chaque case
-        for(int j = strlen(plateau[i].nom); j<strlen(plateau[24].nom)-2; j++)//permet de faire que chaque case ai la meme longueur
-        {
-            printf(" ");
-        }
-        Color(15,0);//re-met en noir et blanc
-        printf("|");
-        if(i == 8)
-        {
-            creation_sous_case(plateau, tab_joueur, 0,9);
-        }
-        else if (i == 15)
-        {
-            creation_sous_case(plateau, tab_joueur,9,16);
-        }
-        else if (i == 23)
-        {
-            creation_sous_case(plateau, tab_joueur, 16, 24);
-        }
-        else if(i == 31)
-        {
-            creation_sous_case(plateau, tab_joueur,24,32);
-        }*/
-        if(i <= 8)//permet de faire les saut de ligne(pareil pour les 2 suivant)
+        if(i <= 8)//permet de creer la premiere ligne
         {
             creation_sous_case1(plateau,tab_joueur,i);
         }
-        else if(i >=9 && i <= 15)
+        else if(i >=9 && i <= 15)//permet de creer les 2 colonnes sur les coté
         {
-            //gotoligcol(17,100);
             printf("|");
             creation_sous_case2(plateau, tab_joueur, i);
         }
-        else if(i>= 16 && i<= 24)
+        else if(i>= 16 && i<= 24)//permet de creer la derniere ligne
         {
             creation_sous_case3(plateau,tab_joueur,i);
         }

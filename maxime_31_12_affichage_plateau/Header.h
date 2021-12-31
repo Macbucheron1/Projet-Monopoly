@@ -79,8 +79,6 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque); // Fais 
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque); // Achat de maison et d'hotel
 void loyer(t_joueur tab_joueur[], int i, t_case cases); // Permet de faire payer le loyer
 
-void gotoligcol( int lig, int col );
-void creation_sous_case(t_case plateau[], t_joueur tab_joueur[], int k_petit, int k_grand);
 void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i);
 void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i);
 void creation_sous_case3(t_case plateau[], t_joueur tab_joueur[], int i);
