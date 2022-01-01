@@ -3,8 +3,8 @@
 // Fonction de deplacement de joueur
 void deplacement(int* liste_de, t_joueur tab_joueur[], int i)
 {
-    /*La procédure incrémente la position du joueur
-      Prend en paramètre la liste de dé et un pointeur sur le joueur qui se deplace
+    /*La procÃ©dure incrÃ©mente la position du joueur
+      Prend en paramÃ¨tre la liste de dÃ© et un pointeur sur le joueur qui se deplace
       Ne renvoie rien
     */
     tab_joueur[i].position += liste_de[0] + liste_de[1];
@@ -13,8 +13,8 @@ void deplacement(int* liste_de, t_joueur tab_joueur[], int i)
 // Fonction de deplacement de joueur
 void aller_a(int indice_case, t_joueur tab_joueur[], int i)
 {
-    /* La procédure actualise la position du joueur pour le mettre à la case voulu
-       Prend en paramètre l’indice de la case et le joueur qui se déplace,
+    /* La procÃ©dure actualise la position du joueur pour le mettre Ã  la case voulu
+       Prend en paramÃ¨tre lâ€™indice de la case et le joueur qui se dÃ©place,
        Ne renvoie rien
     */
 
@@ -24,8 +24,8 @@ void aller_a(int indice_case, t_joueur tab_joueur[], int i)
 // fonction pour prison
 void entrer_prison(t_joueur tab_joueur[], int i)
 {
-    /*La procédure envoie le joueur en prison. Elle change l’etat prison du joueur et appelle la fonction aller à pour l’envoyer en prison
-      Prend en paramètre le joueur
+    /*La procÃ©dure envoie le joueur en prison. Elle change lâ€™etat prison du joueur et appelle la fonction aller Ã  pour lâ€™envoyer en prison
+      Prend en paramÃ¨tre le joueur
       Ne renvoie rien
     */
     tab_joueur[i].en_prison = 1;
@@ -35,8 +35,8 @@ void entrer_prison(t_joueur tab_joueur[], int i)
 // fonction pour prison
 bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i)
 {
-    /* Fonction qui permets à un joueur de sortir de prison
-       Prend en paramètre la liste de dé et un pointeur sur le joueur
+    /* Fonction qui permets Ã  un joueur de sortir de prison
+       Prend en paramÃ¨tre la liste de dÃ© et un pointeur sur le joueur
        Renvoie true si le joueur est sortie de prison, false sinon
     */
     if (tab_joueur[i].en_prison == false) // Si le joueur n'est pas en prison on ne va pas plus loin
@@ -48,7 +48,7 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i)
         tab_joueur[i].tour_prison += 1;
         printf("C'est votre %d tour en prison\n", tab_joueur[i].tour_prison);
     }
-    if (tab_joueur[i].tour_prison >= 3) // Le joueur a passé 3 tours en prison
+    if (tab_joueur[i].tour_prison >= 3) // Le joueur a passÃ© 3 tours en prison
     {
         printf("Vous avez passez 3 tours en prison, vous payez 50 et sortez\n");
         tab_joueur[i].argent -= 50;
@@ -123,7 +123,7 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
 t_joueur creation_joueur(int numero)
 {
     /* Permet la creation d'un joueur
-       Ne prend pas de paramètre
+       Ne prend pas de paramÃ¨tre
        Renvoie une instance de la classe joueur au debut de partie
     */
     t_joueur j;
@@ -147,7 +147,7 @@ t_joueur creation_joueur(int numero)
 t_banque creation_banque(void)
 {
     /* Permet la creation de la banque
-       Ne prend pas de paramètre
+       Ne prend pas de paramÃ¨tre
        Renvoie une instance de la classe banque au debut de partie
     */
     t_banque b;
@@ -162,21 +162,21 @@ t_banque creation_banque(void)
 // fonction creation plateau
 void creation_plateau(t_case* plateau)
 {
-    /* Procédure de creation du plateau
-       Prend en paramètre un tableau qui sera le plateau
+    /* ProcÃ©dure de creation du plateau
+       Prend en paramÃ¨tre un tableau qui sera le plateau
        Ne renvoie rien
     */
 
-    // Groupe 1 = Propriétés , 2 cases
-    // Groupe 2 = Propriétés , 3 cases
-    // Groupe 3 = Propriétés , 3 cases
-    // Groupe 4 = Propriétés , 2 cases
-    // Groupe 5 = Propriétés , 2 cases
-    // Groupe 6 = Propriétés , 2 cases
-    // Groupe 7 = Propriétés , 3 cases
-    // Groupe 8 = Propriétés , 2 cases
+    // Groupe 1 = PropriÃ©tÃ©s , 2 cases
+    // Groupe 2 = PropriÃ©tÃ©s , 3 cases
+    // Groupe 3 = PropriÃ©tÃ©s , 3 cases
+    // Groupe 4 = PropriÃ©tÃ©s , 2 cases
+    // Groupe 5 = PropriÃ©tÃ©s , 2 cases
+    // Groupe 6 = PropriÃ©tÃ©s , 2 cases
+    // Groupe 7 = PropriÃ©tÃ©s , 3 cases
+    // Groupe 8 = PropriÃ©tÃ©s , 2 cases
     // Groupe 9 = Gares, 4 cases
-    // Groupe 10 = carte communauté,
+    // Groupe 10 = carte communautÃ©,
     // Groupe 11 = carte chance
     // Groupe 12 = prison
     // Groupe 13 = parc gratuit
@@ -342,7 +342,7 @@ void creation_tab_joueur(t_joueur tab_joueur[])
 
         t_joueur j4;
         strcpy(j4.nom, "j4");
-        j4.numero = 3;
+        j4.numero = 4;
         j4.position=0;
         j4.argent=1500;
         j4.capital=1500;
@@ -363,7 +363,7 @@ void creation_tab_joueur(t_joueur tab_joueur[])
 
         t_joueur j4;
         strcpy(j4.nom, "j4");
-        j4.numero = 3;
+        j4.numero = 4;
         j4.position=0;
         j4.argent=1500;
         j4.capital=1500;
@@ -388,44 +388,44 @@ void creation_tab_joueur(t_joueur tab_joueur[])
 // fonction affichage d'instance
 void afficher_joueur(t_joueur j)
 {
-    /* Procédure qui affiche une instance de joueur
-       Prend en paramètre un joueur
+    /* ProcÃ©dure qui affiche une instance de joueur
+       Prend en paramÃ¨tre un joueur
        Ne renvoie rien
     */
     printf("Voici le JOUEUR:\n");
     printf("nom:%s\nnumero:%d\nposition:%d\nargent:%d\ncapital:%d\npropriete:%d\netes-vous en prison?:%d\ncombien de tour en prison:%d\nnb de cartes sorites de prison:%d\nfaillite: %d\n",j.nom,j.numero,j.position,j.argent,j.capital,j.proprietes,j.en_prison,j.tour_prison,j.carte_sortie_prison, j.en_faillite);
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
 // fonction affichage d'instance
 void afficher_case(t_case c)
 {
-    /* Procédure qui affiche une instance de case
-       Prend en paramètre une case
+    /* ProcÃ©dure qui affiche une instance de case
+       Prend en paramÃ¨tre une case
        Ne renvoie rien
     */
     printf("Voici la CASE:\n");
     printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\n",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes);
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
 // fonction affichage d'instance
 void afficher_banque(t_banque banque)
 {
-    /* Procédure qui affiche une instance de banque
-       Prend en paramètre la banque
+    /* ProcÃ©dure qui affiche une instance de banque
+       Prend en paramÃ¨tre la banque
        Ne renvoie rien
     */
     printf("Voici la BANQUE:\n");
     printf("maisons restantes:%d\nhotels restant:%d\n",banque.nb_maison_restante,banque.nb_hotel_restant);
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
-// fonction pour les dés
+// fonction pour les dÃ©s
 void lance_de(int* de)
 {
-    /* Procédure qui prend en paramètre une liste de 2 dé et qui les lance
-       Prend en paramètre la liste de dé
+    /* ProcÃ©dure qui prend en paramÃ¨tre une liste de 2 dÃ© et qui les lance
+       Prend en paramÃ¨tre la liste de dÃ©
        Ne renvoie rien
     */
     de[0] = (rand()%6)+1;
@@ -433,12 +433,12 @@ void lance_de(int* de)
 
 }
 
-// fonction pour les dés
+// fonction pour les dÃ©s
 bool double_de(int* de)
 {
     /* La fonction verifie si le joueur a fait un double
-       Prend en paramètre une liste de dé
-       Renvoie un booléen, True si double, False si non
+       Prend en paramÃ¨tre une liste de dÃ©
+       Renvoie un boolÃ©en, True si double, False si non
     */
     if(de[0] == de[1])
     {
@@ -453,16 +453,16 @@ bool double_de(int* de)
 // fonction pour faillite
 void en_faillite(t_joueur tab_joueur[], int i) // En cours par LUC
 {
-    /* La procédure erifie si le joueur est en faillite
+    /* La procÃ©dure erifie si le joueur est en faillite
        Si oui le met en faillite
-       Prend en paramètre un pointeur sur le joueur
+       Prend en paramÃ¨tre un pointeur sur le joueur
     */
     int choix = 2;
     if (tab_joueur[i].capital<=0) //le joueur ne peut plus rien faire
         {
             tab_joueur[i].en_faillite=true;
             printf("Vous etes en faillite");
-            //On doit supprimer ses propriétés
+            //On doit supprimer ses propriÃ©tÃ©s
         }
 
 
@@ -474,12 +474,12 @@ void en_faillite(t_joueur tab_joueur[], int i) // En cours par LUC
                 {
                     tab_joueur[i].en_faillite=true;
                     printf("Vous etes en faillite\n\n");
-                    // On doit supprimer toute ses propriétés
+                    // On doit supprimer toute ses propriÃ©tÃ©s
                 }
             else // Il veut continuer
                 {
                     printf("ok, vous allez devoir hyppotequer\n\n");
-                    // lance la fonction hypotèque
+                    // lance la fonction hypotÃ¨que
                 }
         }
 
@@ -562,8 +562,8 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cou
 
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque) // faire le blindage
 {
-//La fonction permet au joueur d’acheter une maison ou un hôtel (elle lui demande)
-//Prend en paramètre un pointeur sur le joueur, le plateau, un pointeur sur la banque)
+//La fonction permet au joueur dâ€™acheter une maison ou un hÃ´tel (elle lui demande)
+//Prend en paramÃ¨tre un pointeur sur le joueur, le plateau, un pointeur sur la banque)
 //renvoie un booleen(true si il a achete false sinon)
     if(plateau[tab_joueur[i].position].groupe_cartes <=8)//regarde si c'est bien des propriete
     {
