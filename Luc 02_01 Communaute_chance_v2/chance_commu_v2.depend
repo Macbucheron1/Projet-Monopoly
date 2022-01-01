@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1641080197 source:c:\users\luc\onedrive\documents\ece - ing 1\informatique\algo et prog structuré c\monop\chance_commu_v2\main.c
+	"chance_commu_header_v2.h"
+
+1641079303 c:\users\luc\onedrive\documents\ece - ing 1\informatique\algo et prog structuré c\monop\chance_commu_v2\chance_commu_header_v2.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1641080401 source:c:\users\luc\onedrive\documents\ece - ing 1\informatique\algo et prog structuré c\monop\chance_commu_v2\chance_commu_v2.c
+	"chance_commu_header_v2.h"
+
