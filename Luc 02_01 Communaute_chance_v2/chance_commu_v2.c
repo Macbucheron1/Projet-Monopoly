@@ -29,7 +29,7 @@ void afficher_joueur(t_joueur j)
 {
     printf("Voici le JOUEUR:\n");
     printf("numero:%d\nnom:%s\nposition:%d\nargent:%d\ncapital:%d\npropriete:%d\netes-vous en prison?:%d\ncombien de tour en prison:%d\nnb de cartes sorites de prison:%d\nest-il en faillite ?:%d\n",j.numero,j.nom,j.position,j.argent,j.capital,j.proprietes,j.en_prison,j.tour_prison,j.carte_sortie_prison,j.en_faillite);
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
 //chance commu transac
@@ -176,6 +176,8 @@ void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_co
     int carteComTire = rand() % 16;
 
     printf("Vous tirez une carte commite olympique:\n");
+    
+    char choix[10]; //on l'utilisera dans le case 1
 
     //numero des autres joueurs
     int B;
@@ -214,21 +216,20 @@ void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_co
         tab_joueur[i].carte_sortie_prison+=1;
         break;
     case 1:
-        afficher_liste(liste_commite,1);
-        int choix=0;
         do
         {
-            scanf("%d",&choix);
-            if (choix==1)
+            afficher_liste(liste_commite,1);
+            gets(choix);
+            if (choix[0] == 49)
             {
                 transaction(tab_joueur,i,-10);
             }
-            else if (choix ==2)
+            else if (choix[0] == 50)
             {
                 tirer_corruption(tab_joueur,i,liste_corruption);
             }
         }
-        while(choix<1 || choix>2);
+        while ((choix[0] != 49) && (choix[0] != 50) || (strlen(choix) > 1)); // 49 = 1 en code ascii
         break;
     case 2:
         afficher_liste(liste_commite,2);
@@ -408,8 +409,8 @@ void creation_tab_joueur(t_joueur tab_joueur[])
 
 void entrer_prison(t_joueur tab_joueur[], int i)
 {
-    /*La procédure envoie le joueur en prison. Elle change l’etat prison du joueur et appelle la fonction aller à pour l’envoyer en prison
-      Prend en paramètre le joueur
+    /*La procÃ©dure envoie le joueur en prison. Elle change lÂ’etat prison du joueur et appelle la fonction aller Ã  pour lÂ’envoyer en prison
+      Prend en paramÃ¨tre le joueur
       Ne renvoie rien
     */
     tab_joueur[i].en_prison = 1;
@@ -419,8 +420,8 @@ void entrer_prison(t_joueur tab_joueur[], int i)
 
 void aller_a(int indice_case, t_joueur tab_joueur[], int i)
 {
-    /* La procédure actualise la position du joueur pour le mettre à la case voulu
-       Prend en paramètre l’indice de la case et le joueur qui se déplace,
+    /* La procÃ©dure actualise la position du joueur pour le mettre Ã  la case voulu
+       Prend en paramÃ¨tre lÂ’indice de la case et le joueur qui se dÃ©place,
        Ne renvoie rien
     */
 
@@ -430,7 +431,7 @@ void aller_a(int indice_case, t_joueur tab_joueur[], int i)
 void afficher_liste(char* liste[],int i)
 {
     int iterateur=0;
-    while(liste[i][iterateur] != '\0')   //\0 correspond à la fin de chaine
+    while(liste[i][iterateur] != '\0')   //\0 correspond Ã  la fin de chaine
     {
         printf("%c",liste[i][iterateur]);
         iterateur++;
