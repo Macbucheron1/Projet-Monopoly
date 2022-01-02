@@ -25,7 +25,9 @@ typedef struct //case(ou cartes) du plateau
     int groupe_cartes; //groupe à laquelle appartient la case
     int couleur_fond; // Couleur de fond de la case
     int couleur_texte; // Couleur de texte de la case
-    bool hypoteque;
+    bool hypoteque; // booleen qui dit si la case est hypoteque
+    int val_hypotheque; // donne la valeur de l'hypotheque
+    int base_loyer; // donne le loyer sans maison
 }t_case;
 
 typedef struct //joueur du plateau (max 4)
@@ -62,7 +64,7 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i); // Permet de fa
 
 //instanciation
 t_joueur creation_joueur(int numero); // permet de créer une instance de structure joueur
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte);  //permet de créer une instance de strucutre de case
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer);  //permet de créer une instance de strucutre de case
 t_banque creation_banque(void); // Permet de créer une instance de banque
 void creation_plateau(t_case* plateau); // Permet de créer le plateau
 void creation_tab_joueur(t_joueur tab_joueur[]); // Permet de créer le tableau des joueurs

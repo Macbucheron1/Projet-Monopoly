@@ -103,7 +103,7 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i)
 }
 
 // fonction creation d'instance
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte)
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer)
 {
     /* Fonction qui créée une case
        Prend en paramètre toutes ses caractéristique
@@ -123,6 +123,8 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
     c.couleur_fond = couleur_fond;
     c.couleur_texte = couleur_texte;
     c.hypoteque = false;
+    c.val_hypotheque = valeur_hypotheque;
+    c.base_loyer = base_loyer;
 
     return c;
 }
@@ -193,131 +195,131 @@ void creation_plateau(t_case* plateau)
     // Groupe 16 = Depart
 
     t_case depart;
-    depart=creation_case(0,0,0,0,16,"depart",7,0);
+    depart=creation_case(0,0,0,0,16,"depart",7,0, 0, 0);
     plateau[0]= depart;
 
     t_case sport_equestre;
-    sport_equestre=creation_case(1, 60, 50, 60,1, "Sport Equestre", 6 , 15);
+    sport_equestre=creation_case(1, 60, 50, 60,1, "Sport Equestre", 6 , 15, 60, 2);
     plateau[1] = sport_equestre;
 
     t_case waterpolo;
-    waterpolo=creation_case(2, 60, 50, 60,1, "Waterpolo", 6, 15);
+    waterpolo=creation_case(2, 60, 50, 60,1, "Waterpolo", 6, 15, 30, 4);
     plateau[2] = waterpolo;
 
     t_case breaking;
-    breaking=creation_case(3, 200, 0, 0,9, "Breaking",15, 0);
+    breaking=creation_case(3, 200, 0, 0,9, "Breaking",15, 0, 100, 25);
     plateau[3] = breaking;
 
     t_case aviron;
-    aviron=creation_case(4, 60, 50, 60,2, "Aviron",3, 15);
+    aviron=creation_case(4, 60, 50, 60,2, "Aviron",3, 15, 50, 6);
     plateau[4] = aviron;
 
     t_case corruption1;
-    corruption1 = creation_case(5, 0, 0, 0, 11, "Corruption",13 , 15);
+    corruption1 = creation_case(5, 0, 0, 0, 11, "Corruption",13 , 15, 0, 0);
     plateau[5] = corruption1;
 
     t_case canoe;
-    canoe=creation_case(6, 60, 50, 60, 2, "Canoe",3, 15);
+    canoe=creation_case(6, 60, 50, 60, 2, "Canoe",3, 15, 50, 6);
     plateau[6] = canoe;
 
     t_case voile;
-    voile=creation_case(7, 60, 50, 60, 2, "Voile",3 , 15);
+    voile=creation_case(7, 60, 50, 60, 2, "Voile",3 , 15, 60, 8);
     plateau[7] = voile;
 
     t_case suspension;
-    suspension = creation_case(8, 0, 0, 0, 12, "Suspension", 7 , 0);
+    suspension = creation_case(8, 0, 0, 0, 12, "Suspension", 7 , 0, 0, 0);
     plateau[8] = suspension;
 
     t_case tennis;
-    tennis=creation_case(9, 140, 100, 110,3, "Tennis",5 , 15);
+    tennis=creation_case(9, 140, 100, 110,3, "Tennis",5 , 15, 70, 10);
     plateau[9] = tennis;
 
     t_case golf;
-    golf=creation_case(10, 140, 100, 110,3, "Golf", 5 , 15);
+    golf=creation_case(10, 140, 100, 110,3, "Golf", 5 , 15, 70, 10);
     plateau[10] = golf;
 
     t_case skate;
-    skate=creation_case(11, 200, 0, 0,9, "Skate", 15 , 0);
+    skate=creation_case(11, 200, 0, 0,9, "Skate", 15 , 0, 100, 25);
     plateau[11] = skate;
 
     t_case tir_a_l_arc;
-    tir_a_l_arc=creation_case(12, 160, 100, 110,3, "Tir a l'arc",5 , 15);
+    tir_a_l_arc=creation_case(12, 160, 100, 110,3, "Tir a l'arc",5 , 15, 80, 12);
     plateau[12] = tir_a_l_arc;
 
     t_case lutte;
-    lutte=creation_case(13, 180, 100, 110, 4, "Lutte",8 , 15);
+    lutte=creation_case(13, 180, 100, 110, 4, "Lutte",8 , 15, 90, 14);
     plateau[13] = lutte;
 
     t_case comite_olympique1;
-    comite_olympique1 = creation_case(14, 0, 0, 0, 10, "Comite olympique",9 , 15);
+    comite_olympique1 = creation_case(14, 0, 0, 0, 10, "Comite olympique",9 , 15, 0, 0);
     plateau[14] = comite_olympique1;
 
     t_case halterophilie;
-    halterophilie=creation_case(15, 200, 100, 110, 4, "Halterophilie", 8, 15);
+    halterophilie=creation_case(15, 200, 100, 110, 4, "Halterophilie", 8, 15, 100, 16);
     plateau[15] = halterophilie;
 
     t_case village_olympique;
-    village_olympique = creation_case(16, 0, 0, 0, 13, "Village olympique",7, 0);
+    village_olympique = creation_case(16, 0, 0, 0, 13, "Village olympique",7, 0, 0, 0);
     plateau[16] = village_olympique;
 
     t_case Volley;
-    Volley=creation_case(17, 220, 150, 165, 5, "Volley",4 , 15);
+    Volley=creation_case(17, 220, 150, 165, 5, "Volley",4 , 15, 110, 18);
     plateau[17] = Volley;
 
     t_case handball;
-    handball=creation_case(18, 220, 150, 165, 5, "Handball",4, 15);
+    handball=creation_case(18, 220, 150, 165, 5, "Handball",4, 15, 120, 20);
     plateau[18] = handball;
 
     t_case escalade;
-    escalade=creation_case(19, 200, 0, 0,9, "Escalade", 15, 0);
+    escalade=creation_case(19, 200, 0, 0,9, "Escalade", 15, 0, 100, 25);
     plateau[19] = escalade;
 
     t_case amende;
-    amende = creation_case(20, 0, 0, 0, 14, "Amende", 12, 15);
+    amende = creation_case(20, 0, 0, 0, 14, "Amende", 12, 15, 0, 0);
     plateau[20] = amende;
 
     t_case corruption2;
-    corruption2 = creation_case(5, 0, 0, 0, 11, "Corruption",13, 15);
+    corruption2 = creation_case(5, 0, 0, 0, 11, "Corruption",13, 15, 0, 0);
     plateau[21] = corruption2;
 
     t_case judo;
-    judo=creation_case(22, 260, 150, 165,6, "Judo", 14, 0);
+    judo=creation_case(22, 260, 150, 165,6, "Judo", 14, 0, 130, 22);
     plateau[22] = judo;
 
     t_case boxe;
-    boxe=creation_case(23, 280, 150, 165,6, "Boxe", 14, 0);
+    boxe=creation_case(23, 280, 150, 165,6, "Boxe", 14, 0, 140, 24);
     plateau[23] = boxe;
 
     t_case controle_dopage;
-    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle dopage",7,0);
+    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle dopage",7,0, 0, 0);
     plateau[24] = controle_dopage;
 
     t_case basket;
-    basket=creation_case(25, 300, 200, 220, 7, "Basket" ,2, 15);
+    basket=creation_case(25, 300, 200, 220, 7, "Basket" ,2, 15, 150, 26);
     plateau[25] = basket;
 
     t_case foot;
-    foot=creation_case(26, 300, 200, 220, 7, "Foot", 2, 15);
+    foot=creation_case(26, 300, 200, 220, 7, "Foot", 2, 15, 150, 26);
     plateau[26] = foot;
 
     t_case surf;
-    surf=creation_case(27, 200, 0, 0,9, "Surf",15, 0);
+    surf=creation_case(27, 200, 0, 0,9, "Surf",15, 0, 100, 25);
     plateau[27] = surf;
 
     t_case rugby;
-    rugby=creation_case(28, 320, 200, 220, 7, "Rugby", 2, 15);
+    rugby=creation_case(28, 320, 200, 220, 7, "Rugby", 2, 15, 160, 28);
     plateau[28] = rugby;
 
     t_case athletisme;
-    athletisme=creation_case(29, 350, 200, 220, 8, "Athletisme",1,15);
+    athletisme=creation_case(29, 350, 200, 220, 8, "Athletisme",1,15, 175, 35);
     plateau[29] = athletisme;
 
     t_case comite_olympique2;
-    comite_olympique2 = creation_case(5, 0, 0, 0, 10, "Comite olympique",9,15);
+    comite_olympique2 = creation_case(5, 0, 0, 0, 10, "Comite olympique",9,15, 0, 0);
     plateau[30] = comite_olympique2;
 
     t_case natation;
-    natation=creation_case(31, 400, 200, 220, 8, "Natation",1,15);
+    natation=creation_case(31, 400, 200, 220, 8, "Natation",1,15, 200, 50);
     plateau[31] = natation;
 }
 
@@ -417,7 +419,7 @@ void afficher_case(t_case c)
        Ne renvoie rien
     */
     printf("Voici la CASE:\n");
-    printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\n",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes);
+    printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\nvaleur de l'hypotheque:%d\nHypotheque:%d",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.val_hypotheque, c.hypoteque);
     printf("\n"); //pour de la lisibilité
 }
 
@@ -428,7 +430,7 @@ void afficher_case_jeu(t_case c)
        Prend en paramètre une case
        Ne renvoie rien
     */
-    printf("nom: %s\nprix d'achat:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\n",c.nom,c.valeur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes);
+    printf("nom: %s\nprix d'achat:%d\nnombre de maison:%d\nNombre d'Hotel hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\nLoyer sans maison:%d\n",c.nom,c.valeur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.base_loyer);
     printf("\n"); //pour de la lisibilité
 }
 
@@ -1082,7 +1084,6 @@ bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banqu
         fflush(stdin);
         gets(choix);
     } while ((choix[0] < '1') || (choix[0] > '0'+long_prop) || (strlen(choix) > 1)); // 48 = 0 en code ascii
-    printf("%d\n", tab_joueur[i].proprietes[choix[0]-49].groupe_cartes);
     for (int j = 0; j < long_prop; j++)
     {
         if ((tab_joueur[i].proprietes[choix[0]-49].groupe_cartes == tab_joueur[i].proprietes[j].groupe_cartes) && (tab_joueur[i].proprietes[choix[0]-49].position != tab_joueur[i].proprietes[j].position))
@@ -1090,11 +1091,17 @@ bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banqu
             // Le joueur a une carte du même groupede couleur
             if ((tab_joueur[i].proprietes[choix[0]-49].nb_maison > 0) || (tab_joueur[i].proprietes[choix[0]-49].nb_hotel > 0)) // La propriete que le joueur hypoteque a une maison ou un hotel
             {
-
+                tab_joueur[i].argent += (tab_joueur[i].proprietes[choix[0]-49].nb_maison * tab_joueur[i].proprietes[choix[0]-49].val_maison)/2 + (tab_joueur[i].proprietes[choix[0]-49].nb_hotel * tab_joueur[i].proprietes[choix[0]-49].val_hotel)/2;
+                tab_joueur[i].proprietes[choix[0]-49].nb_maison = 0;
+                tab_joueur[i].proprietes[choix[0]-49].nb_hotel = 0;
+                printf("Vos maisons et hotel sur la case %s, ont ete vendu a moitie prix\n", tab_joueur[i].proprietes[choix[0]-49].nom);
             }
             if ((tab_joueur[i].proprietes[j].nb_maison > 0) || (tab_joueur[i].proprietes[j].nb_hotel > 0)) // La propriete teste a une maison ou un hotel
             {
-
+                tab_joueur[i].argent += (tab_joueur[i].proprietes[j].nb_maison * tab_joueur[i].proprietes[j].val_maison)/2 + (tab_joueur[i].proprietes[j].nb_hotel * tab_joueur[i].proprietes[j].val_hotel)/2;
+                tab_joueur[i].proprietes[j].nb_maison = 0;
+                tab_joueur[i].proprietes[j].nb_hotel = 0;
+                printf("Vos maisons et hotel sur la case %s, ont ete vendu a moitie prix\n", tab_joueur[i].proprietes[j].nom);
             }
         }
     }
@@ -1113,6 +1120,7 @@ int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[])
         }
     }
     int compteur = 0;
+    int total = 0;
      for (int j = 0; j < 32; j++)
     {
         if (plateau[j].num_joueur == tab_joueur[i].numero)
@@ -1120,6 +1128,11 @@ int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[])
             tab_joueur[i].proprietes[compteur] = plateau[j];
             compteur+=1;
         }
+        else
+        {
+            tab_joueur[i].proprietes[total] = creation_case(50, 0, 0, 0, 50, "Rien", 50, 50, 0, 0); // on remplit le reste du tableau avec des cases vides
+        }
+        total+=1;
     }
     return nb;
 }
