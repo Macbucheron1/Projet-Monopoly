@@ -1,15 +1,14 @@
 #ifndef NATHAN_H_H_INCLUDED
 #define NATHAN_H_H_INCLUDED
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
 #include <string.h>
-#include<windows.h>
 
-#define TAILLE_NOM 16
+
+#define TAILLE_NOM 50
 #define TAILLE_PLATEAU 32
 
 typedef struct //case(ou cartes) du plateau
@@ -23,11 +22,6 @@ typedef struct //case(ou cartes) du plateau
     int val_maison; //prix d'une maison sur la case
     int val_hotel; //prix de l'hotel
     int groupe_cartes; //groupe à laquelle appartient la case
-    int couleur_fond; // Couleur de fond de la case
-    int couleur_texte; // Couleur de texte de la case
-    bool hypoteque; // booleen qui dit si la case est hypoteque
-    int val_hypotheque; // donne la valeur de l'hypotheque
-    int base_loyer; // donne le loyer sans maison
 }t_case;
 
 typedef struct //joueur du plateau (max 4)
@@ -64,7 +58,7 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i); // Permet de fa
 
 //instanciation
 t_joueur creation_joueur(int numero); // permet de créer une instance de structure joueur
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer);  //permet de créer une instance de strucutre de case
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom); //permet de créer une instance de strucutre de case
 t_banque creation_banque(void); // Permet de créer une instance de banque
 void creation_plateau(t_case* plateau); // Permet de créer le plateau
 void creation_tab_joueur(t_joueur tab_joueur[]); // Permet de créer le tableau des joueurs
@@ -81,18 +75,5 @@ void en_faillite(t_joueur tab_joueur[], int i); // Met le joueur en faillite si 
 void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque); // Fais faire un tour à un joueur
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque); // Achat de maison et d'hotel
 void loyer(t_joueur tab_joueur[], int i, t_case cases); // Permet de faire payer le loyer
-bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* banque); // Permet d'hypotéquer une propriété
-
-
-//fonction d'affichage
-void afficher_plateau(t_case plateau[], t_joueur tab_joueur[]); //affiche le plateau
-void gotoligcol( int lig, int col );
-int Longueur(int Valeur);
-void afficher_valeur_case(int indice, t_case plateau[]);
-void afficher_nom_proprietaire(int indice, t_case plateau[], t_joueur tab_joueur[], int num_joueur);
-void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i);
-void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i);
-void creation_sous_case3(t_case plateau[], t_joueur tab_joueur[], int i);
-
 
 #endif // NATHAN_H_H_INCLUDED

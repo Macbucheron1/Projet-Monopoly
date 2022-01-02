@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1640844176 source:c:\users\tahsah\desktop\version 1.8\main.c
+	"Header.h"
+
+1640844176 c:\users\tahsah\desktop\version 1.8\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640844176 source:c:\users\tahsah\desktop\version 1.9\main.c
+	"Header.h"
+
+1640844176 c:\users\tahsah\desktop\version 1.9\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+

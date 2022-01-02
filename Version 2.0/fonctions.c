@@ -103,12 +103,8 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i)
 }
 
 // fonction creation d'instance
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer)
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom)
 {
-    /* Fonction qui créée une case
-       Prend en paramètre toutes ses caractéristique
-       Renvoie la case
-    */
     t_case c;
     fflush(stdin);
     strcpy(c.nom, nom);
@@ -120,12 +116,6 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
     c.groupe_cartes=groupe_cartes;
     c.nb_maison = 0;
     c.nb_hotel = 0;
-    c.couleur_fond = couleur_fond;
-    c.couleur_texte = couleur_texte;
-    c.hypoteque = false;
-    c.val_hypotheque = valeur_hypotheque;
-    c.base_loyer = base_loyer;
-
     return c;
 }
 
@@ -133,7 +123,7 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
 t_joueur creation_joueur(int numero)
 {
     /* Permet la creation d'un joueur
-       Prend en paramètre le numéro du joueur
+       Ne prend pas de paramètre
        Renvoie une instance de la classe joueur au debut de partie
     */
     t_joueur j;
@@ -177,15 +167,15 @@ void creation_plateau(t_case* plateau)
        Ne renvoie rien
     */
 
-    // Groupe 1 = Propriétés , 2 cases , vert caca d'oie , blanc
-    // Groupe 2 = Propriétés , 3 cases , turquoise , blanc
-    // Groupe 3 = Propriétés , 3 cases , violet , blanc
-    // Groupe 4 = Propriétés , 2 cases , gris foncé , blanc
-    // Groupe 5 = Propriétés , 2 cases , rouge , blanc
-    // Groupe 6 = Propriétés , 2 cases , jaune , noir
-    // Groupe 7 = Propriétés , 3 cases , vert , blanc
-    // Groupe 8 = Propriétés , 2 cases , bleu , blanc
-    // Groupe 9 = Gares, 4 cases , blanc , noir
+    // Groupe 1 = Propriétés , 2 cases
+    // Groupe 2 = Propriétés , 3 cases
+    // Groupe 3 = Propriétés , 3 cases
+    // Groupe 4 = Propriétés , 2 cases
+    // Groupe 5 = Propriétés , 2 cases
+    // Groupe 6 = Propriétés , 2 cases
+    // Groupe 7 = Propriétés , 3 cases
+    // Groupe 8 = Propriétés , 2 cases
+    // Groupe 9 = Gares, 4 cases
     // Groupe 10 = carte communauté,
     // Groupe 11 = carte chance
     // Groupe 12 = prison
@@ -195,141 +185,137 @@ void creation_plateau(t_case* plateau)
     // Groupe 16 = Depart
 
     t_case depart;
-    depart=creation_case(0,0,0,0,16,"depart",7,0, 0, 0);
-    plateau[0]= depart;
+    depart = creation_case(0, 0, 0, 0, 16, "Depart");
+    plateau[0] = depart;
 
     t_case sport_equestre;
-    sport_equestre=creation_case(1, 60, 50, 60,1, "Sport Equestre", 6 , 15, 60, 2);
+    sport_equestre=creation_case(1, 60, 50, 60,1, "Sport Equestre");
     plateau[1] = sport_equestre;
 
     t_case waterpolo;
-    waterpolo=creation_case(2, 60, 50, 60,1, "Waterpolo", 6, 15, 30, 4);
+    waterpolo=creation_case(2, 60, 50, 60,1, "Waterpolo");
     plateau[2] = waterpolo;
 
     t_case breaking;
-    breaking=creation_case(3, 200, 0, 0,9, "Breaking",15, 0, 100, 25);
+    breaking=creation_case(3, 200, 0, 0,9, "Breaking");
     plateau[3] = breaking;
 
     t_case aviron;
-    aviron=creation_case(4, 60, 50, 60,2, "Aviron",3, 15, 50, 6);
+    aviron=creation_case(4, 60, 50, 60,2, "Aviron");
     plateau[4] = aviron;
 
     t_case corruption1;
-    corruption1 = creation_case(5, 0, 0, 0, 11, "Corruption",13 , 15, 0, 0);
+    corruption1 = creation_case(5, 0, 0, 0, 11, "Corruption");
     plateau[5] = corruption1;
 
     t_case canoe;
-    canoe=creation_case(6, 60, 50, 60, 2, "Canoe",3, 15, 50, 6);
+    canoe=creation_case(6, 60, 50, 60, 2, "Canoe");
     plateau[6] = canoe;
 
     t_case voile;
-    voile=creation_case(7, 60, 50, 60, 2, "Voile",3 , 15, 60, 8);
+    voile=creation_case(7, 60, 50, 60, 2, "Voile");
     plateau[7] = voile;
 
     t_case suspension;
-    suspension = creation_case(8, 0, 0, 0, 12, "Suspension", 7 , 0, 0, 0);
+    suspension = creation_case(8, 0, 0, 0, 12, "Suspension");
     plateau[8] = suspension;
 
     t_case tennis;
-    tennis=creation_case(9, 140, 100, 110,3, "Tennis",5 , 15, 70, 10);
+    tennis=creation_case(9, 140, 100, 110,3, "Tennis");
     plateau[9] = tennis;
 
     t_case golf;
-    golf=creation_case(10, 140, 100, 110,3, "Golf", 5 , 15, 70, 10);
+    golf=creation_case(10, 140, 100, 110,3, "Golf");
     plateau[10] = golf;
 
     t_case skate;
-    skate=creation_case(11, 200, 0, 0,9, "Skate", 15 , 0, 100, 25);
+    skate=creation_case(11, 200, 0, 0,9, "Skate");
     plateau[11] = skate;
 
     t_case tir_a_l_arc;
-    tir_a_l_arc=creation_case(12, 160, 100, 110,3, "Tir a l'arc",5 , 15, 80, 12);
+    tir_a_l_arc=creation_case(12, 160, 100, 110,3, "Tir a l'arc");
     plateau[12] = tir_a_l_arc;
 
     t_case lutte;
-    lutte=creation_case(13, 180, 100, 110, 4, "Lutte",8 , 15, 90, 14);
+    lutte=creation_case(13, 180, 100, 110, 4, "Lutte");
     plateau[13] = lutte;
 
     t_case comite_olympique1;
-    comite_olympique1 = creation_case(14, 0, 0, 0, 10, "Comite olympique",9 , 15, 0, 0);
+    comite_olympique1 = creation_case(14, 0, 0, 0, 10, "Comite olympique");
     plateau[14] = comite_olympique1;
 
     t_case halterophilie;
-    halterophilie=creation_case(15, 200, 100, 110, 4, "Halterophilie", 8, 15, 100, 16);
+    halterophilie=creation_case(15, 200, 100, 110, 4, "Halterophilie");
     plateau[15] = halterophilie;
 
     t_case village_olympique;
-    village_olympique = creation_case(16, 0, 0, 0, 13, "Village olympique",7, 0, 0, 0);
+    village_olympique = creation_case(16, 0, 0, 0, 13, "Village olympique");
     plateau[16] = village_olympique;
 
     t_case Volley;
-    Volley=creation_case(17, 220, 150, 165, 5, "Volley",4 , 15, 110, 18);
+    Volley=creation_case(17, 220, 150, 165, 5, "Volley");
     plateau[17] = Volley;
 
     t_case handball;
-    handball=creation_case(18, 220, 150, 165, 5, "Handball",4, 15, 120, 20);
+    handball=creation_case(18, 220, 150, 165, 5, "Handball");
     plateau[18] = handball;
 
     t_case escalade;
-    escalade=creation_case(19, 200, 0, 0,9, "Escalade", 15, 0, 100, 25);
+    escalade=creation_case(19, 200, 0, 0,9, "Escalade");
     plateau[19] = escalade;
 
     t_case amende;
-    amende = creation_case(20, 0, 0, 0, 14, "Amende", 12, 15, 0, 0);
+    amende = creation_case(20, 0, 0, 0, 14, "Amende");
     plateau[20] = amende;
 
     t_case corruption2;
-    corruption2 = creation_case(5, 0, 0, 0, 11, "Corruption",13, 15, 0, 0);
+    corruption2 = creation_case(5, 0, 0, 0, 11, "Corruption");
     plateau[21] = corruption2;
 
     t_case judo;
-    judo=creation_case(22, 260, 150, 165,6, "Judo", 14, 0, 130, 22);
+    judo=creation_case(22, 260, 150, 165,6, "Judo");
     plateau[22] = judo;
 
     t_case boxe;
-    boxe=creation_case(23, 280, 150, 165,6, "Boxe", 14, 0, 140, 24);
+    boxe=creation_case(23, 280, 150, 165,6, "Boxe");
     plateau[23] = boxe;
 
     t_case controle_dopage;
-    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle dopage",7,0, 0, 0);
+    controle_dopage = creation_case(24, 0, 0, 0, 15, "Controle anti dopage");
     plateau[24] = controle_dopage;
 
     t_case basket;
-    basket=creation_case(25, 300, 200, 220, 7, "Basket" ,2, 15, 150, 26);
-    plateau[25] = basket;
+    basket=creation_case(25, 300, 200, 220, 7, "Basket");
+    plateau[25] = sport_equestre;
 
     t_case foot;
-    foot=creation_case(26, 300, 200, 220, 7, "Foot", 2, 15, 150, 26);
+    foot=creation_case(26, 300, 200, 220, 7, "Foot");
     plateau[26] = foot;
 
     t_case surf;
-    surf=creation_case(27, 200, 0, 0,9, "Surf",15, 0, 100, 25);
+    surf=creation_case(27, 200, 0, 0,9, "Surf");
     plateau[27] = surf;
 
     t_case rugby;
-    rugby=creation_case(28, 320, 200, 220, 7, "Rugby", 2, 15, 160, 28);
+    rugby=creation_case(28, 320, 200, 220, 7, "Rugby");
     plateau[28] = rugby;
 
     t_case athletisme;
-    athletisme=creation_case(29, 350, 200, 220, 8, "Athletisme",1,15, 175, 35);
+    athletisme=creation_case(29, 350, 200, 220, 8, "Athletisme");
     plateau[29] = athletisme;
 
     t_case comite_olympique2;
-    comite_olympique2 = creation_case(5, 0, 0, 0, 10, "Comite olympique",9,15, 0, 0);
+    comite_olympique2 = creation_case(5, 0, 0, 0, 10, "Comite olympique");
     plateau[30] = comite_olympique2;
 
     t_case natation;
-    natation=creation_case(31, 400, 200, 220, 8, "Natation",1,15, 200, 50);
+    natation=creation_case(31, 400, 200, 220, 8, "Natation");
     plateau[31] = natation;
 }
 
 // fonction creation tableau joueur
 void creation_tab_joueur(t_joueur tab_joueur[])
 {
-    /* Créée le tableau de joueurs, permet de choisir le nombre de joueur
-       Prend en paramètre la tableau des joueurs
-       Ne renvoie rien
-    */
     char choix[10];
     do
     {
@@ -419,18 +405,7 @@ void afficher_case(t_case c)
        Ne renvoie rien
     */
     printf("Voici la CASE:\n");
-    printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\nvaleur de l'hypotheque:%d\nHypotheque:%d",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.val_hypotheque, c.hypoteque);
-    printf("\n"); //pour de la lisibilité
-}
-
-// fonction affichage d'instance dans le jeu
-void afficher_case_jeu(t_case c)
-{
-    /* Procédure qui affiche une instance de case
-       Prend en paramètre une case
-       Ne renvoie rien
-    */
-    printf("nom: %s\nprix d'achat:%d\nnombre de maison:%d\nNombre d'Hotel hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\nLoyer sans maison:%d\n",c.nom,c.valeur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.base_loyer);
+    printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\n",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes);
     printf("\n"); //pour de la lisibilité
 }
 
@@ -513,32 +488,22 @@ void en_faillite(t_joueur tab_joueur[], int i) // En cours par LUC
 // fonction pour loyer
 void loyer(t_joueur tab_joueur[], int i, t_case cases) // En cours par Nathan
 {
-    /* Permet de faire payer un joueur si il est sur la case d'un autre joueur
-       Prend en paramèètre le tableau de joueur, l'indice du joueur qui joue et la case sur laquelle il est
-    */
     if ((cases.num_joueur != tab_joueur[i].numero) && (cases.num_joueur != 0) && (cases.groupe_cartes <= 9))
     {
         // le joueur doit payer
         printf("Paye\n");
-        return true;
     }
     else
     {
         printf("Vous n'etes pas sur la case de quelqu'un d'autre, vous ne payez pas\n");
-        return false;
     }
 }
 
-// Fonction de tour
 void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cours par Nathan
 {
-    /* Procédure qui fait un tour à tout les joueurs
-       Prend en paramèètre le tableau des joueurs, le plateau et la banque
-       Ne renvoie rien
-    */
     for (int i = 0; i < 4; i++)
     {
-        // En faillite
+        en_faillite(tab_joueur, i);
         if (tab_joueur[i].en_faillite)
         {
             // Le joueur ne joue pas
@@ -548,47 +513,40 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cou
         {
             printf("\n\nC'est le tour de %s\n", tab_joueur[i].nom);
             int de[2];
-            lance_de(de);
-            de[0] = 1;
-            de[1] = 3;
+            salaire(tab_joueur,de,i);
             printf("Vous avez fait %d et %d\n", de[0], de[1]);
             if (sortie_prison(de, tab_joueur, i)) // Le joueur sors de prison donc ne joue pas plus pendant ce tour
             {
-                afficher_plateau(plateau, tab_joueur);
+
             }
             else // Le joueur n'est pas en prison                       // continue ici
             {
                 // Le joueur joue une fois
                 deplacement(de, tab_joueur, i);
-                afficher_plateau(plateau, tab_joueur);
                 printf("Vous etes a la case %s\n", plateau[tab_joueur[i].position].nom);
                 loyer(tab_joueur, i, plateau[tab_joueur[i].position]);
+                // acheter_propriete(p_joueur, plateau[p_joueur->position]);
                 acheter_maison_hotel(tab_joueur, i, plateau, p_banque);
-                hypotheque(tab_joueur, i, plateau, p_banque);
                 if (double_de(de)) // Le joueur a fait un double
                 {
                     // Le joueur joue une 2eme fois
                     lance_de(de);
                     printf("Vous avez fait %d et %d\n", de[0], de[1]);
                     deplacement(de, tab_joueur, i);
-                    afficher_plateau(plateau, tab_joueur);
                     printf("Vous etes a la case %s\n", plateau[tab_joueur[i].position].nom);
                     loyer(tab_joueur, i, plateau[tab_joueur[i].position]);
                     // acheter_propriete(p_joueur, plateau[p_joueur->position]);
                     acheter_maison_hotel(tab_joueur, i, plateau, p_banque);
-                    //hypotheque(tab_joueur, i, plateau, p_banque);
                     if (double_de(de)) // Le joueur a fait 2 doubles
                     {
                         // Le joueur joue une 3eme fois
                         lance_de(de);
                         printf("Vous avez fait %d et %d\n", de[0], de[1]);
-                        afficher_plateau(plateau, tab_joueur);
                         deplacement(de, tab_joueur, i);
                         printf("Vous etes a la case %s\n", plateau[tab_joueur[i].position].nom);
                         loyer(tab_joueur, i, plateau[tab_joueur[i].position]);
                         // acheter_propriete(p_joueur, plateau[p_joueur->position]);
                         acheter_maison_hotel(tab_joueur, i, plateau, p_banque);
-                        //hypotheque(tab_joueur, i, plateau, p_banque);
                         if (double_de(de))
                         {
                             printf("Vous allez en prison");
@@ -601,7 +559,6 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque) // en cou
     }
 }
 
-// fonction pour les tours
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque) // faire le blindage
 {
 //La fonction permet au joueur d’acheter une maison ou un hôtel (elle lui demande)
@@ -624,7 +581,7 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
                             fflush(stdin);
                             gets(choix);
                         } while ((choix[0] != 48) && (choix[0] != 49) || (strlen(choix) > 1)); // 48 = 0 en code ascii
-                        if(choix[0] == 49)
+                        if(choix == 1)
                         {
                             plateau[tab_joueur[i].position].nb_maison+=1;//ajoute une maison
                             tab_joueur[i].argent-=plateau[tab_joueur[i].position].val_maison;//enleve l'argent au joueur
@@ -633,7 +590,7 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
                             printf("Il y a %d maisons sur la case\n", plateau[tab_joueur[i].position].nb_maison);
                             return true;
                         }
-                        else if(choix[0] == 48)
+                        else if(choix == 0)
                         {
                             printf("vous n'avez pas achete de maison.\n");
                             return false;
@@ -641,7 +598,6 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
                     }
                     else//il n'a pas assez d'argent
                     {
-                        printf("argent joueur : %d\ncout maison : %d\n",tab_joueur[i].argent, plateau[tab_joueur[i].position].val_maison);
                         printf("vous n'avez pas assez d'argent\n");
                         return false;
                     }
@@ -665,7 +621,7 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
                             fflush(stdin);
                             gets(choix);
                         } while ((choix[0] != 48) && (choix[0] != 49) || (strlen(choix) > 1)); // 48 = 0 en code ascii
-                        if(choix[0] == 49)
+                        if(choix == 1)
                         {
                             plateau[tab_joueur[i].position].nb_hotel+=1;//ajoute l'hotel
                             plateau[tab_joueur[i].position].nb_maison = 0;//on retire les maison
@@ -675,7 +631,7 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
                             printf("vous avez achete un hotel.\n");
                             return true;
                         }
-                        else if(choix[0] == 48)
+                        else if(choix == 0)
                         {
                             printf("vous n'avez pas achete d'hotel.\n");
                             return false;
@@ -712,427 +668,63 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
     }
 }
 
-// Fonction affichage
-void gotoligcol( int lig, int col )
+//Permet aux joueurs d'acheter une propriété
+bool achat(t_joueur tab_joueur[],t_case plateau[],int i)
 {
-
-    // ressources
-
-    COORD mycoord;
-
-    mycoord.X = col;
-
-    mycoord.Y = lig;
-
-    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
-
-}
-
-// Fonction d'affichage
-void Color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
-{
-    HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
-}
-
-// Fonction d'affichage
-int Longueur(int Valeur)
-{
-	int Retour = 0;
-	if(Valeur == 0)
-    {
-        Retour = 1;
-    }
-	while(Valeur !=0)
-	{
-		Retour++;
-		Valeur = Valeur / 10;
-	}
-
-	return Retour;
-}
-
-// Fonction d'affichage
-void afficher_valeur_case(int indice, t_case plateau[])
-{
-    Color(plateau[indice].couleur_texte,plateau[indice].couleur_fond);
-    printf("%d",plateau[indice].valeur);
-    for(int z = Longueur(plateau[indice].valeur); z<18;z++)
-    {
-        printf(" ");
-    }
-    Color(15,0);//re-met en noir et blanc
-    printf("|");
-}
-
-// Fonction d'affichage
-void afficher_nom_proprietaire(int indice, t_case plateau[], t_joueur tab_joueur[], int num_joueur)
-{
-    Color(plateau[indice].couleur_texte,plateau[indice].couleur_fond);
-    printf("%s",tab_joueur[num_joueur].nom);
-    for(int z = strlen(tab_joueur[num_joueur].nom); z<18;z++)
-    {
-        printf(" ");
-    }
-    Color(15,0);//re-met en noir et blanc
-    printf("|");
-}
-
-//fonction d'affichage
-void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i)
-{
-//permet d'afficher la premiere ligne du plateau
-//prends en parametre le plateau, le tableau des joueur et l'indice i
-//ne renvoie rien
-    Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
-    printf("%s", plateau[i].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[i].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-    {
-        printf(" ");
-    }
-    Color(15,0);//re-met en noir et blanc
-    printf("|");
-    if(i == 8)
-    {
-        for (int l = 0; l<4; l++)//affiche les 4 ligne sous le nom de la case
-        {
-            printf("|");
-            for(int k = 0;k<9;k++)//permet de parcourir l'indice des cases pour pouvoir recuperer les couleur attribue a chaque case
-            {
-                Color(plateau[k].couleur_texte,plateau[k].couleur_fond);
-                if ((tab_joueur[l].position == k) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite
+        if(plateau[tab_joueur[i].position].groupe_cartes <= 9)//on verifie si la case est une propriété
+       {
+           if(plateau[tab_joueur[i].position].num_joueur==0)//on verifie si la case n'appartient a personne
+          {
+               int choix;
+               printf("Voulez-vous acheter cette case ?\n");
+               printf("           si oui : 1           \n");
+               printf("           si non : 0           \n");
+               do{
+                scanf("%d",&choix);
+                if(choix!=0&&choix!=1)
+                   {
+                      printf("Erreur : Veuillez saisir 1 pour oui et 0 pour non\n");
+                   }
+              }while(choix!=0&&choix!=1);
+               if(choix==1)
                 {
-                    printf("%s", tab_joueur[l].nom);
-                    for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
+                    if(tab_joueur[i].argent < plateau[tab_joueur[i].position].valeur)//on verfie si le joueur n'a pas les fonds nécessaires
                     {
-                        printf(" ");
+                        printf("Fonds insuffisants !\n");
+                        return false;
+                    }
+                    else if(tab_joueur[i].argent >= plateau[tab_joueur[i].position].valeur)//on verfie si le joueur a les fonds nécessaires
+                    {
+                        tab_joueur[i].argent-=plateau[tab_joueur[i].position].valeur;//on décrémente l'argent du joueur
+                        plateau[tab_joueur[i].position].num_joueur=i;//on actualise le propriétaire de la case
+                        return true;
                     }
                 }
-                else
+               if(choix==0)
                 {
-                    printf("                  ");
+                      return false;
                 }
-
-
-                Color(15,0);//re-met en noir et blanc
-                printf("|");
-            }
-        }
-        //permet d'afficher la 5e ligne sous les cases
-        printf("|");
-        for(int k =0;k<9;k++)
-        {
-            if (plateau[k].groupe_cartes <= 9)
-            {
-                 if(plateau[k].num_joueur == 0)// || plateau[k].num_joueur != 1 || plateau[k].num_joueur != 2 || plateau[k].num_joueur != 3)
-                {
-                    afficher_valeur_case(k,plateau);
-                }
-                else
-                {
-                    afficher_nom_proprietaire(k,plateau, tab_joueur, plateau[k].num_joueur-1);
-                }
-            }
-            else
-            {
-                Color(plateau[k].couleur_texte,plateau[k].couleur_fond);
-                printf("                  ");
-                Color(15,0);//re-met en noir et blanc
-                printf("|");
-
-            }
-        }
-    }
+          }
+      }
+  return false;
 }
-
-//fonction d'affichage
-void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i)
+//Verse 200€ aux joueurs passant par la case départ
+void salaire(t_joueur tab_joueur[],int de[2],int i)
 {
-//permet d'afficher les 2 colonnes sur les cote du plateau
-//prends en parametre le plateau, le tableau des joueur et l'indice i
-//ne renvoie rien
-    Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);//permet de prendre les couleur attribue a chaque case
-    printf("%s", plateau[40-i].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[40-i].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-    {
-        printf(" ");
-    }
-    Color(15,0);//re-met en noir et blanc
-    printf("|");
-    for(int z = 0; z<=131;z++)//permet de faire l'espace entre les 2 colonnes
-        {
-            printf(" ");
-        }
-    printf("|");
-    Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
-    printf("%s", plateau[i].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[i].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-    {
-        printf(" ");
-    }
-    Color(15,0);//re-met en noir et blanc
-    printf("|");
-    for (int l = 0; l<4; l++)//permet de faire les 4 lignes sous le nom des cases
-    {
-        printf("|");
-        Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);//permet de prendre  les couleur attribue a chaque case
-        if ((tab_joueur[l].position == 40-i) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite
-        {
-            printf("%s", tab_joueur[l].nom);
-            for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-            {
-                printf(" ");
-            }
+    int addposition=tab_joueur[i].position+de[0]+de[1];//on additionne la valeur des dés avec la position du joueur
+    if (addposition>32)//on vérifie si le joueur passe par la case départ
+  {
+      tab_joueur[i].position=addposition%32;//on actualise sa position
+      tab_joueur[i].argent+=200;//on incrémente l'argent du joueur
+  }
+}
+//Impose le joueur et lui retire 200€
+void impot(t_joueur tab_joueur[],t_case plateau[],int i)
+   {
+       if(plateau[tab_joueur[i].position].groupe_cartes == 14)//on vérifie si le joueur est sur la case impôt
+       {
+          printf("        Impôt sur le revenu        \n");
+          printf("    Vous devez 200€ à la banque!    \n ");
+          tab_joueur[i].argent-=200;//on décrémente son argent du montant de l'impôt
        }
-        else
-        {
-            printf("                  ");
-        }
-        Color(15,0);//re-met en noir et blanc
-        printf("|");
-        for(int z = 0; z<=131;z++)//permet de faire l'espace entre les 2 colonnes
-        {
-            printf(" ");
-        }
-        printf("|");
-        Color(plateau[i].couleur_texte,plateau[i].couleur_fond);//permet de prendre les couleur attribue a chaque case
-        if ((tab_joueur[l].position == i) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite
-        {
-            printf("%s", tab_joueur[l].nom);
-            for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-            {
-                printf(" ");
-            }
-       }
-        else
-        {
-            printf("                  ");
-        }
-        Color(15,0);//re-met en noir et blanc
-        printf("|");
     }
-    //permet de creer la 5e ligne sous les cases
-    printf("|");
-    if (plateau[40-i].groupe_cartes <= 9)
-    {
-         if(plateau[40-i].num_joueur == 0)
-        {
-            afficher_valeur_case(40-i,plateau);
-        }
-        else
-        {
-            afficher_nom_proprietaire(40-i,plateau, tab_joueur, plateau[40-i].num_joueur-1);
-        }
-    }
-    else
-    {
-        Color(plateau[40-i].couleur_texte,plateau[40-i].couleur_fond);
-        printf("                  ");
-        Color(15,0);//re-met en noir et blanc
-        printf("|");
-    }
-    for(int z = 0; z<=131;z++)
-    {
-        printf(" ");
-    }
-    printf("|");
-    if (plateau[i].groupe_cartes <= 9)
-    {
-         if(plateau[i].num_joueur == 0)
-        {
-            afficher_valeur_case(i,plateau);
-        }
-        else
-        {
-            afficher_nom_proprietaire(i,plateau, tab_joueur, plateau[i].num_joueur-1);
-        }
-    }
-    else
-    {
-        Color(plateau[i].couleur_texte,plateau[i].couleur_fond);
-        printf("                  ");
-        Color(15,0);//re-met en noir et blanc
-        printf("|");
-    }
-}
-
-//fonction d'affichage
-void creation_sous_case3(t_case plateau[], t_joueur tab_joueur[], int i)
-{
-//permet d'afficher la derniere ligne du plateau
-//prends en parametre le plateau, le tableau des joueur et l'indice i
-//ne renvoie rien
-    i = i-16;//pour mettre i =0 puis i=1 etc jusqu'a i=8
-    if(i == 0)//permet d'afficher la premiere barre de la ligne
-    {
-        printf("|");
-    }
-    Color(plateau[24-(i*1)].couleur_texte,plateau[24-(i*1)].couleur_fond);//permet de prendre les couleur attribue a chaque case
-    printf("%s", plateau[24-(i*1)].nom);//affiche le nom de chaque case
-    for(int j = strlen(plateau[24-(i*1)].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-    {
-        printf(" ");
-    }
-    Color(15,0);//re-met en noir et blanc
-    printf("|");
-    if(i == 8)//quand on arrive a la derniere case de la ligne
-    {
-        for (int l = 0; l<4; l++)//permet d'afficher les 4 ligne sous le nom de la case
-        {
-            printf("|");
-            for(int k = 16;k<25;k++)
-            {
-                Color(plateau[40-k].couleur_texte,plateau[40-k].couleur_fond);//permet de prendre la couleur de la case
-                if ((tab_joueur[l].position == 40-k) && (tab_joueur[l].en_faillite == false))//regarde si le joueur a fait faillite ou pas
-                {
-                    printf("%s", tab_joueur[l].nom);
-                    for(int j = strlen(tab_joueur[l].nom); j<18; j++)//permet de faire que chaque case ai la meme longueur
-                    {
-                        printf(" ");
-                    }
-                }
-                else
-                {
-                    printf("                  ");
-                }
-                Color(15,0);//re-met en noir et blanc
-                printf("|");
-            }
-        }
-        printf("|");
-        for(int k = 16;k<25;k++)
-        {
-            if (plateau[40-k].groupe_cartes <= 9)
-            {
-                if(plateau[40-k].num_joueur == 0)
-                {
-                    afficher_valeur_case(40-k,plateau);
-                }
-                else
-                {
-                    afficher_nom_proprietaire(40-k,plateau, tab_joueur, plateau[40-k].num_joueur-1);
-                }
-            }
-            else
-            {
-                Color(plateau[40-k].couleur_texte,plateau[40-k].couleur_fond);
-                printf("                  ");
-                Color(15,0);//re-met en noir et blanc
-                printf("|");
-            }
-        }
-    }
-}
-
-// Fonction d'affichage
-void afficher_plateau(t_case plateau[], t_joueur tab_joueur[])
-{
-//la fonction permet d'afficher le plateau
-//prend en parametre le plateau et le tableau des joueurs
-//ne renvoie rien
-    printf("|");//fait la premiere barre(en haut a gauche)
-    for(int i=0;i<25 ; i++)
-    {
-        if(i <= 8)//permet de creer la premiere ligne
-        {
-            creation_sous_case1(plateau,tab_joueur,i);
-        }
-        else if(i >=9 && i <= 15)//permet de creer les 2 colonnes sur les coté
-        {
-            printf("|");
-            creation_sous_case2(plateau, tab_joueur, i);
-        }
-        else if(i>= 16 && i<= 24)//permet de creer la derniere ligne
-        {
-            creation_sous_case3(plateau,tab_joueur,i);
-        }
-    }
-}
-// fonction de jeu
-bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banque)
-{
-    /* fonction qui permet d'hypotéquer une propriétée
-       Prend en paramètre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
-       Renvoie un bool, True si il a hypotéqué, false sinon
-    */
-    char choix[10];
-    do
-    {
-        printf("\nVoulez vous hypotequez une propriete oui[1]  non[0]\n");//propose d'hypotéquer
-        fflush(stdin);
-        gets(choix);
-    } while ((choix[0] != 48) && (choix[0] != 49) || (strlen(choix) > 1)); // 48 = 0 en code ascii
-    if (choix[0] == 48)
-    {
-        return false;
-    }
-    int long_prop = update_propriete(tab_joueur, i, plateau);
-    if (long_prop == 0)
-    {
-        return false;
-    }
-    printf("\nVous avez %d proprietes, laquelle voulez vous hypotequer ?\n\n", long_prop);
-    for (int j = 0; j < long_prop; j++)
-    {
-        printf("La propriete numero %d : \n", j+1);
-        afficher_case_jeu(tab_joueur[i].proprietes[j]);
-    }
-
-    do
-    {
-        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotéquer
-        fflush(stdin);
-        gets(choix);
-    } while ((choix[0] < '1') || (choix[0] > '0'+long_prop) || (strlen(choix) > 1)); // 48 = 0 en code ascii
-    for (int j = 0; j < long_prop; j++)
-    {
-        if ((tab_joueur[i].proprietes[choix[0]-49].groupe_cartes == tab_joueur[i].proprietes[j].groupe_cartes) && (tab_joueur[i].proprietes[choix[0]-49].position != tab_joueur[i].proprietes[j].position))
-        {
-            // Le joueur a une carte du même groupede couleur
-            if ((tab_joueur[i].proprietes[choix[0]-49].nb_maison > 0) || (tab_joueur[i].proprietes[choix[0]-49].nb_hotel > 0)) // La propriete que le joueur hypoteque a une maison ou un hotel
-            {
-                tab_joueur[i].argent += (tab_joueur[i].proprietes[choix[0]-49].nb_maison * tab_joueur[i].proprietes[choix[0]-49].val_maison)/2 + (tab_joueur[i].proprietes[choix[0]-49].nb_hotel * tab_joueur[i].proprietes[choix[0]-49].val_hotel)/2;
-                tab_joueur[i].proprietes[choix[0]-49].nb_maison = 0;
-                tab_joueur[i].proprietes[choix[0]-49].nb_hotel = 0;
-                printf("Vos maisons et hotel sur la case %s, ont ete vendu a moitie prix\n", tab_joueur[i].proprietes[choix[0]-49].nom);
-            }
-            if ((tab_joueur[i].proprietes[j].nb_maison > 0) || (tab_joueur[i].proprietes[j].nb_hotel > 0)) // La propriete teste a une maison ou un hotel
-            {
-                tab_joueur[i].argent += (tab_joueur[i].proprietes[j].nb_maison * tab_joueur[i].proprietes[j].val_maison)/2 + (tab_joueur[i].proprietes[j].nb_hotel * tab_joueur[i].proprietes[j].val_hotel)/2;
-                tab_joueur[i].proprietes[j].nb_maison = 0;
-                tab_joueur[i].proprietes[j].nb_hotel = 0;
-                printf("Vos maisons et hotel sur la case %s, ont ete vendu a moitie prix\n", tab_joueur[i].proprietes[j].nom);
-            }
-        }
-    }
-    printf("que dalle\n");
-}
-
-// fonction d'instance
-int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[])
-{
-    int nb = 0; // Nombre de propriété que le joueur a
-    for (int j = 0; j < 32; j++)
-    {
-        if (plateau[j].num_joueur == tab_joueur[i].numero)
-        {
-            nb+=1;
-        }
-    }
-    int compteur = 0;
-    int total = 0;
-     for (int j = 0; j < 32; j++)
-    {
-        if (plateau[j].num_joueur == tab_joueur[i].numero)
-        {
-            tab_joueur[i].proprietes[compteur] = plateau[j];
-            compteur+=1;
-        }
-        else
-        {
-            tab_joueur[i].proprietes[total] = creation_case(50, 0, 0, 0, 50, "Rien", 50, 50, 0, 0); // on remplit le reste du tableau avec des cases vides
-        }
-        total+=1;
-    }
-    return nb;
-}
