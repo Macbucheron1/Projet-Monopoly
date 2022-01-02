@@ -82,10 +82,12 @@ void loyer(t_joueur tab_joueur[], int i, t_case cases); // Permet de faire payer
 bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* banque); // Permet d'hypotéquer une propriété
 
 
-// Fonction d'affichage
+//fonction d'affichage
 void afficher_plateau(t_case plateau[], t_joueur tab_joueur[]); //affiche le plateau
 void gotoligcol( int lig, int col );
-void creation_sous_case(t_case plateau[], t_joueur tab_joueur[], int k_petit, int k_grand);
+int Longueur(int Valeur);
+void afficher_valeur_case(int indice, t_case plateau[]);
+void afficher_nom_proprietaire(int indice, t_case plateau[], t_joueur tab_joueur[], int num_joueur);
 void creation_sous_case1(t_case plateau[], t_joueur tab_joueur[], int i);
 void creation_sous_case2(t_case plateau[], t_joueur tab_joueur[], int i);
 void creation_sous_case3(t_case plateau[], t_joueur tab_joueur[], int i);

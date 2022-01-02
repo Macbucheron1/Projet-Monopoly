@@ -108,3 +108,17 @@
 1641060235 source:c:\users\natha\desktop\version 1.7\fonctions.c
 	"Header.h"
 
+1641080658 source:c:\users\natha\desktop\version 2.0\main.c
+	"Header.h"
+
+1641079317 c:\users\natha\desktop\version 2.0\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1641081607 source:c:\users\natha\desktop\version 2.0\fonctions.c
+	"Header.h"
+
