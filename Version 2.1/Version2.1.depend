@@ -1,0 +1,138 @@
+# depslib dependency file v1.0
+1640296382 source:c:\users\natha\desktop\monopoly\main.c
+	"NATHAN_H.h"
+	<time.h>
+
+1640295303 c:\users\natha\desktop\monopoly\nathan_h.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1640368024 source:c:\users\natha\desktop\nathan_24.12\main.c
+	"Header.h"
+
+1640360792 c:\users\natha\desktop\nathan_24.12\monopoly_header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+
+1640360396 source:c:\users\natha\desktop\nathan_24.12\fonction_monopoly.c
+	"Monopoly_header.h"
+
+1640368006 source:c:\users\natha\desktop\nathan_24.12\fonctions.c
+	"Header.h"
+
+1640368258 c:\users\natha\desktop\nathan_24.12\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+
+1640534737 source:c:\users\natha\desktop\version1.0\main.c
+	"Header.h"
+
+1640536389 c:\users\natha\desktop\version1.0\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640536389 source:c:\users\natha\desktop\version1.0\fonctions.c
+	"Header.h"
+
+1640707157 source:c:\users\natha\desktop\version1.2\fonctions.c
+	"Header.h"
+
+1640706794 c:\users\natha\desktop\version1.2\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640705014 source:c:\users\natha\desktop\version1.2\main.c
+	"Header.h"
+
+1640722067 source:c:\users\natha\desktop\plateau pointeur\fonctions.c
+	"Header.h"
+
+1640722079 c:\users\natha\desktop\plateau pointeur\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640721994 source:c:\users\natha\desktop\plateau pointeur\main.c
+	"Header.h"
+
+1640777058 source:c:\users\natha\desktop\version 1.4\fonctions.c
+	"Header.h"
+
+1640722079 c:\users\natha\desktop\version 1.4\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640776436 source:c:\users\natha\desktop\version 1.4\main.c
+	"Header.h"
+
+1640784533 source:c:\users\natha\desktop\version 1.5\main.c
+	"Header.h"
+
+1640780656 c:\users\natha\desktop\version 1.5\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+
+1640785062 source:c:\users\natha\desktop\version 1.5\fonctions.c
+	"Header.h"
+
+1641058154 source:c:\users\natha\desktop\version 1.7\main.c
+	"Header.h"
+
+1641054237 c:\users\natha\desktop\version 1.7\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1641060235 source:c:\users\natha\desktop\version 1.7\fonctions.c
+	"Header.h"
+
+1641137514 source:c:\users\natha\desktop\version 2.0\main.c
+	"Header.h"
+
+1641119513 c:\users\natha\desktop\version 2.0\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1641139758 source:c:\users\natha\desktop\version 2.0\fonctions.c
+	"Header.h"
+
+1641137514 source:c:\users\natha\desktop\version 2.1\main.c
+	"Header.h"
+
+1641143320 c:\users\natha\desktop\version 2.1\header.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1641143456 source:c:\users\natha\desktop\version 2.1\fonctions.c
+	"Header.h"
+
