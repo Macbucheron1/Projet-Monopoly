@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="47" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Header.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5963" topLine="57" />
+		</Cursor>
+		<Folding>
+			<Collapse line="53" />
+		</Folding>
+	</File>
+	<File name="fonctions.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="26866" topLine="90" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="22" />
+			<Collapse line="33" />
+			<Collapse line="45" />
+			<Collapse line="113" />
+			<Collapse line="145" />
+			<Collapse line="168" />
+			<Collapse line="184" />
+			<Collapse line="338" />
+			<Collapse line="410" />
+			<Collapse line="422" />
+			<Collapse line="434" />
+			<Collapse line="449" />
+			<Collapse line="461" />
+			<Collapse line="473" />
+			<Collapse line="491" />
+			<Collapse line="770" />
+			<Collapse line="882" />
+			<Collapse line="899" />
+			<Collapse line="910" />
+			<Collapse line="927" />
+			<Collapse line="944" />
+			<Collapse line="992" />
+			<Collapse line="1059" />
+			<Collapse line="1170" />
+			<Collapse line="1238" />
+			<Collapse line="1263" />
+			<Collapse line="1360" />
+			<Collapse line="1393" />
+			<Collapse line="1405" />
+			<Collapse line="1533" />
+			<Collapse line="1552" />
+			<Collapse line="1571" />
+			<Collapse line="1609" />
+			<Collapse line="1621" />
+			<Collapse line="1634" />
+			<Collapse line="1692" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>
