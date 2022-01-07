@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1641465347 source:c:\users\luc\onedrive\documents\ece - ing 1\informatique\algo et prog structuré c\monop\faillite_v2\main.c
+	"faillite_header_v2.h"
+
+1641465347 c:\users\luc\onedrive\documents\ece - ing 1\informatique\algo et prog structuré c\monop\faillite_v2\faillite_header_v2.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+	<string.h>
+	<windows.h>
+
+1641465443 source:c:\users\luc\onedrive\documents\ece - ing 1\informatique\algo et prog structuré c\monop\faillite_v2\faillite_v2.c
+	"faillite_header_v2.h"
+
