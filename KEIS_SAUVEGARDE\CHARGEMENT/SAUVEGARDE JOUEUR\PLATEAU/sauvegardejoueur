@@ -1,5 +1,10 @@
+// Fonction de sauvegarde des joueurs
 void sauvegarderjoueur(FILE* sauv,t_joueur tabj[])
 {
+    /* La procédure sauvegarde les informations des joueurs
+       Prend en paramètre l'adresse du fichier qui contiendra la sauvegarde et un tableau comptenant les structures joueurs,
+       Ne renvoie rien
+    */
     for(int j=0;j < 4;j++)
     {
         fprintf(sauv,"%s %d %d %d %d %d %d",tabj[j].nom,tabj[j].numero,tabj[j].argent,tabj[j].position,tabj[j].en_prison,tabj[j].carte_sortie_prison,tabj[j].en_faillite);
