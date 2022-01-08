@@ -1,19 +1,19 @@
 // fonction utilitaire
-void evenement(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_comite,char* liste_corruption)
+void evenement(t_joueur tab_joueur[],t_case plateau[],int i,char* liste_commite,char* liste_comite,char* liste_corruption)
 {
   /* Permet le tirage des carte comite et corruption et l'entree en prison du joueur,
        Prend en paramètre le tableau de joueur,l'indice du joueur,la liste des cartes comite et la liste des carte corruption,
         Ne renvoie rien.
     */
-  if(groupe_cartes==10)
+  if(plateau[tab_joueur[i].position].groupe_cartes==10)
   {
     tirer_comite(tab_joueur,i,liste_commite,liste_comite);
   }
-  else if(groupe_cartes==11)
+  else if(plateau[tab_joueur[i].position].groupe_carte==11)
   {
     tirer_corruption(tab_joueur,i,liste_corruption);
   }
-  else if(groupe_cartes==12)
+  else if(plateau[tab_joueur[i].position].groupe_carte==12)
   {
     entrer_prison(tab_joueur,i);
   }
