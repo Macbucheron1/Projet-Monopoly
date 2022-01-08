@@ -1,0 +1,7 @@
+void sauvegarderjoueur(FILE* sauv,t_joueur tabj[])
+{
+    for(int j=0;j < 4;j++)
+    {
+        fprintf(sauv,"%s %d %d %d %d %d %d",tabj[j].nom,tabj[j].numero,tabj[j].argent,tabj[j].position,tabj[j].en_prison,tabj[j].carte_sortie_prison,tabj[j].en_faillite);
+    }
+}
