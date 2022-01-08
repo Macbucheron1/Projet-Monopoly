@@ -10,6 +10,6 @@ void evenement(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_comit
   }
   else if(groupe_cartes==12)
   {
-    entrer_prison(tab_joueur[],i);
+    entrer_prison(tab_joueur,i);
   }
 }
