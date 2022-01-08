@@ -1,6 +1,6 @@
 void chargerjoueur(FILE* sauv,t_joueur tabj[])
 {
-    for(int i=0;i < 32;i++)
+    for(int i=0;i < 4;i++)
     {
         fscanf(sauv,"%s %d %d %d %d %d %d",tabj[i].nom,&tabj[i].numero,&tabj[i].argent,&tabj[i].position,&tabj[i].en_prison,&tabj[i].carte_sortie_prison,&tabj[i].en_faillite);
     }
