@@ -1,0 +1,15 @@
+void evenement(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_comite,char* liste_corruption)
+{
+  if(groupe_cartes==10)
+  {
+    tirer_comite(tab_joueur,i,liste_commite,liste_comite);
+  }
+  else if(groupe_cartes==11)
+  {
+    tirer_corruption(tab_joueur,i,liste_corruption);
+  }
+  else if(groupe_cartes==12)
+  {
+    entrer_prison(tab_joueur[],i);
+  }
+}
