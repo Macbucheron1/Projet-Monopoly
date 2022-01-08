@@ -1,0 +1,7 @@
+void sauvegarderplateau(FILE* sauv,t_case plateau[])
+{
+    for(int i=0;i < 32;i++)
+    {
+        fprintf(sauv,"%d %d %d %d %d",plateau[i].num_joueur,plateau[i].hypoteque,plateau[i].val_hypotheque,plateau[i].nb_maison,plateau[i].nb_hotel);
+    }
+}
