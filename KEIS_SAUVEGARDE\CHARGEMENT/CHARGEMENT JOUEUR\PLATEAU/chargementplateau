@@ -1,7 +1,7 @@
 //Fonctions de chargement de la sauvegarde du plateau
 void chargerplateau(FILE* sauv,t_case plateau[])
 {
-    /* La procédure charge la sauvegarde les informations des cases du plateau
+    /* La procédure charge la sauvegarde les informations des cases du plateau,
        Prend en paramètre l'adresse du fichier qui contient la sauvegarde et un tableau comptenant les structures cases,
        Ne renvoie rien
     */
