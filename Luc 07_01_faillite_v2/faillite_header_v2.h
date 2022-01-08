@@ -24,12 +24,12 @@ typedef struct //case(ou cartes) du plateau
     char nom[25]; // Nom de la case
     int position; //position de la case sur le plateau
     int valeur; //prix d'achat
-    int num_joueur; //numÈro du propriÈtaire(NULL si ya pas)
+    int num_joueur; //num√©ro du propri√©taire(NULL si ya pas)
     int nb_maison; //entre 0 et 3
     int nb_hotel; //si ya un hotel ou pas
     int val_maison; //prix d'une maison sur la case
     int val_hotel; //prix de l'hotel
-    int groupe_cartes; //groupe ‡ laquelle appartient la case
+    int groupe_cartes; //groupe √† laquelle appartient la case
     int couleur_fond; // Couleur de fond de la case
     int couleur_texte; // Couleur de texte de la case
     bool hypoteque; // booleen qui dit si la case est hypoteque
@@ -47,11 +47,11 @@ typedef struct //joueur du plateau (max 4)
 {
     int numero; //joueur 1 2 3 ou 4 ?
     char nom[TAILLE_NOM];
-    int position; //initialisÈ ‡ 0, la case dÈpart (modulo 32)
-    int argent; //‡ initialiser avec le montant de base (argent sur le compte, c'est ‡ dire argent utilisable)
+    int position; //initialis√© √† 0, la case d√©part (modulo 32)
+    int argent; //√† initialiser avec le montant de base (argent sur le compte, c'est √† dire argent utilisable)
     int capital; //c'est l'argent que le joueur a sur son compte plus la valeur des propriete, des maisons,etc (sert dns les parties rapides)
-    t_case proprietes[TAILLE_PLATEAU]; //propriÈtÈs dÈtenue par le joueur --> position de la case (tableau de case)
-    bool en_prison; //boolÈen vÈrifiant si le joueur est en prison ou non (0 pas en prison, totu autre chiffre = en prison)
+    t_case proprietes[TAILLE_PLATEAU]; //propri√©t√©s d√©tenue par le joueur --> position de la case (tableau de case)
+    bool en_prison; //bool√©en v√©rifiant si le joueur est en prison ou non (0 pas en prison, totu autre chiffre = en prison)
     int tour_prison; //nombre de tour en prison(max: 3)
     int carte_sortie_prison; //nombre de carte permettant au joueur de sortir de prison
     bool en_faillite; //nous dit si le joueur est en faillite ou pas (s'il l'est ne pas afficher son tour sur le menu et son pion sur le plateua)
@@ -67,7 +67,7 @@ typedef struct
 
 //instanciation
 t_joueur creation_joueur(int num); // permet de modifier une instance de structure joueur
-t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer, int loyer_1_maison, int loyer_2_maison, int loyer_3_maison, int loyer_4_maison, int loyer_1_hotel);  //permet de crÈer une instance de strucutre de case
+t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer, int loyer_1_maison, int loyer_2_maison, int loyer_3_maison, int loyer_4_maison, int loyer_1_hotel);  //permet de cr√©er une instance de strucutre de case
 t_banque creation_banque(void);
 
 //affichage d'instance
@@ -79,7 +79,7 @@ void afficher_banque(t_banque);
 
 //debut header transactions
 
-void transaction(t_joueur tab_joueur[],int i,int montant); //IN: un joueur e tun montant(positif ou negatif), sert a faciliter les transactions
+void transaction(t_joueur tab_joueur[],int i,int montant); //IN: un joueur et un montant(positif ou negatif), sert a faciliter les transactions
 
 //fin transaction
 
@@ -88,15 +88,15 @@ void afficher_case_jeu(t_case c);
 
 int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]);
 
-void creation_tab_joueur(t_joueur tab_joueur[]); // Permet de crÈer le tableau des joueurs
-void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* banque); // Permet d'hypotÈquer une propriÈtÈ
-void creation_plateau(t_case* plateau); // Permet de crÈer le plateau
+void creation_tab_joueur(t_joueur tab_joueur[]); // Permet de cr√©er le tableau des joueurs
+void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* banque); // Permet d'hypot√©quer une propri√©t√©
+void creation_plateau(t_case* plateau); // Permet de cr√©er le plateau
 
-void propriete_a_joueur(t_joueur tab_joueur[],int i, t_case plateau[],int j);//j=position carte, i=num joueur
-void enlever_propriete_joueur(t_joueur tab_joueur[],int i,t_case plateau[],int j);//j=position carte, i=num joueur
+void propriete_a_joueur(t_joueur tab_joueur[],int i, t_case plateau[],int j);//j=position carte, i=num joueur, permet d'ajouter une propriete dans le tab propriete d'un joueur (rajoute aussi +1 a nb_propriete)
+void enlever_propriete_joueur(t_joueur tab_joueur[],int i,t_case plateau[],int j);//j=position carte, i=num joueur,permet de supprimer une propriete dans le tab propriete d'un joueur (enleve aussi -1 a nb_propriete)
 
-void afficher_propriete_joueur(t_joueur tab_joueur[],int i, t_case plateau[]);
+void afficher_propriete_joueur(t_joueur tab_joueur[],int i, t_case plateau[]);// montre les propriete d'un joueur (je sais pas si ten as besoin c'etait surtout pour moi pour mes verification)
 
-void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int proprietaire,t_case plateau[]); //on fait appel ‡ la fonction lors de n'importe quel paiement (‡ la banque ou ‡ un joueur), si proprietaire = 0 c'est la banque
+void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int proprietaire,t_case plateau[]); //on fait appel √† la fonction lors de n'importe quel paiement (√† la banque ou √† un joueur), si proprietaire = 0 c'est la banque
 
 #endif // FAILLITE_HEADER_V2_H_INCLUDED
