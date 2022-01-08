@@ -608,6 +608,7 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
                         int position_prop_a_supp=tab_joueur[i].proprietes[0].position;//indice 0 car on enleve les propriete du tableau a chaque fois
                         plateau[position_prop_a_supp].hypoteque=false;//enleve l'hypoteque de la propriete
                         enlever_propriete_joueur(tab_joueur,i,plateau,position_prop_a_supp);
+                        tab[i].argent=0; //le joueur en faillite n'a plus d'argent
                     }
                 }
                 else //joueur doit payer a un autre joueur
@@ -615,9 +616,13 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
                     for (int k=0; k<nb_prop_j; k++)
                     {
                         int position_prop_a_echanger=tab_joueur[i].proprietes[0].position; //indice 0 car on enleve les propriete du tableau a chaque fois
+                        int dix_prct_prop=0.1*tab_joueur[i].proprietes[0].valeur;
+                        printf("Vous devez payer 10% de la propriete\nSoit %d euros.",dix_prct_prop);
+                        tab[proprietaire].argent-=dix_prct_prop;//payer 10% de la propriete
                         enlever_propriete_joueur(tab_joueur,i,plateau,position_prop_a_echanger);
                         propriete_a_joueur(tab_joueur,proprietaire,plateau,position_prop_a_echanger);
                         tab[proprietaire].argent+=tab[i].argent; //restitue l'argent au creancier
+                        tab[i].argent=0; //le joueur en faillite n'a plus d'argent
                     }
                 }
             }
