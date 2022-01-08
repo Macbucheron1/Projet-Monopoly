@@ -1,7 +1,7 @@
 //Fonction de sauvegarde du plateau
 void sauvegarderplateau(FILE* sauv,t_case plateau[])
 {
-    /* La procédure sauvegarde les informations des cases du plateau
+    /* La procédure sauvegarde les informations des cases du plateau,
        Prend en paramètre l'adresse du fichier qui contiendra la sauvegarde et un tableau comptenant les structures cases,
        Ne renvoie rien
     */
