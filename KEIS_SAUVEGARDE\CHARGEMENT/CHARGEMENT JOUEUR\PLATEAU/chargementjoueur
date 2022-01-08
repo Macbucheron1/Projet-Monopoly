@@ -1,8 +1,8 @@
-//fonction permettant la sauvegarde des informations des joueurs
+//Fonction de chargment de la sauvegarde des joueurs
 void chargerjoueur(FILE* sauv,t_joueur tabj[])
 {
-    /* La procédure sauvegarde les informations des joueurs
-       Prend en paramètre l'adresse du fichier qui contiendra la sauvegarde et un tableau comptenant les structures joueurs,
+     /* La procédure charge la sauvegarde des informations des joueurs,
+       Prend en paramètre l'adresse du fichier qui contient la sauvegarde et un tableau comptenant les joueurs,
        Ne renvoie rien
     */
     for(int i=0;i < 4;i++)
