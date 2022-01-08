@@ -1,5 +1,10 @@
+//fonction permettant la sauvegarde des informations des joueurs
 void chargerjoueur(FILE* sauv,t_joueur tabj[])
 {
+    /* La procédure sauvegarde les informations des joueurs
+       Prend en paramètre l'adresse du fichier qui contiendra la sauvegarde et un tableau comptenant les structures joueurs,
+       Ne renvoie rien
+    */
     for(int i=0;i < 4;i++)
     {
         fscanf(sauv,"%s %d %d %d %d %d %d",tabj[i].nom,&tabj[i].numero,&tabj[i].argent,&tabj[i].position,&tabj[i].en_prison,&tabj[i].carte_sortie_prison,&tabj[i].en_faillite);
