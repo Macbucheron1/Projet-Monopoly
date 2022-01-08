@@ -26,8 +26,8 @@ t_joueur creation_joueur(int num)
 // fonction creation d'instance
 t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer, int loyer_1_maison, int loyer_2_maison, int loyer_3_maison, int loyer_4_maison, int loyer_1_hotel)
 {
-    /* Fonction qui créée une case
-       Prend en paramètre toutes ses caractéristique
+    /* Fonction qui crÃ©Ã©e une case
+       Prend en paramÃ¨tre toutes ses caractÃ©ristique
        Renvoie la case
     */
     t_case c;
@@ -59,7 +59,7 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
 t_banque creation_banque(void) // LUC
 {
     /* Permet la creation de la banque
-       Ne prend pas de paramètre
+       Ne prend pas de paramÃ¨tre
        Renvoie une instance de la classe banque au debut de partie
     */
     t_banque b;
@@ -76,7 +76,7 @@ void afficher_joueur(t_joueur j)
 {
     printf("Voici le JOUEUR:\n");
     printf("numero:%d\nnom:%s\nposition:%d\nargent:%d\ncapital:%d\npropriete:%d\netes-vous en prison?:%d\ncombien de tour en prison:%d\nnb de cartes sorites de prison:%d\nest-il en faillite ?:%d\n",j.numero,j.nom,j.position,j.argent,j.capital,j.proprietes,j.en_prison,j.tour_prison,j.carte_sortie_prison,j.en_faillite);
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
 // transaction
@@ -177,19 +177,19 @@ void creation_tab_joueur(t_joueur tab_joueur[])
 // fonction affichage d'instance
 void afficher_case(t_case c)
 {
-    /* Procédure qui affiche une instance de case
-       Prend en paramètre une case
+    /* ProcÃ©dure qui affiche une instance de case
+       Prend en paramÃ¨tre une case
        Ne renvoie rien
     */
     printf("Voici la CASE:\n");
     printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\n",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes);
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
 void afficher_case_jeu(t_case c) // LUC
 {
-    /* Procédure qui affiche une instance de case
-       Prend en paramètre une case
+    /* ProcÃ©dure qui affiche une instance de case
+       Prend en paramÃ¨tre une case
        Ne renvoie rien
     */
     printf("nom: %s\nprix d'achat:%d\nnombre de maison:%d\nNombre d'Hotel hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\nLoyer sans maison:%d\n",c.nom,c.valeur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.base_loyer);
@@ -197,7 +197,7 @@ void afficher_case_jeu(t_case c) // LUC
     {
         printf("Cette propriete a ete hypotheque\n");
     }
-    printf("\n"); //pour de la lisibilité
+    printf("\n"); //pour de la lisibilitÃ©
 }
 
 
@@ -214,7 +214,7 @@ void afficher_propriete_joueur(t_joueur tab_joueur[],int i, t_case plateau[])
         {
             int iterateur=0;
             printf("Nom case: ");
-            while(tab_joueur[i].proprietes[j].nom[iterateur] != '\0')   //\0 correspond à la fin de chaine
+            while(tab_joueur[i].proprietes[j].nom[iterateur] != '\0')   //\0 correspond Ã  la fin de chaine
             {
                 printf("%c",tab_joueur[i].proprietes[j].nom[iterateur]);
                 iterateur++;
@@ -227,21 +227,21 @@ void afficher_propriete_joueur(t_joueur tab_joueur[],int i, t_case plateau[])
 
 void creation_plateau(t_case* plateau)
 {
-    /* Procédure de creation du plateau
-       Prend en paramètre un tableau qui sera le plateau
+    /* ProcÃ©dure de creation du plateau
+       Prend en paramÃ¨tre un tableau qui sera le plateau
        Ne renvoie rien
     */
 
-    // Groupe 1 = Propriétés , 2 cases , vert caca d'oie , blanc
-    // Groupe 2 = Propriétés , 3 cases , turquoise , blanc
-    // Groupe 3 = Propriétés , 3 cases , violet , blanc
-    // Groupe 4 = Propriétés , 2 cases , gris foncé , blanc
-    // Groupe 5 = Propriétés , 2 cases , rouge , blanc
-    // Groupe 6 = Propriétés , 2 cases , jaune , noir
-    // Groupe 7 = Propriétés , 3 cases , vert , blanc
-    // Groupe 8 = Propriétés , 2 cases , bleu , blanc
+    // Groupe 1 = PropriÃ©tÃ©s , 2 cases , vert caca d'oie , blanc
+    // Groupe 2 = PropriÃ©tÃ©s , 3 cases , turquoise , blanc
+    // Groupe 3 = PropriÃ©tÃ©s , 3 cases , violet , blanc
+    // Groupe 4 = PropriÃ©tÃ©s , 2 cases , gris foncÃ© , blanc
+    // Groupe 5 = PropriÃ©tÃ©s , 2 cases , rouge , blanc
+    // Groupe 6 = PropriÃ©tÃ©s , 2 cases , jaune , noir
+    // Groupe 7 = PropriÃ©tÃ©s , 3 cases , vert , blanc
+    // Groupe 8 = PropriÃ©tÃ©s , 2 cases , bleu , blanc
     // Groupe 9 = Gares, 4 cases , blanc , noir
-    // Groupe 10 = carte communauté,
+    // Groupe 10 = carte communautÃ©,
     // Groupe 11 = carte chance
     // Groupe 12 = prison
     // Groupe 13 = parc gratuit
@@ -394,7 +394,7 @@ void propriete_a_joueur(t_joueur tab_joueur[],int i, t_case plateau[],int j) //a
     tab_joueur[i].proprietes[nb_prop_j].val_hotel=plateau[j].val_hotel;
     tab_joueur[i].proprietes[nb_prop_j].val_maison=plateau[j].val_maison;
     int iterateur=0;
-    while(plateau[j].nom[iterateur] != '\0')   //\0 correspond à la fin de chaine
+    while(plateau[j].nom[iterateur] != '\0')   //\0 correspond Ã  la fin de chaine
     {
         tab_joueur[i].proprietes[nb_prop_j].nom[iterateur]=plateau[j].nom[iterateur];
         iterateur++;
@@ -466,9 +466,9 @@ void enlever_propriete_joueur(t_joueur tab_joueur[],int i,t_case plateau[],int j
 // fonction de jeu
 void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banque)
 {
-    /* fonction qui permet d'hypotéquer une propriétée
-       Prend en paramètre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
-       Renvoie un bool, True si il a hypotéqué, false sinon
+    /* fonction qui permet d'hypotÃ©quer une propriÃ©tÃ©e
+       Prend en paramÃ¨tre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
+       Renvoie un bool, True si il a hypotÃ©quÃ©, false sinon
     */
     char choix[10];
     int long_prop = update_propriete(tab_joueur, i, plateau);
@@ -481,10 +481,10 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
 
     do
     {
-        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotéquer
+        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotÃ©quer
         fflush(stdin);
         gets(choix);
-        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1) // Si la propriete est hypothéqué
+        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1) // Si la propriete est hypothÃ©quÃ©
         {
             printf("Cette propriete est deja hypotheque \n");
         }
@@ -494,7 +494,7 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
     {
         if ((tab_joueur[i].proprietes[choix[0]-49].groupe_cartes == tab_joueur[i].proprietes[j].groupe_cartes) && (tab_joueur[i].proprietes[choix[0]-49].position != tab_joueur[i].proprietes[j].position))
         {
-            // Le joueur a une carte du même groupede couleur
+            // Le joueur a une carte du mÃªme groupede couleur
             if ((tab_joueur[i].proprietes[choix[0]-49].nb_maison > 0) || (tab_joueur[i].proprietes[choix[0]-49].nb_hotel > 0))
             {
                 // La propriete que le joueur hypoteque a une maison ou un hotel
@@ -519,9 +519,9 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
             }
         }
     }
-    // On donne au joueurs l'argent de l'hypothéque
+    // On donne au joueurs l'argent de l'hypothÃ©que
     tab_joueur[i].argent += tab_joueur[i].proprietes[choix[0]-49].val_hypotheque;
-    // On met la propriété en hypothéque
+    // On met la propriÃ©tÃ© en hypothÃ©que
     tab_joueur[i].proprietes[choix[0]-49].hypoteque=true;
     plateau[tab_joueur[i].proprietes[choix[0]-49].position].hypoteque = true;
 }
@@ -529,12 +529,12 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
 // fonction d'instance
 int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]) // NATHAN
 {
-    /* Update les propriétés dees joueurs
-       Prend en paramètre le tableau de joueur, l'indice du joueur, le plateau
-       Renvoie le nombre de propriétés du joueur
+    /* Update les propriÃ©tÃ©s dees joueurs
+       Prend en paramÃ¨tre le tableau de joueur, l'indice du joueur, le plateau
+       Renvoie le nombre de propriÃ©tÃ©s du joueur
     */
-    int nb = 0; // Nombre de propriété que le joueur a
-    for (int j = 0; j < 32; j++) // Compte le nombre de propriété du joueur
+    int nb = 0; // Nombre de propriÃ©tÃ© que le joueur a
+    for (int j = 0; j < 32; j++) // Compte le nombre de propriÃ©tÃ© du joueur
     {
         if (plateau[j].num_joueur == tab_joueur[i].numero)
         {
@@ -543,7 +543,7 @@ int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]) // NATHAN
     }
     int compteur = 0;
     int total = 0;
-    for (int j = 0; j < 32; j++) // Remplit le tableau de propriété du joueur
+    for (int j = 0; j < 32; j++) // Remplit le tableau de propriÃ©tÃ© du joueur
     {
         if (plateau[j].num_joueur == tab_joueur[i].numero)
         {
@@ -563,7 +563,7 @@ int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]) // NATHAN
 
 void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int proprietaire,t_case plateau[])
 {
-    int nb_hypoteque=0;//nb de propriete hypotequé
+    int nb_hypoteque=0;//nb de propriete hypotequÃ©
     int nb_prop_j=tab_joueur[i].nb_propriete;
     int iterateur=0;
     if (tab_joueur[i].argent>=montant)
@@ -581,7 +581,7 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
         {
             do
             {
-                //sert a verifier qu'il reste des propriété a hypothequer
+                //sert a verifier qu'il reste des propriÃ©tÃ© a hypothequer
                 printf("Vous n'avez pas assez d'argent pour payer, vous allez devoir hypotequer\n");
                 hypotheque_faillite(tab_joueur,i,plateau,p_banque);//appel de la fonction d'hypotheque pour la faillite
 
@@ -592,7 +592,7 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
                 }
 
 
-                iterateur+=1;//nombre de proprieté hypothequé
+                iterateur+=1;//nombre de proprietÃ© hypothequÃ©
             }
             while (iterateur==nb_prop_j ^ tab_joueur[i].argent<montant);//verifier qu'on a plus rien a hypoteque ou que les hypoteque on rembourser le montant
 
@@ -600,9 +600,9 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
             {
                 printf("Malgre vos hypoteques vous ne pouvez toujours pas payer.\nVous faites faillite\n");
                 tab_joueur[i].en_faillite=true;
-                if (proprietaire==0)//veut dire que le joueur doit de largent à la banque
+                if (proprietaire==0)//veut dire que le joueur doit de largent Ã  la banque
                 {
-                    //rendre les propiétés a la banque (les rendres libres et plus hypothequer)
+                    //rendre les propiÃ©tÃ©s a la banque (les rendres libres et plus hypothequer)
                     for (int k=0; k<=nb_prop_j; k++)
                     {
                         int position_prop_a_supp=tab_joueur[i].proprietes[0].position;//indice 0 car on enleve les propriete du tableau a chaque fois
@@ -617,6 +617,7 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
                         int position_prop_a_echanger=tab_joueur[i].proprietes[0].position; //indice 0 car on enleve les propriete du tableau a chaque fois
                         enlever_propriete_joueur(tab_joueur,i,plateau,position_prop_a_echanger);
                         propriete_a_joueur(tab_joueur,proprietaire,plateau,position_prop_a_echanger);
+                        tab[proprietaire].argent+=tab[i].argent; //restitue l'argent au creancier
                     }
                 }
             }
