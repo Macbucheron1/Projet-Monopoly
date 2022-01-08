@@ -1,0 +1,16 @@
+// fonction de jeu
+bool salaire(t_joueur tab_joueur[],int de[2],int i) 
+{
+    /* Permet de donner le salaire au joueur si celui ci passe par la case depart
+       Prend en paramètre le tableau de joueur, la liste de de du joueur et l'indice du joueur qui joue
+       Renvoie True si le joueur a recu un salaire, false sinon
+    */
+    int addposition=tab_joueur[i].position+de[0]+de[1];//on additionne la valeur des dés avec la position du joueur
+    if (addposition>32)//on vérifie si le joueur passe par la case départ
+  {
+      tab_joueur[i].position=addposition%32;//on actualise sa position
+      tab_joueur[i].argent+=200;//on incrémente l'argent du joueur
+      return true;
+  }
+  return false;
+}
