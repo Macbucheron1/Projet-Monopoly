@@ -1,5 +1,10 @@
+//Fonction de sauvegarde du plateau
 void sauvegarderplateau(FILE* sauv,t_case plateau[])
 {
+    /* La procédure sauvegarde du plateau
+       Prend en paramètre l'adresse du fichier qui contiendra la sauvegarde et un tableau comptenant les structures cases,
+       Ne renvoie rien
+    */
     for(int i=0;i < 32;i++)
     {
         fprintf(sauv,"%d %d %d %d %d",plateau[i].num_joueur,plateau[i].hypoteque,plateau[i].val_hypotheque,plateau[i].nb_maison,plateau[i].nb_hotel);
