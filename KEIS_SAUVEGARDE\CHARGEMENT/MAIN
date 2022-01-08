@@ -1,0 +1,15 @@
+//Exemple de main pour l'appel des fonctions
+int main()
+{
+    FILE* sauvj;
+    sauvj = fopen("nom du fichier txt a mettre dans le même dossier","r+");
+    FILE* sauvp;
+    sauvp = fopen("nom du fichier txt a mettre dans le même dossier","r+");
+    sauvegarderplateau(sauvp,plateau);
+    sauvegarderjoueur(sauvj,tabj);
+    chargerjoueur(sauvj, tabj);
+    chargerplateau(sauvp, plateau);
+    fclose(sauvj);
+    fclose(sauvp);
+    return 0;
+}
