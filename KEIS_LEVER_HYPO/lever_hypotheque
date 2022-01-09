@@ -1,0 +1,141 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <time.h>
+#include <string.h>
+
+#define TAILLE_NOM 16
+#define TAILLE_PLATEAU 32
+#define TAILLE_LISTE 16
+
+typedef struct //case(ou cartes) du plateau
+{
+    char nom[25]; // Nom de la case
+    int position; //position de la case sur le plateau
+    int valeur; //prix d'achat
+    int num_joueur; //numéro du propriétaire(NULL si ya pas)
+    bool hypoteque; // boolee qui dit si la case est hypoteque
+    int val_hypotheque; // donne la valeur de l'hypotheque
+}t_case;
+
+typedef struct //joueur du plateau (max 4)
+{
+    char nom[TAILLE_NOM];
+    int numero; //Numéro du joueur
+    int position; //initialisé à 0, la case départ (modulo 32)
+    int argent; //à initialiser avec le montant de base (argent sur le compte, c'est à dire argent utilisable)
+    t_case proprietes[TAILLE_PLATEAU]; //propriétés détenue par le joueur (tableau de case)
+    bool en_prison; //booléen vérifiant si le joueur est en prison ou non (0 pas en prison, totu autre chiffre = en prison)
+    int tour_prison; //nombre de tour en prison(max: 3)
+    int carte_sortie_prison; //nombre de carte permettant au joueur de sortir de prison
+    bool en_faillite; //nous dit si le joueur est en faillite ou pas (s'il l'est ne pas afficher son tour sur le menu et son pion sur le plateau)
+    int nb_propriete; //Nombre de propriété
+}t_joueur;
+
+void afficher_case_jeu(t_case c) // LUC fait
+{
+    /* Procédure qui affiche une instance de case
+       Prend en paramètre une case
+       Ne renvoie rien
+    */
+    printf("Nom : %s \nPrix d'achat : %d\n",c.nom,c.valeur);
+    if (c.hypoteque == true)
+    {
+        printf("Cette propriete a ete hypotheque\n");
+    }
+    printf("\n"); //pour de la lisibilité
+}
+
+bool lever_hypotheque(t_joueur tab_joueur[],int i,t_case plateau[]) // NATHAN fait
+{
+    /* fonction qui permet d'hypotéquer une propriétée
+       Prend en paramètre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
+       Renvoie un bool, True si il a hypotéqué, false sinon
+    */
+    char choix[10];
+    int val=tab_joueur[i].proprietes[choix[0]-49].val_hypotheque;
+    int vall=val/100;
+    int pval=vall*10;
+    int ppval=val+pval;
+    do
+    {
+        printf("\nVoulez vous lever l'hypoteque d'une de vos propriete ? oui[1]  non[0]\n");//propose d'hypotéquer
+        fflush(stdin);
+        gets(choix);
+    } while (((choix[0] != 48) && (choix[0] != 49)) || (strlen(choix) > 1)); // 48 = 0 en code ascii
+
+    int long_prop = 5;
+    if (long_prop == 0) // Si pas de propriete renvoie false
+    {
+        printf("Vous n'avez pas de propriete\n");
+        return false;
+    }
+    printf("Vous avez %d proprietes, pour laquelle voulez-vous lever l'hypoteque ?\n\n", long_prop);
+    for (int j = 0; j < long_prop; j++) // affiche toutes les proprietes du joueur
+    {
+        printf("\nLa propriete numero %d : \n", j+1);
+        afficher_case_jeu(tab_joueur[i].proprietes[j]);
+    }
+    do
+    {
+        printf("\nDonnez le numero de la propriete pour laquelle vous souhaitez lever l'hypotheque : ");//propose de lever l'hypotéque
+        printf("Si vous souhaitez quitter[0]\n");
+        fflush(stdin);
+        gets(choix);
+        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 0) // Si la propriete n'est pas hypothéqué
+        {
+            printf("Cette propriete n'est pas hypothéquée \n");
+        }
+        if (choix[0] == 48) // Si le joueur ne veut pas hypothéqué
+        {
+            printf("Vous n'avez pas lever d'hypotheque \n");
+            return false;
+        }
+    } while ((choix[0] < '0') || (choix[0] > '0'+long_prop) || (strlen(choix) > 1) || (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1)); // 48 = 0 en code ascii
+    if(tab_joueur[i].argent<ppval)
+    {
+        printf("Vous n'avez pas les fonds nécessaires pour payer l'hypotheque et les intérets \n");
+        return false;
+    }
+    tab_joueur[i].argent-=ppval;
+    tab_joueur[i].proprietes[choix[0]-49].hypoteque = false;
+    lever_hypotheque(tab_joueur,i,plateau);
+    return true;
+}
+
+int main(int argc, const char * argv[]) {
+    t_case plateau[7];
+    t_case judo={"Judo",0,260,0,0,1200};
+    plateau[0] = judo;
+
+    t_case boxe={"Boxe",   0,    260,    1,   1,   1200};
+    plateau[1] = boxe;
+
+    t_case basket={"Basket",    0,    260,    0,   0,   1200};
+    plateau[2] = basket;
+
+    t_case foot={"Foot",   0,    260,    1,   1,   1200};
+    plateau[3] = foot;
+
+    t_case rugby={"Rugby",   0,    260,    1,   0,   1200};
+    plateau[4] = rugby;
+
+    t_case athletisme={"Athletisme",   0,    260,    0,   0,   1200};
+    plateau[5] = athletisme;
+
+    t_case natation={"Natation",   0,    260,    1,   0,   1200};
+    plateau[6] = natation;
+    
+    t_case prop[4];
+    prop[0]=natation;
+    prop[1]=rugby;
+    prop[2]=foot;
+    prop[3]=boxe;
+    t_joueur tab[1];
+    t_joueur joueur1={"keis",1,4,1200000,prop[4],0,0,0,0,4};
+    tab[0] = joueur1;
+    
+    lever_hypotheque(tab, 0, plateau);
+    
+    return 0;
+}
