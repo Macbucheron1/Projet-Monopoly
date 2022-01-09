@@ -98,10 +98,11 @@ void tirer_corruption(t_joueur tab_joueur[],int i, char* liste_corruption); // P
 bool achat(t_joueur tab_joueur[],t_case plateau[],int i); // Permet d'acheter une propriété
 void impot(t_joueur tab_joueur[],t_case plateau[],int i); // Impose le joueur si il est sur la case impot
 bool salaire(t_joueur tab_joueur[],int de[2],int i); // Fait avancer le joueur et lui donne 200 dollars si il passe sur la case depart
-int victoire(t_joueur tab_joueur[]); // Permet de verifier si un joueur à gagner
-void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_corruption); // Permet de tirer une carte comite olympique
+bool victoire(t_joueur tab_joueur[]); // Permet de verifier si un joueur à gagner
+void tirer_comite(t_joueur tab_joueur[],int i,char* liste_comite[]); // Permet de tirer une carte comite olympique
 void tirer_corruption(t_joueur tab_joueur[],int i, char* liste_corruption); // Permet de tirer une carte corruption
 bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int i);
+bool evenement(t_joueur tab_joueur[],t_case plateau[],int i,char* liste_comite[],char* liste_corruption[]);
 
 
 //fonction d'affichage

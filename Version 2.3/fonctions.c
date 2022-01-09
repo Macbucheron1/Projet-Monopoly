@@ -3,8 +3,8 @@
 // Fonction de deplacement de joueur
 void deplacement(int* liste_de, t_joueur tab_joueur[], int i) // NATHAN fait
 {
-    /*La procÃ©dure incrÃ©mente la position du joueur
-      Prend en paramÃ¨tre la liste de dÃ© et un pointeur sur le joueur qui se deplace
+    /*La procédure incrémente la position du joueur
+      Prend en paramètre la liste de dé et un pointeur sur le joueur qui se deplace
       Ne renvoie rien
     */
     if (salaire(tab_joueur, liste_de, i))
@@ -21,8 +21,8 @@ void deplacement(int* liste_de, t_joueur tab_joueur[], int i) // NATHAN fait
 // Fonction de deplacement de joueur
 void aller_a(int indice_case, t_joueur tab_joueur[], int i) // NATHAN fait
 {
-    /* La procÃ©dure actualise la position du joueur pour le mettre Ã  la case voulu
-       Prend en paramÃ¨tre lâ€™indice de la case et le joueur qui se dÃ©place,
+    /* La procédure actualise la position du joueur pour le mettre à la case voulu
+       Prend en paramètre l’indice de la case et le joueur qui se déplace,
        Ne renvoie rien
     */
 
@@ -32,8 +32,8 @@ void aller_a(int indice_case, t_joueur tab_joueur[], int i) // NATHAN fait
 // fonction pour prison
 void entrer_prison(t_joueur tab_joueur[], int i) // NATHAN fait
 {
-    /*La procÃ©dure envoie le joueur en prison. Elle change lâ€™etat prison du joueur et appelle la fonction aller Ã  pour lâ€™envoyer en prison
-      Prend en paramÃ¨tre le joueur
+    /*La procédure envoie le joueur en prison. Elle change l’etat prison du joueur et appelle la fonction aller à pour l’envoyer en prison
+      Prend en paramètre le joueur
       Ne renvoie rien
     */
     tab_joueur[i].en_prison = 1;
@@ -44,8 +44,8 @@ void entrer_prison(t_joueur tab_joueur[], int i) // NATHAN fait
 // fonction pour prison
 bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) // NATHAN fait
 {
-    /* Fonction qui permets Ã  un joueur de sortir de prison
-       Prend en paramÃ¨tre la liste de dÃ© et un pointeur sur le joueur
+    /* Fonction qui permets à un joueur de sortir de prison
+       Prend en paramètre la liste de dé et un pointeur sur le joueur
        Renvoie true si le joueur est sortie de prison, false sinon
     */
     if (tab_joueur[i].en_prison == false) // Si le joueur n'est pas en prison on ne va pas plus loin
@@ -59,7 +59,7 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i, t_case plateau[]
         hypotheque(tab_joueur, i, plateau, p_banque);
         Vendre_bien(tab_joueur, plateau, p_banque, i);
     }
-    if (tab_joueur[i].tour_prison >= 3) // Le joueur a passÃ© 3 tours en prison
+    if (tab_joueur[i].tour_prison >= 3) // Le joueur a passé 3 tours en prison
     {
         printf("Vous avez passez 3 tours en prison, vous payez 50 et sortez\n");
         tab_joueur[i].argent -= 50;
@@ -114,8 +114,8 @@ bool sortie_prison(int* liste_de, t_joueur tab_joueur[], int i, t_case plateau[]
 // fonction creation d'instance
 t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int groupe_cartes, char* nom, int couleur_fond, int couleur_texte, int valeur_hypotheque, int base_loyer, int loyer_1_maison, int loyer_2_maison, int loyer_3_maison, int loyer_4_maison, int loyer_1_hotel) // LUC NATHAN MAXIME fait
 {
-    /* Fonction qui crÃ©Ã©e une case
-       Prend en paramÃ¨tre toutes ses caractÃ©ristique
+    /* Fonction qui créée une case
+       Prend en paramètre toutes ses caractéristique
        Renvoie la case
     */
     t_case c;
@@ -147,7 +147,7 @@ t_case creation_case(int position,int valeur, int val_maison, int val_hotel, int
 t_joueur creation_joueur(int numero) // LUC fait
 {
     /* Permet la creation d'un joueur
-       Prend en paramÃ¨tre le numÃ©ro du joueur
+       Prend en paramètre le numéro du joueur
        Renvoie une instance de la classe joueur au debut de partie
     */
     t_joueur j;
@@ -175,7 +175,7 @@ t_joueur creation_joueur(int numero) // LUC fait
 t_banque creation_banque(void) // LUC fait
 {
     /* Permet la creation de la banque
-       Ne prend pas de paramÃ¨tre
+       Ne prend pas de paramètre
        Renvoie une instance de la classe banque au debut de partie
     */
     t_banque b;
@@ -190,21 +190,21 @@ t_banque creation_banque(void) // LUC fait
 // fonction creation plateau
 void creation_plateau(t_case* plateau) // MAXIME NATHAN Fait
 {
-    /* ProcÃ©dure de creation du plateau
-       Prend en paramÃ¨tre un tableau qui sera le plateau
+    /* Procédure de creation du plateau
+       Prend en paramètre un tableau qui sera le plateau
        Ne renvoie rien
     */
 
-    // Groupe 1 = PropriÃ©tÃ©s , 2 cases , vert caca d'oie , blanc
-    // Groupe 2 = PropriÃ©tÃ©s , 3 cases , turquoise , blanc
-    // Groupe 3 = PropriÃ©tÃ©s , 3 cases , violet , blanc
-    // Groupe 4 = PropriÃ©tÃ©s , 2 cases , gris foncÃ© , blanc
-    // Groupe 5 = PropriÃ©tÃ©s , 2 cases , rouge , blanc
-    // Groupe 6 = PropriÃ©tÃ©s , 2 cases , jaune , noir
-    // Groupe 7 = PropriÃ©tÃ©s , 3 cases , vert , blanc
-    // Groupe 8 = PropriÃ©tÃ©s , 2 cases , bleu , blanc
+    // Groupe 1 = Propriétés , 2 cases , vert caca d'oie , blanc
+    // Groupe 2 = Propriétés , 3 cases , turquoise , blanc
+    // Groupe 3 = Propriétés , 3 cases , violet , blanc
+    // Groupe 4 = Propriétés , 2 cases , gris foncé , blanc
+    // Groupe 5 = Propriétés , 2 cases , rouge , blanc
+    // Groupe 6 = Propriétés , 2 cases , jaune , noir
+    // Groupe 7 = Propriétés , 3 cases , vert , blanc
+    // Groupe 8 = Propriétés , 2 cases , bleu , blanc
     // Groupe 9 = Gares, 4 cases , blanc , noir
-    // Groupe 10 = carte communautÃ©,
+    // Groupe 10 = carte communauté,
     // Groupe 11 = carte chance
     // Groupe 12 = prison
     // Groupe 13 = parc gratuit
@@ -344,8 +344,8 @@ void creation_plateau(t_case* plateau) // MAXIME NATHAN Fait
 // fonction creation tableau joueur
 void creation_tab_joueur(t_joueur tab_joueur[]) // NATHAN fait
 {
-    /* CrÃ©Ã©e le tableau de joueurs, permet de choisir le nombre de joueur
-       Prend en paramÃ¨tre la tableau des joueurs
+    /* Créée le tableau de joueurs, permet de choisir le nombre de joueur
+       Prend en paramètre la tableau des joueurs
        Ne renvoie rien
     */
     char choix[10];
@@ -416,33 +416,33 @@ void creation_tab_joueur(t_joueur tab_joueur[]) // NATHAN fait
 // fonction affichage d'instance
 void afficher_joueur(t_joueur j) // LUC fait
 {
-    /* ProcÃ©dure qui affiche une instance de joueur
-       Prend en paramÃ¨tre un joueur
+    /* Procédure qui affiche une instance de joueur
+       Prend en paramètre un joueur
        Ne renvoie rien
     */
     printf("Voici le JOUEUR:\n");
     printf("nom:%s\nnumero:%d\nposition:%d\nargent:%d\netes-vous en prison?:%d\ncombien de tour en prison:%d\nnb de cartes sorites de prison:%d\nfaillite: %d\n",j.nom,j.numero,j.position,j.argent,j.en_prison,j.tour_prison,j.carte_sortie_prison, j.en_faillite);
-    printf("\n"); //pour de la lisibilitÃ©
+    printf("\n"); //pour de la lisibilité
 }
 
 // fonction affichage d'instance
 void afficher_case(t_case c) // LUC fait
 {
-    /* ProcÃ©dure qui affiche une instance de case
-       Prend en paramÃ¨tre une case
+    /* Procédure qui affiche une instance de case
+       Prend en paramètre une case
        Ne renvoie rien
     */
     printf("Voici la CASE:\n");
     printf("nom: %s\nposition:%d\nprix d'achat:%d\nnum joueur la possedant:%d\nnombre de maison:%d\nya til un hotel:%d\nprix dachat d'une maison:%d\nprix d'achat d'un hotel:%d\nquel groupe de carte:%d\nvaleur de l'hypotheque:%d\nHypotheque:%d",c.nom,c.position,c.valeur,c.num_joueur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.val_hypotheque, c.hypoteque);
     printf("Loyer avec 1 maison:%d\nLoyer avec 2 maison:%d\nLoyer avec 3 maison:%d\nLoyer avec 4 maison:%d\nLoyer avec 1 hotel:%d\n", c.loyer_1_maison, c.loyer_2_maison, c.loyer_3_maison, c.loyer_4_maison, c.loyer_1_hotel);
-    printf("\n"); //pour de la lisibilitÃ©
+    printf("\n"); //pour de la lisibilité
 }
 
 // fonction affichage dans le jeu
 void afficher_case_jeu(t_case c) // LUC fait
 {
-    /* ProcÃ©dure qui affiche une instance de case
-       Prend en paramÃ¨tre une case
+    /* Procédure qui affiche une instance de case
+       Prend en paramètre une case
        Ne renvoie rien
     */
     printf("Nom : %s \nPrix d'achat : %d\nNombre de maison : %d\nNombre d'Hotel : %d\nPrix d'achat maison : %d\nPrix d'achat hotel : %d\nQuel groupe de carte : %d\nLoyer sans maison : %d\n",c.nom,c.valeur,c.nb_maison,c.nb_hotel,c.val_maison,c.val_hotel,c.groupe_cartes, c.base_loyer);
@@ -452,26 +452,26 @@ void afficher_case_jeu(t_case c) // LUC fait
     {
         printf("Cette propriete a ete hypotheque\n");
     }
-    printf("\n"); //pour de la lisibilitÃ©
+    printf("\n"); //pour de la lisibilité
 }
 
 // fonction affichage d'instance
 void afficher_banque(t_banque banque) // LUC fait
 {
-    /* ProcÃ©dure qui affiche une instance de banque
-       Prend en paramÃ¨tre la banque
+    /* Procédure qui affiche une instance de banque
+       Prend en paramètre la banque
        Ne renvoie rien
     */
     printf("Voici la BANQUE:\n");
     printf("maisons restantes:%d\nhotels restant:%d\n",banque.nb_maison_restante,banque.nb_hotel_restant);
-    printf("\n"); //pour de la lisibilitÃ©
+    printf("\n"); //pour de la lisibilité
 }
 
-// fonction pour les dÃ©s
+// fonction pour les dés
 void lance_de(int* de) // NATHAN fait
 {
-    /* ProcÃ©dure qui prend en paramÃ¨tre une liste de 2 dÃ© et qui les lance
-       Prend en paramÃ¨tre la liste de dÃ©
+    /* Procédure qui prend en paramètre une liste de 2 dé et qui les lance
+       Prend en paramètre la liste de dé
        Ne renvoie rien
     */
     de[0] = (rand()%6)+1;
@@ -479,12 +479,12 @@ void lance_de(int* de) // NATHAN fait
 
 }
 
-// fonction pour les dÃ©s
+// fonction pour les dés
 bool double_de(int* de) // NATHAN
 {
     /* La fonction verifie si le joueur a fait un double
-       Prend en paramÃ¨tre une liste de dÃ©
-       Renvoie un boolÃ©en, True si double, False si non
+       Prend en paramètre une liste de dé
+       Renvoie un booléen, True si double, False si non
     */
     if(de[0] == de[1])
     {
@@ -500,7 +500,7 @@ bool double_de(int* de) // NATHAN
 bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) // Maxime il faut rajouter faillite
 {
     /* Permet de faire payer un joueur si il est sur la case d'un autre joueur
-       Prend en paramÃ¨Ã¨tre le tableau de joueur, l'indice du joueur qui joue et le plateau
+       Prend en paramèètre le tableau de joueur, l'indice du joueur qui joue et le plateau
        revoie un booleen
     */
     int option;
@@ -539,11 +539,12 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
                 {
                     tab_joueur[i].argent -= plateau[tab_joueur[i].position].base_loyer;
                     tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += plateau[tab_joueur[i].position].base_loyer;
-                }/*
+
+                }
                 else
                 {
-                    en_faillite(tab_joueur, i, cases.base_loyer, banque, cases.num_joueur);
-                }*/
+                    en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+                }
                 break;
             }
             case 1: // 1 maison
@@ -552,12 +553,11 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
                 {
                     tab_joueur[i].argent -= plateau[tab_joueur[i].position].loyer_1_maison;
                     tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += plateau[tab_joueur[i].position].loyer_1_maison;
-                }/*
+                }
                 else
                 {
-                    //en_faillite(tab_joueur, i, cases.loyer_1_maison, banque, cases.num_joueur);
-                    continue;
-                }*/
+                    en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+                }
                 break;
             }
             case 2: // 2 maisons
@@ -566,12 +566,11 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
                 {
                     tab_joueur[i].argent -= plateau[tab_joueur[i].position].loyer_2_maison;
                     tab_joueur[plateau[tab_joueur[i].position].num_joueur].argent += plateau[tab_joueur[i].position].loyer_2_maison;
-                }/*
+                }
                 else
                 {
-                    //en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].loyer_2_maison, banque, plateau[tab_joueur[i].position].num_joueur);
-                    continue;
-                }*/
+                    en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+                }
                 break;
             }
             case 3: // 3 maisons
@@ -580,12 +579,11 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
                 {
                     tab_joueur[i].argent -= plateau[tab_joueur[i].position].loyer_3_maison;
                     tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += plateau[tab_joueur[i].position].loyer_3_maison;
-                }/*
+                }
                 else
                 {
-                    //en_faillite(tab_joueur, i, cases.loyer_3_maison, banque, cases.num_joueur);
-                    continue;
-                }*/
+                    en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+                }
                 break;
             }
             case 4: // 4 maisons
@@ -594,12 +592,12 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
                 {
                     tab_joueur[i].argent -= plateau[tab_joueur[i].position].loyer_4_maison;
                     tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += plateau[tab_joueur[i].position].loyer_4_maison;
-                }/*
+                }
                 else
                 {
-                    //en_faillite(tab_joueur, i, cases.loyer_4_maison, banque, cases.num_joueur);
-                    continue;
-                }*/
+                    en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+
+                }
                 break;
             }
             case 5: // 0 maisons 1 hotel
@@ -608,12 +606,12 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
                 {
                     tab_joueur[i].argent -= plateau[tab_joueur[i].position].loyer_1_hotel;
                     tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += plateau[tab_joueur[i].position].loyer_1_hotel;
-                }/*
+                }
                 else
                 {
-                    //en_faillite(tab_joueur, i, cases.loyer_1_hotel, banque, cases.num_joueur);
-                    continue;
-                }*/
+                    en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+
+                }
                 break;
             }
         }
@@ -629,12 +627,12 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
             {
                 tab_joueur[i].argent -= 25;
                 tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += 25;
-            }/*
+            }
             else
             {
-                //en_faillite(tab_joueur, i, 25, banque, cases.num_joueur);
-                continue;
-            }*/
+                en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+
+            }
         }
         else if(nb_gare == 2) // Si 2 gares
         {
@@ -642,12 +640,12 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
             {
                 tab_joueur[i].argent -= 50;
                 tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += 50;
-            }/*
+            }
             else
             {
-                //en_faillite(tab_joueur, i, 50, banque, cases.num_joueur);
-                continue;
-            }*/
+                en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+
+            }
         }
         else if(nb_gare ==3) // Si 3 gardes
         {
@@ -655,12 +653,12 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
             {
                 tab_joueur[i].argent -= 100;
                 tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += 100;
-            }/*
+            }
             else
             {
-                //en_faillite(tab_joueur,i,100, banque, cases.num_joueur);
-                continue;
-            }*/
+                en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+
+            }
         }
         else if(nb_gare ==4) // Si 4 gares
         {
@@ -668,16 +666,16 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
             {
                 tab_joueur[i].argent -= 200;
                 tab_joueur[plateau[tab_joueur[i].position].num_joueur-1].argent += 200;
-            }/*
+            }
             else
             {
-                //en_faillite(tab_joueur, i, 200, banque, cases.num_joueur);
-                continue;
-            }*/
+                en_faillite(tab_joueur, i, plateau[tab_joueur[i].position].base_loyer, p_banque, plateau[tab_joueur[i].position].num_joueur-1, plateau);
+
+            }
         }
         return true;
     }
-    else // Si pas sur la propriÃ©tÃ© d'un autre joueur
+    else // Si pas sur la propriété d'un autre joueur
     {
         //printf("Vous n'etes pas sur la case de quelqu'un d'autre, vous ne payez pas\n");
         return false;
@@ -687,8 +685,8 @@ bool loyer(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* p_banque) /
 // Fonction de tour
 void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* liste_corruption[], char* liste_comite[]) // NATHAN a refaire voir feuille dans pochette
 {
-    /* ProcÃ©dure qui fait un tour Ã  tout les joueurs
-       Prend en paramÃ¨Ã¨tre le tableau des joueurs, le plateau et la banque
+    /* Procédure qui fait un tour à tout les joueurs
+       Prend en paramèètre le tableau des joueurs, le plateau et la banque
        Ne renvoie rien
     */
     for (int i = 0; i < 4; i++)
@@ -708,8 +706,10 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* lis
             sleep(3);
             int de[2];
             lance_de(de);
+            de[0] = 3;
+            de[1] = 2;
             afficher_plateau(plateau, tab_joueur);
-            sleep(2);
+            sleep(3);
             if (sortie_prison(de, tab_joueur, i, plateau, p_banque)) // Le joueur sors de prison donc ne joue pas plus pendant ce tour
             {
                 afficher_plateau(plateau, tab_joueur);
@@ -722,22 +722,118 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* lis
                 afficher_plateau(plateau, tab_joueur);
                 afficher_milieu_plateau(plateau, tab_joueur, i, de);
                 gotoligcol(54, 0);
-                achat(tab_joueur, plateau, i);
+                if (evenement(tab_joueur, plateau, i, liste_comite, liste_corruption) == true)
+                {
+                    sleep(5);
+                    gotoligcol(0,0);
+                    afficher_plateau(plateau, tab_joueur);
+
+                }
                 afficher_milieu_plateau(plateau, tab_joueur, i, de);
-                acheter_maison_hotel(tab_joueur, i, plateau, p_banque);
+                sleep(5);
+                clear_bas();
+                loyer(tab_joueur, i, plateau, p_banque);
+                sleep(5);
+                clear_bas();
+                if (achat(tab_joueur, plateau, i) == true)
+                {
+                    sleep(1);
+                    gotoligcol(0,0);
+                    afficher_plateau(plateau, tab_joueur);
+                }
                 afficher_milieu_plateau(plateau, tab_joueur, i, de);
-                gotoligcol(54, 0);
-                //hypotheque(tab_joueur, i, plateau, p_banque);
-                sleep(4);
+                sleep(5);
+                clear_bas();
+                if (acheter_maison_hotel(tab_joueur, i, plateau, p_banque) == true)
+                {
+                    sleep(1);
+                    gotoligcol(0,0);
+                    afficher_plateau(plateau, tab_joueur);
+                }
+                afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                sleep(5);
+                clear_bas();
+                hypotheque(tab_joueur, i, plateau, p_banque);
+                afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                sleep(5);
+                clear_bas();
+                if (Vendre_bien(tab_joueur, plateau, p_banque, i) == true)
+                {
+                    gotoligcol(0,0);
+                    afficher_plateau(plateau, tab_joueur);
+                }
+                sleep(2);
                 if (double_de(de)) // Le joueur a fait un double
                 {
                     system("cls");
                     // Le joueur joue une 2eme fois
-
+                    gotoligcol(0, 0);
+                    afficher_plateau(plateau, tab_joueur);
+                    sleep(3);
+                    lance_de(de);
+                    deplacement(de, tab_joueur, i);
+                    gotoligcol(0, 0);
+                    afficher_plateau(plateau, tab_joueur);
+                    afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                    gotoligcol(54, 0);
+                    loyer(tab_joueur, i, plateau, p_banque);
+                    sleep(5);
+                    clear_bas();
+                    if (achat(tab_joueur, plateau, i) == true)
+                    {
+                        gotoligcol(0,0);
+                        afficher_plateau(plateau, tab_joueur);
+                    }
+                    afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                    sleep(5);
+                    clear_bas();
+                    if (acheter_maison_hotel(tab_joueur, i, plateau, p_banque) == true)
+                    {
+                        gotoligcol(0,0);
+                        afficher_plateau(plateau, tab_joueur);
+                    }
+                    afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                    sleep(5);
+                    clear_bas();
+                    hypotheque(tab_joueur, i, plateau, p_banque);
+                    afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                    sleep(5);
+                    clear_bas();
                     if (double_de(de)) // Le joueur a fait 2 doubles
                     {
                         // Le joueur joue une 3eme fois
-
+                        system("cls");
+                        gotoligcol(0, 0);
+                        afficher_plateau(plateau, tab_joueur);
+                        sleep(3);
+                        lance_de(de);
+                        deplacement(de, tab_joueur, i);
+                        gotoligcol(0, 0);
+                        afficher_plateau(plateau, tab_joueur);
+                        afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                        gotoligcol(54, 0);
+                        loyer(tab_joueur, i, plateau, p_banque);
+                        sleep(5);
+                        clear_bas();
+                        if (achat(tab_joueur, plateau, i) == true)
+                        {
+                            gotoligcol(0,0);
+                            afficher_plateau(plateau, tab_joueur);
+                        }
+                        afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                        sleep(5);
+                        clear_bas();
+                        if (acheter_maison_hotel(tab_joueur, i, plateau, p_banque) == true)
+                        {
+                            gotoligcol(0,0);
+                            afficher_plateau(plateau, tab_joueur);
+                        }
+                        afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                        sleep(5);
+                        clear_bas();
+                        hypotheque(tab_joueur, i, plateau, p_banque);
+                        afficher_milieu_plateau(plateau, tab_joueur, i, de);
+                        sleep(5);
                         if (double_de(de))
                         {
                             printf("Vous allez en prison");
@@ -753,8 +849,8 @@ void tour(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* lis
 // fonction pour les tours
 bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banque* banque) // MAXIME fait
 {
-//La fonction permet au joueur dâ€™acheter une maison ou un hÃ´tel (elle lui demande)
-//Prend en paramÃ¨tre un pointeur sur le joueur, le plateau, un pointeur sur la banque)
+//La fonction permet au joueur d’acheter une maison ou un hôtel (elle lui demande)
+//Prend en paramètre un pointeur sur le joueur, le plateau, un pointeur sur la banque)
 //renvoie un booleen(true si il a achete false sinon)
     if(plateau[tab_joueur[i].position].groupe_cartes <=8)//regarde si c'est bien des propriete
     {
@@ -848,7 +944,7 @@ bool acheter_maison_hotel(t_joueur tab_joueur[], int i, t_case plateau[], t_banq
                 return false;
             }
         }
-        else if(plateau[tab_joueur[i].position].num_joueur != tab_joueur[i].numero) // La case appartient Ã  un autre joueur ou Ã  personne
+        else if(plateau[tab_joueur[i].position].num_joueur != tab_joueur[i].numero) // La case appartient à un autre joueur ou à personne
         {
             return false;
         }
@@ -881,7 +977,7 @@ void gotoligcol( int lig, int col ) // MAXIME fait
 void Color(int couleurDuTexte,int couleurDeFond) // MAXIME fait
 {
     /* Change la couleur du fond
-       Prend en paramÃ¨tre la couleur du texte et du fond
+       Prend en paramètre la couleur du texte et du fond
        Ne renvoie rien
     */
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
@@ -891,9 +987,9 @@ void Color(int couleurDuTexte,int couleurDeFond) // MAXIME fait
 // Fonction d'affichage
 int Longueur(int Valeur) // MAXIME fait
 {
-    /* calcul le nombre de caractÃ¨re d'un nombre
-       Prend en paramÃ¨tre le nombre
-       Renvoie le nombre de charactÃ¨re du nombre
+    /* calcul le nombre de caractère d'un nombre
+       Prend en paramètre le nombre
+       Renvoie le nombre de charactère du nombre
     */
 	int Retour = 0;
 	if(Valeur == 0)
@@ -913,7 +1009,7 @@ int Longueur(int Valeur) // MAXIME fait
 void afficher_valeur_case(int indice, t_case plateau[]) // MAXIME fait
 {
     /* Affiche la valeur de la case
-       Prend en paramÃ¨tre l'indice de la case et le plateau
+       Prend en paramètre l'indice de la case et le plateau
        Ne renvoie rien
     */
     Color(plateau[indice].couleur_texte,plateau[indice].couleur_fond);
@@ -929,8 +1025,8 @@ void afficher_valeur_case(int indice, t_case plateau[]) // MAXIME fait
 // Fonction d'affichage
 void afficher_nom_proprietaire(int indice, t_case plateau[], t_joueur tab_joueur[], int num_joueur) // MAXIME fait
 {
-    /* Permet d'afficher le nom du propriÃ©taire de la case
-       Prend en paramÃ¨tre l'indice du joueur, le plateau, le tableau de joueur et le numero du joueur
+    /* Permet d'afficher le nom du propriétaire de la case
+       Prend en paramètre l'indice du joueur, le plateau, le tableau de joueur et le numero du joueur
        Ne renvoie rien
     */
     Color(plateau[indice].couleur_texte, plateau[indice].couleur_fond);
@@ -1228,7 +1324,7 @@ void afficher_plateau(t_case plateau[], t_joueur tab_joueur[]) // MAXIME fait
         {
             creation_sous_case1(plateau,tab_joueur,i);
         }
-        else if(i >=9 && i <= 15)//permet de creer les 2 colonnes sur les cotÃ©
+        else if(i >=9 && i <= 15)//permet de creer les 2 colonnes sur les coté
         {
             printf("|");
             creation_sous_case2(plateau, tab_joueur, i);
@@ -1244,7 +1340,7 @@ void afficher_plateau(t_case plateau[], t_joueur tab_joueur[]) // MAXIME fait
 void afficher_milieu_plateau(t_case plateau[], t_joueur tab_joueur[],int i, int de[]) // NATHAN en cours
 {
     /* Permet d'afficher des choses au milieu du plateau
-       Prend en paramÃ¨tre le plateau et le tableau de joueur
+       Prend en paramètre le plateau et le tableau de joueur
        Ne renvoie rien
     */
 
@@ -1253,7 +1349,7 @@ void afficher_milieu_plateau(t_case plateau[], t_joueur tab_joueur[],int i, int 
     gotoligcol(18, 75);
     printf("Vous avez fait %d et %d", de[0], de[1]);
     gotoligcol(20, 75);
-    printf("Vous etes a la case %s", plateau[tab_joueur[i].position].nom);
+    printf("Vous etes a la case %s                ", plateau[tab_joueur[i].position].nom);
     gotoligcol(22, 75);
     printf("Vous avez %de", tab_joueur[i].argent);
     gotoligcol(7, 21);
@@ -1277,18 +1373,18 @@ void afficher_milieu_plateau(t_case plateau[], t_joueur tab_joueur[],int i, int 
 // fonction de jeu
 bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banque) // NATHAN fait
 {
-    /* fonction qui permet d'hypotÃ©quer une propriÃ©tÃ©e
-       Prend en paramÃ¨tre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
-       Renvoie un bool, True si il a hypotÃ©quÃ©, false sinon
+    /* fonction qui permet d'hypotéquer une propriétée
+       Prend en paramètre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
+       Renvoie un bool, True si il a hypotéqué, false sinon
     */
     char choix[10];
     do
     {
-        printf("\nVoulez vous hypotequez une propriete oui[1]  non[0]\n");//propose d'hypotÃ©quer
+        printf("\nVoulez vous hypotequez une propriete oui[1]  non[0]\n");//propose d'hypotéquer
         fflush(stdin);
         gets(choix);
     } while (((choix[0] != 48) && (choix[0] != 49)) || (strlen(choix) > 1)); // 48 = 0 en code ascii
-    if (choix[0] == 48) // Ne veut pas hypothÃ©quer
+    if (choix[0] == 48) // Ne veut pas hypothéquer
     {
         return false;
     }
@@ -1307,15 +1403,15 @@ bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banqu
 
     do
     {
-        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotÃ©quer
+        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotéquer
         printf("Si vous souhaitez quitter[0]\n");
         fflush(stdin);
         gets(choix);
-        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1) // Si la propriete est hypothÃ©quÃ©
+        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1) // Si la propriete est hypothéqué
         {
             printf("Cette propriete est deja hypotheque \n");
         }
-        if (choix[0] == 48) // Si le joueur ne veut pas hypothÃ©quÃ©
+        if (choix[0] == 48) // Si le joueur ne veut pas hypothéqué
         {
             printf("Vous n'avez pas hypotheque \n");
             return false;
@@ -1325,7 +1421,7 @@ bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banqu
     {
         if ((tab_joueur[i].proprietes[choix[0]-49].groupe_cartes == tab_joueur[i].proprietes[j].groupe_cartes) && (tab_joueur[i].proprietes[choix[0]-49].position != tab_joueur[i].proprietes[j].position))
         {
-            // Le joueur a une carte du mÃªme groupede couleur
+            // Le joueur a une carte du même groupede couleur
             if ((tab_joueur[i].proprietes[choix[0]-49].nb_maison > 0) || (tab_joueur[i].proprietes[choix[0]-49].nb_hotel > 0))
             {
                 // La propriete que le joueur hypoteque a une maison ou un hotel
@@ -1350,9 +1446,9 @@ bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banqu
             }
         }
     }
-    // On donne au joueurs l'argent de l'hypothÃ©que
+    // On donne au joueurs l'argent de l'hypothéque
     tab_joueur[i].argent += tab_joueur[i].proprietes[choix[0]-49].val_hypotheque;
-    // On met la propriÃ©tÃ© en hypothÃ©que
+    // On met la propriété en hypothéque
     plateau[tab_joueur[i].proprietes[choix[0]-49].position].hypoteque = true;
     hypotheque(tab_joueur, i, plateau, p_banque);
     return false;
@@ -1361,12 +1457,12 @@ bool hypotheque(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banqu
 // fonction d'instance
 int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]) // NATHAN fait
 {
-    /* Update les propriÃ©tÃ©s dees joueurs
-       Prend en paramÃ¨tre le tableau de joueur, l'indice du joueur, le plateau
-       Renvoie le nombre de propriÃ©tÃ©s du joueur
+    /* Update les propriétés dees joueurs
+       Prend en paramètre le tableau de joueur, l'indice du joueur, le plateau
+       Renvoie le nombre de propriétés du joueur
     */
-    int nb = 0; // Nombre de propriÃ©tÃ© que le joueur a
-    for (int j = 0; j < 32; j++) // Compte le nombre de propriÃ©tÃ© du joueur
+    int nb = 0; // Nombre de propriété que le joueur a
+    for (int j = 0; j < 32; j++) // Compte le nombre de propriété du joueur
     {
         if (plateau[j].num_joueur == tab_joueur[i].numero)
         {
@@ -1375,7 +1471,7 @@ int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]) // NATHAN fa
     }
     int compteur = 0;
     int total = 0;
-     for (int j = 0; j < 32; j++) // Remplit le tableau de propriÃ©tÃ© du joueur
+     for (int j = 0; j < 32; j++) // Remplit le tableau de propriété du joueur
     {
         if (plateau[j].num_joueur == tab_joueur[i].numero)
         {
@@ -1394,12 +1490,12 @@ int update_propriete(t_joueur tab_joueur[],int i, t_case plateau[]) // NATHAN fa
 // fonction affichage
 void afficher_liste(char* liste[],int i) // LUC fait
 {
-    /* Permet d'afficher la "carte" commitÃ© ou corruption tirÃ©e, Ã  partir de son indice et de quelle liste elle est tirÃ©e
-       Prend en paramÃ¨tre une liste de chaine de caractÃ¨re et l'indice de la chaine que l'on veut afficher
+    /* Permet d'afficher la "carte" commité ou corruption tirée, à partir de son indice et de quelle liste elle est tirée
+       Prend en paramètre une liste de chaine de caractère et l'indice de la chaine que l'on veut afficher
        Ne renvoie rien
     */
     int iterateur=0;
-    while(liste[i][iterateur] != '\0')   //\0 correspond Ã  la fin de chaine
+    while(liste[i][iterateur] != '\0')   //\0 correspond à la fin de chaine
     {
         printf("%c",liste[i][iterateur]);
         iterateur++;
@@ -1410,7 +1506,7 @@ void afficher_liste(char* liste[],int i) // LUC fait
 void tirer_corruption(t_joueur tab_joueur[],int i, char* liste_corruption) // LUC fait
 {
     /* Permet de tirer une carte corruption
-       Prend en paramÃ¨tre le tableau de joueur, l'indice du joueur qui joue et la liste de corruption
+       Prend en paramètre le tableau de joueur, l'indice du joueur qui joue et la liste de corruption
        Ne renvoie rien
     */
     int carteCorTire = rand() % 16;
@@ -1529,10 +1625,10 @@ void tirer_corruption(t_joueur tab_joueur[],int i, char* liste_corruption) // LU
     }
 }
 
-void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_comite) // LUC fait
+void tirer_comite(t_joueur tab_joueur[],int i, char* liste_comite[]) // LUC fait
 {
     /* Permet de tirer une carte comite olympique
-       Prend en paramÃ¨tre le tableau de joueur, l'indice du joueur qui joue et la liste de comite olympique
+       Prend en paramètre le tableau de joueur, l'indice du joueur qui joue et la liste de comite olympique
        Ne renvoie rien
     */
     int carteComTire = rand() % 16;
@@ -1574,13 +1670,13 @@ void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_co
     switch(carteComTire)
     {
     case 0:
-        afficher_liste(liste_commite,0);
+        afficher_liste(liste_comite,0);
         tab_joueur[i].carte_sortie_prison+=1;
         break;
     case 1:
         do
         {
-            afficher_liste(liste_commite,1);
+            afficher_liste(liste_comite,1);
             gets(choix);
             if (choix[0] == 49)
             {
@@ -1594,11 +1690,11 @@ void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_co
         while (((choix[0] != 49) && (choix[0] != 50)) || (strlen(choix) > 1)); // 49 = 1 en code ascii
         break;
     case 2:
-        afficher_liste(liste_commite,2);
+        afficher_liste(liste_comite,2);
         tab_joueur[i].argent += 50;
         break;
     case 3:
-        afficher_liste(liste_commite,3); //on verifie que les autres joueur ne sont pas en faillite (quils jouent trs)
+        afficher_liste(liste_comite,3); //on verifie que les autres joueur ne sont pas en faillite (quils jouent trs)
         if(tab_joueur[B].en_faillite==false)
         {
             tab_joueur[B].argent -= 10;
@@ -1616,87 +1712,87 @@ void tirer_comite(t_joueur tab_joueur[],int i,char* liste_commite,char* liste_co
         }
         break;
     case 4:
-        afficher_liste(liste_commite,4);
+        afficher_liste(liste_comite,4);
         tab_joueur[i].argent += 200;
         break;
     case 5:
-        afficher_liste(liste_commite,5);
+        afficher_liste(liste_comite,5);
         tab_joueur[i].argent -= 100;
         break;
     case 6:
-        afficher_liste(liste_commite,6);
+        afficher_liste(liste_comite,6);
         tab_joueur[i].argent += 20;
         break;
     case 7:
-        afficher_liste(liste_commite,7);
+        afficher_liste(liste_comite,7);
         tab_joueur[i].argent += 100;
         break;
     case 8:
-        afficher_liste(liste_commite,8);
-        aller_a(1,tab_joueur, i); //definir la postion qu'on veut (ici premiere case)
+        afficher_liste(liste_comite,8);
+        aller_a(1,tab_joueur, i); //definiir la postion qu'on veut (ici premiere case)
         break;
     case 9:
-        afficher_liste(liste_commite,9);
+        afficher_liste(liste_comite,9);
         tab_joueur[i].argent += 25;
         break;
     case 10:
-        afficher_liste(liste_commite,10);
+        afficher_liste(liste_comite,10);
         tab_joueur[i].argent += 200;
         aller_a(0,tab_joueur, i); //definir la postion qu'on veut (depart ici)
         break;
     case 11:
-        afficher_liste(liste_commite,11);
+        afficher_liste(liste_comite,11);
         tab_joueur[i].argent -= 50;
         break;
     case 12:
-        afficher_liste(liste_commite,12);
+        afficher_liste(liste_comite,12);
         tab_joueur[i].argent += 10;
         break;
     case 13:
-        afficher_liste(liste_commite,13);
+        afficher_liste(liste_comite,13);
         tab_joueur[i].argent -= 50;
         break;
     case 14:
-        afficher_liste(liste_commite,14);
+        afficher_liste(liste_comite,14);
         entrer_prison(tab_joueur,i);
         break;
     case 15:
-        afficher_liste(liste_commite,15);
+        afficher_liste(liste_comite,15);
         tab_joueur[i].argent += 100;
         break;
     }
 }
 
-int victoire(t_joueur tab_joueur[]) // LUC fait
+bool victoire(t_joueur tab_joueur[]) // LUC fait
 {
     /* Fonction qui verifie si un joueur de gagner
-       Prend en paramÃ¨tre le tableau de joueur
-       Renvoie le numero du joueur qui a gagnÃ©
+       Prend en paramètre le tableau de joueur
+       Renvoie le numero du joueur qui a gagné
     */
 
     if(tab_joueur[0].en_faillite==true && tab_joueur[1].en_faillite==true && tab_joueur[2].en_faillite==true)
     {
         printf("Le joueur %d a gagner la partie. Felicitation !!!!!\n",tab_joueur[3].numero);
-        return 4;
+        return true;
     }
     else if(tab_joueur[1].en_faillite==true && tab_joueur[2].en_faillite==true && tab_joueur[3].en_faillite==true)
     {
         printf("Le joueur %d a gagner la partie. Felicitation !!!!!\n",tab_joueur[0].numero);
-        return 1;
+        return true;
     }
     else if(tab_joueur[2].en_faillite==true && tab_joueur[3].en_faillite==true && tab_joueur[0].en_faillite==true)
     {
         printf("Le joueur %d a gagner la partie. Felicitation !!!!!\n",tab_joueur[1].numero);
-        return 2;
+        return true;
     }
     else if(tab_joueur[3].en_faillite==true && tab_joueur[0].en_faillite==true && tab_joueur[1].en_faillite==true)
     {
         printf("Le joueur %d a gagner la partie. Felicitation !!!!!\n",tab_joueur[2].numero);
-        return 3;
+        return true;
     }
     else
     {
-        return 0;
+        return false;
     }
 }
 
@@ -1705,7 +1801,7 @@ int victoire(t_joueur tab_joueur[]) // LUC fait
 int nb_maisons_joueur(t_joueur tab_joueur[],int i) // LUC fait
 {
     /* Compte le nombre de maison du joueur
-       Prend en paramÃ¨tre le tableau de joueur et l'indice du joueur
+       Prend en paramètre le tableau de joueur et l'indice du joueur
        Renvoie le nombre de maison du joueur
     */
     int nb_maisons=0;
@@ -1724,7 +1820,7 @@ int nb_maisons_joueur(t_joueur tab_joueur[],int i) // LUC fait
 int nb_hotels_joueur(t_joueur tab_joueur[],int i) // LUC fait
 {
     /* Compte le nombre d'hotel du joueur
-       Prend en paramÃ¨tre le tableau de joueur et l'indice du joueur
+       Prend en paramètre le tableau de joueur et l'indice du joueur
        Renvoie le nombre d'hotel du joueur
     */
     int nb_hotels=0;
@@ -1743,10 +1839,10 @@ int nb_hotels_joueur(t_joueur tab_joueur[],int i) // LUC fait
 bool achat(t_joueur tab_joueur[],t_case plateau[],int i) // KEIS fait
 {
     /* Permet d'acheter une propriete
-       Prend en paramÃ¨tre le tableau de joueur, le plateau et l'indice du joueur qui joue
-       Renvoie true si le joueur a achetÃ© une propriÃ©tÃ© sinon false
+       Prend en paramètre le tableau de joueur, le plateau et l'indice du joueur qui joue
+       Renvoie true si le joueur a acheté une propriété sinon false
     */
-        if(plateau[tab_joueur[i].position].groupe_cartes <= 9)//on verifie si la case est une propriÃ©tÃ©
+        if(plateau[tab_joueur[i].position].groupe_cartes <= 9)//on verifie si la case est une propriété
        {
            if(plateau[tab_joueur[i].position].num_joueur==0)//on verifie si la case n'appartient a personne
           {
@@ -1754,21 +1850,21 @@ bool achat(t_joueur tab_joueur[],t_case plateau[],int i) // KEIS fait
                afficher_case_jeu(plateau[tab_joueur[i].position]);
                do
                {
-                   printf("\nVoulez vous achetez %s ? oui[1]  non[0]\n", plateau[tab_joueur[i].position].nom);//propose d'hypotÃ©quer
+                   printf("\nVoulez vous achetez %s ? oui[1]  non[0]\n", plateau[tab_joueur[i].position].nom);//propose d'hypotéquer
                    fflush(stdin);
                    gets(choix);
                } while (((choix[0] != 48) && (choix[0] != 49)) || (strlen(choix) > 1)); // 48 = 0 en code ascii
                if(choix[0] == 49) // Le joueur veut acheter
                 {
-                    if(tab_joueur[i].argent < plateau[tab_joueur[i].position].valeur)//on verfie si le joueur n'a pas les fonds nÃ©cessaires
+                    if(tab_joueur[i].argent < plateau[tab_joueur[i].position].valeur)//on verfie si le joueur n'a pas les fonds nécessaires
                     {
                         printf("Fonds insuffisants !\n");
                         return false;
                     }
-                    else if(tab_joueur[i].argent >= plateau[tab_joueur[i].position].valeur)//on verfie si le joueur a les fonds nÃ©cessaires
+                    else if(tab_joueur[i].argent >= plateau[tab_joueur[i].position].valeur)//on verfie si le joueur a les fonds nécessaires
                     {
-                        tab_joueur[i].argent-=plateau[tab_joueur[i].position].valeur;//on dÃ©crÃ©mente l'argent du joueur
-                        plateau[tab_joueur[i].position].num_joueur=tab_joueur[i].numero;//on actualise le propriÃ©taire de la case
+                        tab_joueur[i].argent-=plateau[tab_joueur[i].position].valeur;//on décrémente l'argent du joueur
+                        plateau[tab_joueur[i].position].num_joueur=tab_joueur[i].numero;//on actualise le propriétaire de la case
                         return true;
                     }
                 }
@@ -1786,15 +1882,15 @@ bool achat(t_joueur tab_joueur[],t_case plateau[],int i) // KEIS fait
 void impot(t_joueur tab_joueur[],t_case plateau[],int i) // KEIS fait
    {
     /* Permet d'imposer le joueur
-       Prend en paramÃ¨tre le tableau de joueur, le plateau et l'indice du joueur qui joue
+       Prend en paramètre le tableau de joueur, le plateau et l'indice du joueur qui joue
        Ne renvoie rien
     */
 
-       if(plateau[tab_joueur[i].position].groupe_cartes == 14)//on vÃ©rifie si le joueur est sur la case impÃ´t
+       if(plateau[tab_joueur[i].position].groupe_cartes == 14)//on vérifie si le joueur est sur la case impôt
        {
-          printf("        ImpÃ´t sur le revenu        \n");
-          printf("    Vous devez 200â‚¬ Ã  la banque!    \n ");
-          tab_joueur[i].argent-=200;//on dÃ©crÃ©mente son argent du montant de l'impÃ´t
+          printf("        Impôt sur le revenu        \n");
+          printf("    Vous devez 200€ à la banque!    \n ");
+          tab_joueur[i].argent-=200;//on décrémente son argent du montant de l'impôt
        }
     }
 
@@ -1802,14 +1898,14 @@ void impot(t_joueur tab_joueur[],t_case plateau[],int i) // KEIS fait
 bool salaire(t_joueur tab_joueur[],int de[2],int i) // KEIS fait
 {
     /* Permet de donner le salaire au joueur si celui ci passe par la case depart
-       Prend en paramÃ¨tre le tableau de joueur, la liste de de du joueur et l'indice du joueur qui joue
+       Prend en paramètre le tableau de joueur, la liste de de du joueur et l'indice du joueur qui joue
        Renvoie True si le joueur a recu un salaire, false sinon
     */
-    int addposition=tab_joueur[i].position+de[0]+de[1];//on additionne la valeur des dÃ©s avec la position du joueur
-    if (addposition>32)//on vÃ©rifie si le joueur passe par la case dÃ©part
+    int addposition=tab_joueur[i].position+de[0]+de[1];//on additionne la valeur des dés avec la position du joueur
+    if (addposition>32)//on vérifie si le joueur passe par la case départ
   {
       tab_joueur[i].position=addposition%32;//on actualise sa position
-      tab_joueur[i].argent+=200;//on incrÃ©mente l'argent du joueur
+      tab_joueur[i].argent+=200;//on incrémente l'argent du joueur
       return true;
   }
   return false;
@@ -1819,7 +1915,7 @@ bool salaire(t_joueur tab_joueur[],int de[2],int i) // KEIS fait
 void menu(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* liste_corruption[], char* liste_comite[]) // NATHAN rajouter charger partie
 {
     /* Affiche le menu d'avant jeu
-       Prend en parametre la liste des joueur, le plateau, le pointeur de banque, la liste des cartes corruptions et la liste des cartes comitÃ©s
+       Prend en parametre la liste des joueur, le plateau, le pointeur de banque, la liste des cartes corruptions et la liste des cartes comités
        Ne renvoie rien
     */
     system("cls");
@@ -1834,7 +1930,7 @@ void menu(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* lis
     char choix[10];
     do
     {
-        printf("\n                                                                        Que voulez vous faire : ");//propose d'hypotÃ©quer
+        printf("\n                                                                        Que voulez vous faire : ");//propose d'hypotéquer
         fflush(stdin);
         gets(choix);
     } while ((choix[0] < '1') || (choix[0] > '5') || (strlen(choix) > 1) || (strlen(choix) != 1)); // 48 = 0 en code ascii
@@ -1842,7 +1938,10 @@ void menu(t_joueur tab_joueur[], t_case plateau[], t_banque* p_banque, char* lis
     {
         system("cls");
         creation_tab_joueur(tab_joueur);
-        tour(tab_joueur, plateau, p_banque, liste_corruption, liste_comite);
+        while (! victoire(tab_joueur))
+        {
+            tour(tab_joueur, plateau, p_banque, liste_corruption, liste_comite);
+        }
     }
     else if (choix[0] == '2')
     {
@@ -1911,11 +2010,11 @@ int nb_gare_joueur(t_case plateau[], int i) // MAXIME fait
 void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int proprietaire,t_case plateau[]) // LUC faiy
 {
     /* Met en failite un joueur
-       Prend en paramÃ¨tre le tableau de joueur, l'indice du joueur, le montant Ã  payer, la personne a qui le joueur doit de l'argent (0 pour la banque) et le plateau de jeu
+       Prend en paramètre le tableau de joueur, l'indice du joueur, le montant à payer, la personne a qui le joueur doit de l'argent (0 pour la banque) et le plateau de jeu
        Ne renvoie rien
 
     */
-    int nb_hypoteque=0;//nb de propriete hypotequÃ©
+    int nb_hypoteque=0;//nb de propriete hypotequé
     int nb_prop_j=tab_joueur[i].nb_propriete;
     int iterateur=0;
     if (tab_joueur[i].argent>=montant)
@@ -1933,7 +2032,7 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
         {
             do
             {
-                //sert a verifier qu'il reste d) es propriÃ©tÃ© a hypothequer
+                //sert a verifier qu'il reste d) es propriété a hypothequer
                 printf("Vous n'avez pas assez d'argent pour payer, vous allez devoir hypotequer\n");
                 hypotheque_faillite(tab_joueur,i,plateau,p_banque);//appel de la fonction d'hypotheque pour la faillite
 
@@ -1944,7 +2043,7 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
                 }
 
 
-                iterateur+=1;//nombre de proprietÃ© hypothequÃ©
+                iterateur+=1;//nombre de proprieté hypothequé
             }
             while (iterateur == nb_prop_j ^ tab_joueur[i].argent<montant);//verifier qu'on a plus rien a hypoteque ou que les hypoteque on rembourser le montant
 
@@ -1952,9 +2051,9 @@ void en_faillite(t_joueur tab_joueur[],int i,int montant,t_banque* p_banque,int 
             {
                 printf("Malgre vos hypoteques vous ne pouvez toujours pas payer.\nVous faites faillite\n");
                 tab_joueur[i].en_faillite=true;
-                if (proprietaire==0)//veut dire que le joueur doit de largent Ã  la banque
+                if (proprietaire==0)//veut dire que le joueur doit de largent à la banque
                 {
-                    //rendre les propiÃ©tÃ©s a la banque (les rendres libres et plus hypothequer)
+                    //rendre les propiétés a la banque (les rendres libres et plus hypothequer)
                     for (int k=0; k<=nb_prop_j; k++)
                     {
                         int position_prop_a_supp=tab_joueur[i].proprietes[0].position;//indice 0 car on enleve les propriete du tableau a chaque fois
@@ -2001,7 +2100,7 @@ void propriete_a_joueur(t_joueur tab_joueur[],int i, t_case plateau[],int j) // 
     tab_joueur[i].proprietes[nb_prop_j].val_hotel=plateau[j].val_hotel;
     tab_joueur[i].proprietes[nb_prop_j].val_maison=plateau[j].val_maison;
     int iterateur=0;
-    while(plateau[j].nom[iterateur] != '\0')   //\0 correspond Ã  la fin de chaine
+    while(plateau[j].nom[iterateur] != '\0')   //\0 correspond à la fin de chaine
     {
         tab_joueur[i].proprietes[nb_prop_j].nom[iterateur]=plateau[j].nom[iterateur];
         iterateur++;
@@ -2023,8 +2122,8 @@ void propriete_a_joueur(t_joueur tab_joueur[],int i, t_case plateau[],int j) // 
 
 void enlever_propriete_joueur(t_joueur tab_joueur[],int i,t_case plateau[],int j)
 {
-    /* enleve la propriete choisie dns la liste de prop d'un joueur
-       Prend en paramÃ¨tre la liste de joueur, l'indice dun joueur qui joue, le plateau, l'indice de la case que l'on retire
+    /* enleve la propriete choisie dns la liste de prop d'un joueur , m=0 banque, m=1 autre joueur
+       Prend en paramètre la liste de joueur, l'indice dun joueur qui joue, le plateau, l'indice de la case que l'on retire
        Ne renvoie rien
     */
     int nb_prop_j=tab_joueur[i].nb_propriete;
@@ -2077,9 +2176,9 @@ void enlever_propriete_joueur(t_joueur tab_joueur[],int i,t_case plateau[],int j
 // fonction de jeu
 void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque* p_banque) // V2 NATHAN -> LUC fait
 {
-    /* fonction qui permet d'hypotÃ©quer une propriÃ©tÃ©e dans le cadre de la fonction faillite
-       Prend en paramÃ¨tre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
-       Renvoie un bool, True si il a hypotÃ©quÃ©, false sinon
+    /* fonction qui permet d'hypotéquer une propriétée dans le cadre de la fonction faillite
+       Prend en paramètre le tableau de joueur, le numero du joueur qui joue, le plateau, un pointeur sur la banque
+       Renvoie un bool, True si il a hypotéqué, false sinon
     */
     char choix[10];
     int long_prop = update_propriete(tab_joueur, i, plateau);
@@ -2092,10 +2191,10 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
 
     do
     {
-        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotÃ©quer
+        printf("\nDonnez le numero de la propriete que vous souhaitez hypotheque : ");//propose d'hypotéquer
         fflush(stdin);
         gets(choix);
-        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1) // Si la propriete est hypothÃ©quÃ©
+        if (tab_joueur[i].proprietes[choix[0]-49].hypoteque == 1) // Si la propriete est hypothéqué
         {
             printf("Cette propriete est deja hypotheque \n");
         }
@@ -2105,7 +2204,7 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
     {
         if ((tab_joueur[i].proprietes[choix[0]-49].groupe_cartes == tab_joueur[i].proprietes[j].groupe_cartes) && (tab_joueur[i].proprietes[choix[0]-49].position != tab_joueur[i].proprietes[j].position))
         {
-            // Le joueur a une carte du mÃªme groupede couleur
+            // Le joueur a une carte du même groupede couleur
             if ((tab_joueur[i].proprietes[choix[0]-49].nb_maison > 0) || (tab_joueur[i].proprietes[choix[0]-49].nb_hotel > 0))
             {
                 // La propriete que le joueur hypoteque a une maison ou un hotel
@@ -2130,9 +2229,9 @@ void hypotheque_faillite(t_joueur tab_joueur[],int i, t_case plateau[], t_banque
             }
         }
     }
-    // On donne au joueurs l'argent de l'hypothÃ©que
+    // On donne au joueurs l'argent de l'hypothéque
     tab_joueur[i].argent += tab_joueur[i].proprietes[choix[0]-49].val_hypotheque;
-    // On met la propriÃ©tÃ© en hypothÃ©que
+    // On met la propriété en hypothéque
     tab_joueur[i].proprietes[choix[0]-49].hypoteque=true;
     plateau[tab_joueur[i].proprietes[choix[0]-49].position].hypoteque = true;
 }
@@ -2151,7 +2250,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
 
     if (long_prop == 0) // Si pas de propriete renvoie false
     {
-        printf("Vous n'avez pas de propriete\n");
+        printf("Vous n'avez pas de propriete donc vous ne pouvez pas vendre de medaille\n");
         return false;
     }
     else// si le joueur a des propriete
@@ -2169,14 +2268,14 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
         }
         if(long_prop_maison == 0)//le joueur ne possede ni de maison ni d'hotel
         {
-            printf("Vous n'avez pas de bien\n");
+            printf("Vous n'avez pas de medaille a vendre\n");
             return false;
         }
         else // le joueur possede soit des maisons soit un hotel
         {
             do
             {
-                printf("voulez-vous vendre un bien? oui[1] non[0]");
+                printf("voulez-vous vendre une medaille? oui[1] non[0]");
                 fflush(stdin);
                 gets(choix);
             } while (((choix[0] != 48) && (choix[0] != 49)) || (strlen(choix) > 1)); // 48 = 0 en code ascii
@@ -2192,13 +2291,13 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                }
                do
                 {
-                    printf("\nDonnez le numero de la propriete sur laquelle vous voulez enlever un bien : ");
+                    printf("\nDonnez le numero de la propriete sur laquelle vous voulez enlever une medaille : ");
                     printf("Si vous souhaitez quitter[0]\n");
                     fflush(stdin);
                     gets(choix2);
                     if (choix2[0] == 48) // Si le joueur ne veut pas
                     {
-                        printf("Vous n'avez pas enleve de bien \n");
+                        printf("Vous n'avez pas enleve de medaille \n");
                         return false;
                     }
                 } while ((choix2[0] < '0') || (choix2[0] > '0'+long_prop) || (strlen(choix2) > 1)); // 48 = 0 en code ascii
@@ -2207,6 +2306,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                     plateau[tab_joueur[i].proprietes[choix2[0]-49].position].nb_maison -=1;
                     banque->nb_maison_restante+=1;
                     tab_joueur[i].argent+= (tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2;
+                    printf("Vous avez vendu une medaille\n");
                     return true;
                 }
                 else if(tab_joueur[i].proprietes[choix2[0]-49].nb_hotel == 1)//le joueur possede 1 hotel
@@ -2239,7 +2339,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                         {
                             do
                             {
-                                printf("vous avez plusieurs option : \n[1] : vous enlevez l'hotel et recuperez 4 maisons \n[2] : vous enlevez l'hotel et une maison et  vous ne recuperez que 3 maisons \n[3] : pareil mais vous ne recuperez que 2 maisons \n[4] : pareil mais vous ne recuperez qu'une maison \n[5] : vous enlevez tous");
+                                printf("vous avez plusieurs option : \n[1] : vous enlevez une double medaille et recuperez 4 medaille \n[2] : vous enlevez une double medaille et une medaille et  vous ne recuperez que 3 medailles \n[3] : pareil mais vous ne recuperez que 2 medailles \n[4] : pareil mais vous ne recuperez qu'une medaille \n[5] : vous enlevez tous");
                                 fflush(stdin);
                                 gets(option);
                             }while(((option[0] != 49) && (option[0] != 50) && (option[0] != 51) && (option[0] != 52) && (option[0] != 53)) || strlen(option) > 1);
@@ -2250,6 +2350,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=4;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2;
+                                printf("Vous avez vendu une double medailles\n");
                             }
                             else if(option[0] == 50)
                             {
@@ -2258,6 +2359,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=3;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + (tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2;
+                                printf("Vous avez vendu une double medailles et une medaille\n");
                             }
                             else if(option[0] == 51)
                             {
@@ -2266,6 +2368,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=2;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + (tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medaille et deux medailles\n");
                             }
                             else if(option[0] == 52)
                             {
@@ -2274,12 +2377,14 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 3*((tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2);
+                                printf("Vous avez vendu une double medailles et trois medailles\n");
                             }
                             else if(option[0] == 53)
                             {
                                 plateau[tab_joueur[i].proprietes[choix2[0]-49].position].nb_hotel -=1;
                                 banque->nb_hotel_restant += 1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 2*(tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medaille et 4 medailles\n");
                             }
                             break;
                         }
@@ -2287,7 +2392,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                         {
                             do
                             {
-                                printf("vous avez plusieurs option : \n[1] : vous enlevez l'hotel et vous ne recuperez que 3 maisons \n[2] : pareil mais vous ne recuperez que 2 maisons \n[3] : pareil mais vous ne recuperez qu'une maison \n[4] : vous enlevez tous");
+                                printf("vous avez plusieurs option : \n[1] : vous enlevez une double medaille et vous ne recuperez que 3 medailles \n[2] : pareil mais vous ne recuperez que 2 medailles \n[3] : pareil mais vous ne recuperez qu'une medaille \n[4] : vous enlevez tous");
                                 fflush(stdin);
                                 gets(option);
                             }while(((option[0] != 49) && (option[0] != 50) && (option[0] != 51) && (option[0] != 52)) || strlen(option) > 1);
@@ -2298,6 +2403,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=3;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + (tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2;
+                                printf("Vous avez vendu une double medailles et une medaille\n");
                             }
                             else if(option[0] == 50)
                             {
@@ -2306,6 +2412,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=2;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + (tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medailles et 2 medailles\n");
                             }
                             else if(option[0] == 51)
                             {
@@ -2314,12 +2421,14 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 3*((tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2);
+                                printf("Vous avez vendu une double medailles et 3 medailles\n");
                             }
                             else if(option[0] == 52)
                             {
                                 plateau[tab_joueur[i].proprietes[choix2[0]-49].position].nb_hotel -=1;
                                 banque->nb_hotel_restant += 1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 2*(tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medaille et 4 medailles\n");
                             }
                             break;
                         }
@@ -2338,6 +2447,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=2;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + (tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medailles et 2 medailles\n");
                             }
                             else if(option[0] == 50)
                             {
@@ -2346,12 +2456,14 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 3*((tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2);
+                                printf("Vous avez vendu une double medailles et 3 medailles\n");
                             }
                             else if(option[0] == 51)
                             {
                                 plateau[tab_joueur[i].proprietes[choix2[0]-49].position].nb_hotel -=1;
                                 banque->nb_hotel_restant += 1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 2*(tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medailles et 4 medailles\n");
                             }
                             break;
                         }
@@ -2370,18 +2482,20 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
                                 banque->nb_hotel_restant += 1;
                                 banque->nb_maison_restante -=1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 3*((tab_joueur[i].proprietes[choix2[0]-49].val_maison)/2);
+                                printf("Vous avez vendu une double medailles et  3 medailles\n");
                             }
                             else if(option[0] == 50)
                             {
                                 plateau[tab_joueur[i].proprietes[choix2[0]-49].position].nb_hotel -=1;
                                 banque->nb_hotel_restant += 1;
                                 tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 2*(tab_joueur[i].proprietes[choix2[0]-49].val_maison);
+                                printf("Vous avez vendu une double medailles et 4 medailles\n");
                             }
                             break;
                         }
                     case 5:
                         {
-                            printf("vous enlevez l'hotel et les 4 maisons");
+                            printf("vous enlevez une double medaille et les 4 medailles\n");
                             plateau[tab_joueur[i].proprietes[choix2[0]-49].position].nb_hotel -=1;
                             banque->nb_hotel_restant += 1;
                             tab_joueur[i].argent += (tab_joueur[i].proprietes[choix2[0]-49].val_hotel)/2 + 2*(tab_joueur[i].proprietes[choix2[0]-49].val_maison);
@@ -2393,6 +2507,7 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
             }
         }
     }
+    printf("Vous n'avez pas vendu de medaille\n");
     return false;
 }
 
@@ -2400,10 +2515,36 @@ bool Vendre_bien(t_joueur tab_joueur[], t_case plateau[], t_banque* banque, int 
  void clear_bas()
  {
      gotoligcol(54, 0);
-     for (int i; i < 20; i++)
+     for(int k = 0; k < 20; k++)
      {
-        printf("                                                                   \n");
+        printf("                                                                                                        \n");
      }
+
      gotoligcol(54, 0);
 
  }
+
+ // fonction de jeu
+bool evenement(t_joueur tab_joueur[],t_case plateau[],int i,char* liste_comite[],char* liste_corruption[])
+{
+  /* Permet le tirage des carte comite et corruption et l'entree en prison du joueur,
+       Prend en paramètre le tableau de joueur,l'indice du joueur,la liste des cartes comite et la liste des carte corruption,
+       Renvoie un booleen
+    */
+  if(plateau[tab_joueur[i].position].groupe_cartes==10)
+  {
+    tirer_comite(tab_joueur,i, liste_comite);
+    return true;
+  }
+  else if(plateau[tab_joueur[i].position].groupe_cartes==11)
+  {
+    tirer_corruption(tab_joueur,i,liste_corruption);
+    return true;
+  }
+  else if(plateau[tab_joueur[i].position].groupe_cartes==12)
+  {
+    entrer_prison(tab_joueur,i);
+    return true;
+  }
+  return false;
+}
